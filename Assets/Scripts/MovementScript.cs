@@ -3,14 +3,14 @@ using UnityEngine;
 
 public class MovementScript : MonoBehaviour
 {
-    private Rigidbody _rb2d;
+    private Rigidbody2D _rb2d;
 
     public float moveSpeed = 5f;
     public Vector3 moveDirection;
     
     void Start()
     {
-        _rb2d = GetComponent<Rigidbody>();
+        _rb2d = GetComponent<Rigidbody2D>();
     }
 
     
