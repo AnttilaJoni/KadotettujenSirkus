@@ -24,11 +24,11 @@ public class MovementScript : MonoBehaviour
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         
-        moveDirection = new Vector3(horizontal, vertical,  0).normalized;
+        moveDirection = new Vector3(horizontal, vertical,  0);
     }
 
     private void FixedUpdate()
     {
-        _rb2d.MovePosition(transform.position + moveDirection * (moveSpeed / 20) );
+        _rb2d.MovePosition(transform.position + moveDirection.normalized * (moveSpeed / 50) );
     }
 }

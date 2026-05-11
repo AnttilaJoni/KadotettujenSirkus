@@ -1097,8 +1097,8 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 0
   m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
+  m_Interpolate: 1
+  m_Constraints: 120
   m_CollisionDetection: 1
 --- !u!1 &2129230310
 GameObject:
@@ -1189,8 +1189,8 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
+  - {fileID: 1583140459}
   - {fileID: 1781549803}
   - {fileID: 1224393213}
   - {fileID: 699800084}
   - {fileID: 414718957}
-  - {fileID: 1583140459}
