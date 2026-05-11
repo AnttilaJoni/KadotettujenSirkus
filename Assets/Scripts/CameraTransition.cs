@@ -16,20 +16,12 @@ public class CameraTransition : MonoBehaviour
         cmCam = GameObject.Find("PlayerCam");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player")) {
-            var player = other.gameObject;
-            Debug.Log("Camera Transition");
-            
+        if (other.CompareTag("Player")) 
+        {
+            //Debug.Log("Camera Transition");
             GameObject.FindGameObjectWithTag("Fade").GetComponent<FadeScript>().StartFade();
-            
             
             Invoke(nameof(Transition), 1f);
         }
@@ -37,7 +29,6 @@ public class CameraTransition : MonoBehaviour
 
     void Transition()
     {
-        
         cmCam.GetComponent<CinemachineConfiner2D>().m_BoundingShape2D = confiner;
         _player.transform.position = playerSpawnPoint.transform.position;
         
