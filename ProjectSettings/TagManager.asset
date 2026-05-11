@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 3
   tags:
   - Fade
+  - Undefined
+  - NPC
   layers:
   - Default
   - TransparentFX
