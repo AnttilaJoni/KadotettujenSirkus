@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Minigame01 : MonoBehaviour
@@ -10,14 +11,30 @@ public class Minigame01 : MonoBehaviour
     public List<GameObject> notesList = new List<GameObject>();
     
     public float interval = 3f;
+    
+    public float speedMultiplier = 1f;
 
     private float _time;
 
     private float _noteTime = 0.5f;
+
+    private GameObject _playerStats;
+
+    public int damage = 1;
+
+    public int points = 1;
+    
+    public int score = 0;
+    [SerializeField] private TextMeshProUGUI scoreText;
     
     void Start()
     {
+        _playerStats = GameObject.FindGameObjectWithTag("PlayerStats");
+        
         _time = 0f;
+
+        score = 0;
+        scoreText.text = score.ToString();
     }
 
     
@@ -34,11 +51,13 @@ public class Minigame01 : MonoBehaviour
                     notesList.Remove(notesList[0]);
                     Destroy(note);
                     Debug.Log("Note W hit");
+                    AddScore(points);
                 }
             }
             
             else {
                 Debug.Log("Note W not hit");
+                _playerStats.GetComponent<DontDestroyOnLoad>().TakeDamage(damage);
             }
         }
         
@@ -53,10 +72,12 @@ public class Minigame01 : MonoBehaviour
                     notesList.Remove(notesList[0]);
                     Destroy(note);
                     Debug.Log("Note A hit");
+                    AddScore(points);
                 }
                 
                 else {
                     Debug.Log("Note A not hit");
+                    _playerStats.GetComponent<DontDestroyOnLoad>().TakeDamage(damage);
                 }
             }
         }
@@ -72,10 +93,12 @@ public class Minigame01 : MonoBehaviour
                     notesList.Remove(notesList[0]);
                     Destroy(note);
                     Debug.Log("Note S hit");
+                    AddScore(points);
                 }
                 
                 else {
                     Debug.Log("Note S not hit");
+                    _playerStats.GetComponent<DontDestroyOnLoad>().TakeDamage(damage);
                 }
             }
         }
@@ -91,10 +114,12 @@ public class Minigame01 : MonoBehaviour
                     notesList.Remove(notesList[0]);
                     Destroy(note);
                     Debug.Log("Note D hit");
+                    AddScore(points);
                 }
 
                 else {
                     Debug.Log("Note D not hit");
+                    _playerStats.GetComponent<DontDestroyOnLoad>().TakeDamage(damage);
                 }
             }
             
@@ -107,6 +132,12 @@ public class Minigame01 : MonoBehaviour
             SpawnNotes();
             _time -= interval;
         }
+    }
+
+    void AddScore(int scoreToAdd)
+    {
+        score += scoreToAdd;
+        scoreText.text = " Score: " + score.ToString();
     }
 
     void SpawnNotes()
