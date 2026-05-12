@@ -7,23 +7,20 @@ public class Minigame01 : MonoBehaviour
     [SerializeField] private GameObject notesSpawnPoint;
     [SerializeField] private GameObject notes;
     [SerializeField] private GameObject goal;
+    private GameObject _playerStats;
     
     public List<GameObject> notesList = new List<GameObject>();
     
+    [Header("Notes")]
+    
     public float interval = 3f;
-    
     public float speedMultiplier = 1f;
-
     private float _time;
-
     private float _noteTime = 0.5f;
-
-    private GameObject _playerStats;
-
     public int damage = 1;
-
-    public int points = 1;
     
+    [Header("Scoring")]
+    public int points = 1;
     public int score = 0;
     [SerializeField] private TextMeshProUGUI scoreText;
     
