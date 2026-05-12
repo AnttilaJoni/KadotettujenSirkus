@@ -31,7 +31,7 @@ public class Minigame01 : MonoBehaviour
         _time = 0f;
 
         score = 0;
-        scoreText.text = score.ToString();
+        scoreText.text = "score: " + score.ToString();
     }
 
     
