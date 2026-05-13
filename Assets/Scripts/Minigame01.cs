@@ -16,7 +16,7 @@ public class Minigame01 : MonoBehaviour
     public float interval = 3f;
     public float speedMultiplier = 1f;
     private float _time;
-    private float _noteTime = 0.5f;
+    private float _noteTime = 0.75f;
     public int damage = 1;
     
     [Header("Scoring")]
