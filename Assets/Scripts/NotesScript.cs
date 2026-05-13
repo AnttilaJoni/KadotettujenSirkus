@@ -17,7 +17,7 @@ public class NotesScript : MonoBehaviour
         {
             transform.position -= new Vector3(0 , Time.deltaTime * minigameScript.speedMultiplier, 0f);
 
-            if (transform.position.y < goal.position.y - 0.51f) 
+            if (transform.position.y < goal.position.y - 0.76f) 
             {
                 minigameScript.notesList.Remove(this.gameObject);
                 Debug.Log("Note " + gameObject.name + " missed");
