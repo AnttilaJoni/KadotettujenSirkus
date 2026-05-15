@@ -6,12 +6,14 @@ public class TextInteractable : MonoBehaviour, IInteractable
 {
     public bool IsInteracted { get; private set;}
     public string InteractID { get; private set;}
+    public GameObject dialogue;
     
     public Sprite interactedSprite;
 
     void Start()
     {
         InteractID ??= GlobalHelper.GenerateUniqueID(gameObject);
+        dialogue.SetActive(false);
     }
 
 
@@ -36,6 +38,7 @@ public class TextInteractable : MonoBehaviour, IInteractable
         if(IsInteracted = opened)
         {
             GetComponent<SpriteRenderer>().sprite = interactedSprite;
+            dialogue.SetActive(true);
         }
     }
 }
