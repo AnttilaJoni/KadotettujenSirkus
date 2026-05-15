@@ -4212,7 +4212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DontDestroyOnLoad
   playerHealth: 0
-  playerMaxHealth: 3
+  playerMaxHealth: 5
   healthText: {fileID: 2036956499}
 --- !u!114 &2073296072
 MonoBehaviour:

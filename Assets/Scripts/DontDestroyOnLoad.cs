@@ -7,7 +7,7 @@ public class DontDestroyOnLoad : MonoBehaviour
 {
 
     public int playerHealth = 0;
-    public int playerMaxHealth = 3;
+    public int playerMaxHealth = 5;
 
     [SerializeField] private TextMeshProUGUI healthText;
     
@@ -55,8 +55,28 @@ public class DontDestroyOnLoad : MonoBehaviour
 
     void GameOver()
     {
-        SceneManager.LoadScene("Teemu2");
-        playerHealth = playerMaxHealth;
-        healthText.text = "Health: " + playerHealth.ToString();
+        if (SceneManager.GetActiveScene().name == "Teemu2") 
+        {
+            SceneManager.LoadScene("Teemu");
+            playerHealth = playerMaxHealth;
+            healthText.text = "Health: " + playerHealth.ToString();
+        }
+        
+        else if (SceneManager.GetActiveScene().name == "Teemu2") 
+        {
+            SceneManager.LoadScene("Teemu2");
+            playerHealth = playerMaxHealth;
+            healthText.text = "Health: " + playerHealth.ToString();
+        }
+        
+        else if (SceneManager.GetActiveScene().name == "Teemu3") 
+        {
+            SceneManager.LoadScene("Teemu3");
+            playerHealth = playerMaxHealth;
+            healthText.text = "Health: " + playerHealth.ToString();
+        }
+        
+        
+        
     }
 }

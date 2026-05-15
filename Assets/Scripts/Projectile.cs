@@ -4,7 +4,8 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 22f;
-    [SerializeField] private float projectileRange = 20f;
+    //[SerializeField] private float projectileRange = 20f;
+    public int projectileDamage = 1;
     
     private Vector3 _startPosition;
     
@@ -28,7 +29,7 @@ public class Projectile : MonoBehaviour
 
     public void UpdateProjectileRange(float newProjectileRange)
     {
-        this.projectileRange  = projectileRange;
+        //this.projectileRange  = projectileRange;
     }
 
 
@@ -36,7 +37,7 @@ public class Projectile : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Player")) 
         {
-            //playerStats.Take
+            GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().TakeDamage(projectileDamage);
             Destroy(gameObject);
         }
 
