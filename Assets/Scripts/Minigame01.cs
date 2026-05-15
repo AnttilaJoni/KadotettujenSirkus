@@ -147,11 +147,11 @@ public class Minigame01 : MonoBehaviour
         note.transform.GetChild(randomInt).gameObject.SetActive(true);
 
         if (randomInt == 0) {
-            note.gameObject.name = "W";
+            note.gameObject.name = "A";
         }
         
         else if (randomInt == 1) {
-            note.gameObject.name = "A";
+            note.gameObject.name = "W";
         }
         
         else if (randomInt == 2) {
