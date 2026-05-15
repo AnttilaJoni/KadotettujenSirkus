@@ -398,7 +398,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &332614832
 Transform:
   m_ObjectHideFlags: 0
@@ -1671,12 +1671,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcaaa96cc3486e94491594e9a450eddb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Shooter
+  bossHealthScript: {fileID: 1001209889}
   bulletPrefab: {fileID: 1645731899419413916, guid: a627be4981cbf70429b1fc1f3e87fb82, type: 3}
-  bulletMoveSpeed: 6
-  burstCount: 2
+  bulletMoveSpeed: 4
+  burstCount: 1
   timebetweenBursts: 0.1
-  projectilesPerBurst: 10
-  angleSpread: 164
+  projectilesPerBurst: 6
+  angleSpread: 100
   startingDistance: 0.1
   restTime: 1
 --- !u!1 &804672664
@@ -1971,6 +1972,7 @@ MonoBehaviour:
   bossHealthBarFill: {fileID: 720564452}
   bossHealth: 0
   bossMaxHealth: 100
+  bossPhase: 2
 --- !u!1 &1055562235
 GameObject:
   m_ObjectHideFlags: 0
@@ -2744,7 +2746,7 @@ GameObject:
   - component: {fileID: 1431813930}
   - component: {fileID: 1431813929}
   m_Layer: 0
-  m_Name: DontDestroy
+  m_Name: PlayerStats
   m_TagString: PlayerStats
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2763,7 +2765,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DontDestroyOnLoad
   playerHealth: 0
-  playerMaxHealth: 3
+  playerMaxHealth: 5
   healthText: {fileID: 1192462318}
 --- !u!4 &1431813930
 Transform:
@@ -3178,12 +3180,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcaaa96cc3486e94491594e9a450eddb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Shooter
+  bossHealthScript: {fileID: 1001209889}
   bulletPrefab: {fileID: 1645731899419413916, guid: a627be4981cbf70429b1fc1f3e87fb82, type: 3}
-  bulletMoveSpeed: 6
-  burstCount: 2
+  bulletMoveSpeed: 4
+  burstCount: 1
   timebetweenBursts: 0.1
-  projectilesPerBurst: 10
-  angleSpread: 164
+  projectilesPerBurst: 6
+  angleSpread: 100
   startingDistance: 0.1
   restTime: 1
 --- !u!1 &1766944563
