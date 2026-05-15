@@ -1972,7 +1972,7 @@ MonoBehaviour:
   bossHealthBarFill: {fileID: 720564452}
   bossHealth: 0
   bossMaxHealth: 100
-  bossPhase: 2
+  bossPhase: 1
 --- !u!1 &1055562235
 GameObject:
   m_ObjectHideFlags: 0
@@ -2862,7 +2862,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47ebc38c27f90184e999d2025e85428e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MovementScript
-  moveSpeed: 7
+  moveSpeed: 10
   moveDirection: {x: 0, y: 0, z: 0}
 --- !u!61 &1498988395
 BoxCollider2D:

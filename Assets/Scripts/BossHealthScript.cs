@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class BossHealthScript : MonoBehaviour
@@ -44,7 +45,13 @@ public class BossHealthScript : MonoBehaviour
 
     void UpdateBossHealth()
     {
+        bossHealth -= Time.deltaTime;
         bossHealtBar.GetComponent<Slider>().value = bossHealth;
+
+        if (bossHealth <= 0) 
+        {
+            SceneManager.LoadScene("Menu");
+        }
     }
     
     
