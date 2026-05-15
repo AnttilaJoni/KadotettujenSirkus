@@ -5632,6 +5632,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   moveSpeed: 5
   moveDirection: {x: 0, y: 0, z: 0}
+  anim: {fileID: 323354510}
 --- !u!114 &1931040416
 MonoBehaviour:
   m_ObjectHideFlags: 0
