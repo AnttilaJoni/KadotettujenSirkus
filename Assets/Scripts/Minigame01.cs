@@ -1,9 +1,11 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Minigame01 : MonoBehaviour
 {
+    [SerializeField] private GameObject bossHealthBar;
     [SerializeField] private GameObject notesSpawnPoint;
     [SerializeField] private GameObject notes;
     [SerializeField] private GameObject goal;
@@ -23,6 +25,8 @@ public class Minigame01 : MonoBehaviour
     public int points = 1;
     public int score = 0;
     [SerializeField] private TextMeshProUGUI scoreText;
+    public int bossHealth;
+    public int bossMaxHealth;
     
     void Start()
     {
@@ -32,6 +36,7 @@ public class Minigame01 : MonoBehaviour
 
         score = 0;
         scoreText.text = "score: " + score.ToString();
+        bossHealth = bossMaxHealth;
     }
 
     
@@ -135,6 +140,8 @@ public class Minigame01 : MonoBehaviour
     {
         score += scoreToAdd;
         scoreText.text = " Score: " + score.ToString();
+        
+        BossTakeDamage(scoreToAdd * 2);
     }
 
     void SpawnNotes()
@@ -163,7 +170,16 @@ public class Minigame01 : MonoBehaviour
         }
         
         notesList.Add(note);
-    }    
-    
+    }
+
+    void BossTakeDamage(int takeDamage)
+    {
+        bossHealth -= takeDamage;
+        bossHealthBar.GetComponent<Slider>().value = bossHealth;
+
+        if (bossHealth <= 0) {
+            Time.timeScale = 0f;
+        }
+    }
     
 }
