@@ -8,54 +8,104 @@ public class MovementScript : MonoBehaviour
 
     public float moveSpeed = 5f;
     public Vector3 moveDirection;
-
     private Vector2 input;
 
-    [SerializeField ]Animator anim;
-    private Vector2 lastMoveDirection;
-    
+    [SerializeField] private Animator anim;
+    private string lastDirection = "Up";
+
+    List<Vector3> _attemptedMoveDirs = new List<Vector3>();
     
     void Start()
     {
         _rb2d = GetComponent<Rigidbody2D>();
     }
-
-    
     void Update()
     {
         Inputs();
-        Animate();
+        HandleAnimations();
+    }
+    private void HandleAnimations()
+    {
+        if (anim == null) return;
+
+        string animationName = "";
+
+        if (moveDirection == Vector3.zero)
+            animationName = "Idle";
+        else
+            animationName = "Walk";
+
+        anim.Play(animationName + lastDirection);
     }
 
     void Inputs()
     {
-        float moveX = Input.GetAxisRaw("Horizontal");
-        float moveY = Input.GetAxisRaw("Vertical");
-
-        if((moveX == 0 && moveY == 0) && (input.x != 0 || input.y != 0))
-        {
-            lastMoveDirection = input;
-        }
-
-        input.x = Input.GetAxisRaw("Horizontal");
-        input.y = Input.GetAxisRaw("Vertical");
-
-        input.Normalize();
-
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         
-        moveDirection = new Vector3(horizontal, vertical,  0);
-    }
-    void Animate()
-    {
-        anim.SetFloat("MoveX", input.x);
-        anim.SetFloat("MoveY", input.y);
-        anim.SetFloat("MoveMagnitude", input.magnitude);
-        anim.SetFloat("LastMoveX", lastMoveDirection.x);
-        anim.SetFloat("LastMoveY", lastMoveDirection.y);
+        Vector3 finalDirection = Vector2.zero;
+        if (vertical > 0.01f)
+        {
+            if (ShouldMoveInDirection(Vector3.up))
+            {
+                finalDirection = new Vector2(0, 1);
+                lastDirection = "Down";
+            }
+            if (!_attemptedMoveDirs.Contains(Vector3.up))
+                _attemptedMoveDirs.Add(Vector3.up);
+        }
+        else
+            _attemptedMoveDirs.Remove(Vector3.up);
+        
+        if (vertical < -0.01f)
+        {
+            if (ShouldMoveInDirection(Vector3.down))
+            {
+                finalDirection = new Vector2(0, -1);
+                lastDirection = "Up";
+            }
+            if (!_attemptedMoveDirs.Contains(Vector3.down))
+                _attemptedMoveDirs.Add(Vector3.down);
+        }
+        else
+            _attemptedMoveDirs.Remove(Vector3.down);
+
+        if (horizontal > 0.01f)
+        {
+            if (ShouldMoveInDirection(Vector3.right))
+            {
+                finalDirection = new Vector2(1, 0);
+                lastDirection = "Right";
+            }
+            if (!_attemptedMoveDirs.Contains(Vector3.right))
+                _attemptedMoveDirs.Add(Vector3.right);
+        }
+        else
+            _attemptedMoveDirs.Remove(Vector3.right);
+
+        if (horizontal < -0.01f)
+        {
+            if (ShouldMoveInDirection(Vector3.left))
+            {
+                finalDirection = new Vector2(-1, 0);
+                lastDirection = "Left";
+            }
+            if (!_attemptedMoveDirs.Contains(Vector3.left))
+                _attemptedMoveDirs.Add(Vector3.left);
+        }
+        else
+            _attemptedMoveDirs.Remove(Vector3.left);
+
+        //else
+            //finalDirection = Vector2.zero;
+
+        moveDirection = finalDirection;
     }
 
+    bool ShouldMoveInDirection (Vector3 dir)
+    {
+        return !_attemptedMoveDirs.Contains(-dir) && (!_attemptedMoveDirs.Contains(dir) || _attemptedMoveDirs[_attemptedMoveDirs.Count - 1] == dir);
+    }
     private void FixedUpdate()
     {
         _rb2d.MovePosition(transform.position + moveDirection.normalized * (moveSpeed / 50) );
