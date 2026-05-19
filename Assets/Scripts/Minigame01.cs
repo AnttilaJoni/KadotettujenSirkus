@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -5,6 +6,7 @@ using UnityEngine.UI;
 
 public class Minigame01 : MonoBehaviour
 {
+    [SerializeField] private TextMeshProUGUI startCountDownText;
     [SerializeField] private GameObject bossHealthBar;
     [SerializeField] private GameObject notesSpawnPoint;
     [SerializeField] private GameObject notes;
@@ -27,9 +29,12 @@ public class Minigame01 : MonoBehaviour
     [SerializeField] private TextMeshProUGUI scoreText;
     public int bossHealth;
     public int bossMaxHealth;
-    
+
+    public bool gameActive = false;
     void Start()
     {
+        StartCoroutine(StartGame());
+        
         _playerStats = GameObject.FindGameObjectWithTag("PlayerStats");
         
         _time = 0f;
@@ -127,12 +132,16 @@ public class Minigame01 : MonoBehaviour
             
             
         }
-        
-        _time += Time.deltaTime;
-        
-        while (_time >= interval) {
-            SpawnNotes();
-            _time -= interval;
+
+
+        if (gameActive) 
+        {
+            _time += Time.deltaTime;
+
+            while (_time >= interval) {
+                SpawnNotes();
+                _time -= interval;
+            }
         }
     }
 
@@ -180,6 +189,24 @@ public class Minigame01 : MonoBehaviour
         if (bossHealth <= 0) {
             Time.timeScale = 0f;
         }
+    }
+
+    private IEnumerator StartGame()
+    {
+        startCountDownText.gameObject.SetActive(true);
+        startCountDownText.text = "3";
+        yield return new WaitForSeconds(1f);
+        
+        startCountDownText.text = "2";
+        yield return new WaitForSeconds(1f);
+        
+        startCountDownText.text = "1";
+        yield return new WaitForSeconds(1f);
+        
+        startCountDownText.text = "Go!";
+        yield return new WaitForSeconds(1f);
+        startCountDownText.gameObject.SetActive(false);
+        gameActive = true;
     }
     
 }
