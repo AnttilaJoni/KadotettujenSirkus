@@ -55,7 +55,7 @@ public class DontDestroyOnLoad : MonoBehaviour
 
     void GameOver()
     {
-        if (SceneManager.GetActiveScene().name == "Teemu2") 
+        if (SceneManager.GetActiveScene().name == "Teemu") 
         {
             SceneManager.LoadScene("Teemu");
             playerHealth = playerMaxHealth;

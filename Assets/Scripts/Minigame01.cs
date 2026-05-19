@@ -1,9 +1,13 @@
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Minigame01 : MonoBehaviour
 {
+    [SerializeField] private TextMeshProUGUI startCountDownText;
+    [SerializeField] private GameObject bossHealthBar;
     [SerializeField] private GameObject notesSpawnPoint;
     [SerializeField] private GameObject notes;
     [SerializeField] private GameObject goal;
@@ -23,15 +27,21 @@ public class Minigame01 : MonoBehaviour
     public int points = 1;
     public int score = 0;
     [SerializeField] private TextMeshProUGUI scoreText;
-    
+    public int bossHealth;
+    public int bossMaxHealth;
+
+    public bool gameActive = false;
     void Start()
     {
+        StartCoroutine(StartGame());
+        
         _playerStats = GameObject.FindGameObjectWithTag("PlayerStats");
         
         _time = 0f;
 
         score = 0;
         scoreText.text = "score: " + score.ToString();
+        bossHealth = bossMaxHealth;
     }
 
     
@@ -122,12 +132,16 @@ public class Minigame01 : MonoBehaviour
             
             
         }
-        
-        _time += Time.deltaTime;
-        
-        while (_time >= interval) {
-            SpawnNotes();
-            _time -= interval;
+
+
+        if (gameActive) 
+        {
+            _time += Time.deltaTime;
+
+            while (_time >= interval) {
+                SpawnNotes();
+                _time -= interval;
+            }
         }
     }
 
@@ -135,6 +149,8 @@ public class Minigame01 : MonoBehaviour
     {
         score += scoreToAdd;
         scoreText.text = " Score: " + score.ToString();
+        
+        BossTakeDamage(scoreToAdd * 2);
     }
 
     void SpawnNotes()
@@ -147,11 +163,11 @@ public class Minigame01 : MonoBehaviour
         note.transform.GetChild(randomInt).gameObject.SetActive(true);
 
         if (randomInt == 0) {
-            note.gameObject.name = "W";
+            note.gameObject.name = "A";
         }
         
         else if (randomInt == 1) {
-            note.gameObject.name = "A";
+            note.gameObject.name = "W";
         }
         
         else if (randomInt == 2) {
@@ -163,7 +179,34 @@ public class Minigame01 : MonoBehaviour
         }
         
         notesList.Add(note);
-    }    
-    
+    }
+
+    void BossTakeDamage(int takeDamage)
+    {
+        bossHealth -= takeDamage;
+        bossHealthBar.GetComponent<Slider>().value = bossHealth;
+
+        if (bossHealth <= 0) {
+            Time.timeScale = 0f;
+        }
+    }
+
+    private IEnumerator StartGame()
+    {
+        startCountDownText.gameObject.SetActive(true);
+        startCountDownText.text = "3";
+        yield return new WaitForSeconds(1f);
+        
+        startCountDownText.text = "2";
+        yield return new WaitForSeconds(1f);
+        
+        startCountDownText.text = "1";
+        yield return new WaitForSeconds(1f);
+        
+        startCountDownText.text = "Go!";
+        yield return new WaitForSeconds(1f);
+        startCountDownText.gameObject.SetActive(false);
+        gameActive = true;
+    }
     
 }
