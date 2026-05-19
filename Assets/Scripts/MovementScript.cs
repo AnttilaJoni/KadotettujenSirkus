@@ -13,7 +13,8 @@ public class MovementScript : MonoBehaviour
 
     [SerializeField ]Animator anim;
     private Vector2 lastMoveDirection;
-    
+
+    public bool animate = false;
     
     void Start()
     {
@@ -49,11 +50,13 @@ public class MovementScript : MonoBehaviour
     }
     void Animate()
     {
-        anim.SetFloat("MoveX", input.x);
-        anim.SetFloat("MoveY", input.y);
-        anim.SetFloat("MoveMagnitude", input.magnitude);
-        anim.SetFloat("LastMoveX", lastMoveDirection.x);
-        anim.SetFloat("LastMoveY", lastMoveDirection.y);
+        if (animate) {
+            anim.SetFloat("MoveX", input.x);
+            anim.SetFloat("MoveY", input.y);
+            anim.SetFloat("MoveMagnitude", input.magnitude);
+            anim.SetFloat("LastMoveX", lastMoveDirection.x);
+            anim.SetFloat("LastMoveY", lastMoveDirection.y);
+        }
     }
 
     private void FixedUpdate()

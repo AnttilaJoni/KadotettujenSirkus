@@ -22,6 +22,7 @@ public class BossHealthScript : MonoBehaviour
     
     void Update()
     {
+        
         UpdateBossHealth();
         
         if (bossHealtBar.GetComponent<Slider>().value < bossMaxHealth / 3) 

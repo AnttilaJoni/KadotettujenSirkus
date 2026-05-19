@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class Shooter : MonoBehaviour
@@ -15,23 +16,32 @@ public class Shooter : MonoBehaviour
     [SerializeField] private float restTime = 1f;
     [SerializeField] private bool stagger;
     [SerializeField] private bool oscillate;
-
+    [SerializeField] private CountDownScript countDownScript;
+    
 
     private bool _isShooting = false;
+    
+    
 
     //private float startAngle;
     //float currentAngle;
     //private float angleStep;
     //private float endAngle;
-    
-    
+
+    private void Start()
+    {
+        
+    }
 
     private void Update()
     {
-        Attack();
+        if (countDownScript.gameActive) {
+
+            Attack();
+        }
     }
 
-    public void Attack()
+    private void Attack()
     {
         if (!_isShooting) 
         {
