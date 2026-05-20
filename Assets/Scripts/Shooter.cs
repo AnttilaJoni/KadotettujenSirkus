@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Shooter : MonoBehaviour
 {
+    [SerializeField] private GameObject bossHandCollider;
     [SerializeField] private BossHealthScript bossHealthScript;
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private float bulletMoveSpeed;
@@ -175,6 +176,7 @@ public class Shooter : MonoBehaviour
     
     private IEnumerator Phase3()
     {
+        bossHandCollider.gameObject.SetActive(true);
         _isShooting = true;
         
         projectilesPerBurst = 5;
