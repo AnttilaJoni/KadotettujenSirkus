@@ -6,11 +6,15 @@ using UnityEngine.UI;
 
 public class Minigame01 : MonoBehaviour
 {
+    [SerializeField] private Animator comboAnim;
     [SerializeField] private TextMeshProUGUI startCountDownText;
+    [SerializeField] private TextMeshProUGUI comboCounterText;
+    [SerializeField] private GameObject comboCounterImage;
     [SerializeField] private GameObject bossHealthBar;
     [SerializeField] private GameObject notesSpawnPoint;
     [SerializeField] private GameObject notes;
     [SerializeField] private GameObject goal;
+    
     private GameObject _playerStats;
     
     public List<GameObject> notesList = new List<GameObject>();
@@ -24,6 +28,7 @@ public class Minigame01 : MonoBehaviour
     public int damage = 1;
     
     [Header("Scoring")]
+    public int comboCounter = 0;
     public int points = 1;
     public int score = 0;
     [SerializeField] private TextMeshProUGUI scoreText;
@@ -42,6 +47,8 @@ public class Minigame01 : MonoBehaviour
         score = 0;
         scoreText.text = "score: " + score.ToString();
         bossHealth = bossMaxHealth;
+        
+        comboCounterText.text = comboCounter.ToString();
     }
 
     
@@ -59,12 +66,14 @@ public class Minigame01 : MonoBehaviour
                     Destroy(note);
                     Debug.Log("Note W hit");
                     AddScore(points);
+                    AddCombo(points);
                 }
             }
             
             else {
                 Debug.Log("Note W not hit");
                 _playerStats.GetComponent<DontDestroyOnLoad>().TakeDamage(damage);
+                ResetCombo();
             }
         }
         
@@ -80,11 +89,13 @@ public class Minigame01 : MonoBehaviour
                     Destroy(note);
                     Debug.Log("Note A hit");
                     AddScore(points);
+                    AddCombo(points);
                 }
                 
                 else {
                     Debug.Log("Note A not hit");
                     _playerStats.GetComponent<DontDestroyOnLoad>().TakeDamage(damage);
+                    ResetCombo();
                 }
             }
         }
@@ -101,11 +112,13 @@ public class Minigame01 : MonoBehaviour
                     Destroy(note);
                     Debug.Log("Note S hit");
                     AddScore(points);
+                    AddCombo(points);
                 }
                 
                 else {
                     Debug.Log("Note S not hit");
                     _playerStats.GetComponent<DontDestroyOnLoad>().TakeDamage(damage);
+                    ResetCombo();
                 }
             }
         }
@@ -122,11 +135,13 @@ public class Minigame01 : MonoBehaviour
                     Destroy(note);
                     Debug.Log("Note D hit");
                     AddScore(points);
+                    AddCombo(points);
                 }
 
                 else {
                     Debug.Log("Note D not hit");
                     _playerStats.GetComponent<DontDestroyOnLoad>().TakeDamage(damage);
+                    ResetCombo();
                 }
             }
             
@@ -207,6 +222,33 @@ public class Minigame01 : MonoBehaviour
         yield return new WaitForSeconds(1f);
         startCountDownText.gameObject.SetActive(false);
         gameActive = true;
+    }
+
+    void AddCombo(int scoreToAdd)
+    {
+        comboCounter += scoreToAdd;
+        comboCounterText.text = comboCounter.ToString();
+        comboAnim.SetTrigger("Combo");
+        
+
+        if (comboCounter < 10) {
+            comboCounterImage.GetComponent<RawImage>().color = Color.white;
+        }
+        
+        else if (comboCounter >= 10 && comboCounter < 20) {
+            comboCounterImage.GetComponent<RawImage>().color = Color.orange;
+        }
+        
+        else if (comboCounter >= 20) {
+            comboCounterImage.GetComponent<RawImage>().color = Color.red;
+        }
+    }
+
+    void ResetCombo()
+    {
+        comboCounter = 0;
+        comboCounterText.text = comboCounter.ToString();
+        comboCounterImage.GetComponent<RawImage>().color = Color.orange;
     }
     
 }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Minigame2 : MonoBehaviour
+public class Minigame3 : MonoBehaviour
 {
     [SerializeField] private GameObject shapes;
     [SerializeField] private GameObject spawnPoint;
@@ -25,7 +25,7 @@ public class Minigame2 : MonoBehaviour
             _spawnedShape.transform.parent = null;
             _spawnedShape.GetComponent<Rigidbody2D>().gravityScale = 1;
             _spawnedShape.GetComponent<Rigidbody2D>().AddForce(-launcher.transform.up * 5, ForceMode2D.Impulse);
-            _spawnedShape.GetComponent<ShapeScript>().active = true;
+            //_spawnedShape.GetComponent<ShapeScript>().active = true;
             Invoke(nameof(SpawnShape), 1f);
         }
 

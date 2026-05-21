@@ -212,6 +212,8 @@ public class Shooter : MonoBehaviour
 
         yield return new WaitForSeconds(restTime);
         _isShooting = false;
+        
+        
     }
 
     private void TargetConeOfInfluence(out float startAngle, out float currentAngle, out float angleStep, out float endAngle)
