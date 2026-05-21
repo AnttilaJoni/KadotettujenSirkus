@@ -1,9 +1,11 @@
 using System;
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class Shooter : MonoBehaviour
 {
+    [SerializeField] private GameObject bossHandCollider;
     [SerializeField] private BossHealthScript bossHealthScript;
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private float bulletMoveSpeed;
@@ -15,23 +17,32 @@ public class Shooter : MonoBehaviour
     [SerializeField] private float restTime = 1f;
     [SerializeField] private bool stagger;
     [SerializeField] private bool oscillate;
-
+    [SerializeField] private CountDownScript countDownScript;
+    
 
     private bool _isShooting = false;
+    
+    
 
     //private float startAngle;
     //float currentAngle;
     //private float angleStep;
     //private float endAngle;
-    
-    
+
+    private void Start()
+    {
+        
+    }
 
     private void Update()
     {
-        Attack();
+        if (countDownScript.gameActive) {
+
+            Attack();
+        }
     }
 
-    public void Attack()
+    private void Attack()
     {
         if (!_isShooting) 
         {
@@ -165,6 +176,7 @@ public class Shooter : MonoBehaviour
     
     private IEnumerator Phase3()
     {
+        bossHandCollider.gameObject.SetActive(true);
         _isShooting = true;
         
         projectilesPerBurst = 5;
