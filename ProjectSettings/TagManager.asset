@@ -8,6 +8,8 @@ TagManager:
   - Undefined
   - NPC
   - PlayerStats
+  - Interactable
+  - Card
   layers:
   - Default
   - TransparentFX
