@@ -20,9 +20,13 @@ public class CardsController : MonoBehaviour
     public TextMeshProUGUI text_health;
     public GameObject text_gameover;
 
+    public GameObject cards_placeholder;
+    private GameObject[] cards;
+
     private void Start()
     {
         text_gameover.SetActive(false);
+        cards_placeholder.SetActive(false);
         StartCoroutine(SetHealth());
         PrepareSprites();
         CreateCards();
@@ -41,6 +45,12 @@ public class CardsController : MonoBehaviour
         text_health.text = $"♥♥♥♥♥";
         yield return new WaitForSeconds(0.1f);
         text_health.text = $"♥♥♥♥♥♥";
+        yield return new WaitForSeconds(0.1f);
+        text_health.text = $"♥♥♥♥♥♥♥";
+        yield return new WaitForSeconds(0.1f);
+        text_health.text = $"♥♥♥♥♥♥♥♥";
+        yield return new WaitForSeconds(0.1f);
+        text_health.text = $"♥♥♥♥♥♥♥♥♥";
     }
     private void PrepareSprites()
     {
@@ -60,6 +70,18 @@ public class CardsController : MonoBehaviour
             card.SetIconSprite(spritePairs[i]);
             card.controller = this;
         }
+    }
+    void DestroyCards()
+    {
+        cards_placeholder.SetActive(true);
+        StartCoroutine(SetHealth());
+        cards = GameObject.FindGameObjectsWithTag("Card");
+
+        foreach (GameObject c in cards)
+        {
+            Destroy(c);
+        }
+        StartCoroutine(GameReset());
     }
     public void SetSelected(Card card)
     {
@@ -89,7 +111,12 @@ public class CardsController : MonoBehaviour
             matchCounts++;
             if(matchCounts == spritePairs.Count / 2)
             {
-                //gridTransform.transform.DOPunchScale(new Vector3(0.01f, 0.01f, 0.01f), 1, 0, 1F);
+                cards = GameObject.FindGameObjectsWithTag("Card");
+                foreach (GameObject c in cards)
+                {
+                    c.transform.DORotate(new(0, 180f, 0), 0.25f);
+                }
+                DestroyCards(); //odota kunnnes destroyyaa
             }
             a.transform.DOPunchScale(new Vector3(0.08f, 0.08f, 0.08f), (float) 0.4, 3, 1F);
             b.transform.DOPunchScale(new Vector3(0.08f, 0.08f, 0.08f), (float) 0.4, 3, 1F);
@@ -104,6 +131,26 @@ public class CardsController : MonoBehaviour
     }
     void UpdateHealth()
     {
+        if (text_health.text == $"♥♥♥♥♥♥♥♥♥")
+        {
+            text_health.text = $"♥♥♥♥♥♥♥♥";
+            return;
+        }
+        if (text_health.text == $"♥♥♥♥♥♥♥♥")
+        {
+            text_health.text = $"♥♥♥♥♥♥♥";
+            return;
+        }
+        if (text_health.text == $"♥♥♥♥♥♥♥")
+        {
+            text_health.text = $"♥♥♥♥♥♥";
+            return;
+        }
+        if (text_health.text == $"♥♥♥♥♥♥")
+        {
+            text_health.text = $"♥♥♥♥♥";
+            return;
+        }
         if (text_health.text == $"♥♥♥♥♥♥")
         {
             text_health.text = $"♥♥♥♥♥";
@@ -139,6 +186,14 @@ public class CardsController : MonoBehaviour
     void GameOver()
     {
         text_gameover.SetActive(true);
+    }
+    IEnumerator GameReset()
+    {
+        yield return new WaitForSeconds(1f);
+        PrepareSprites();
+        cards_placeholder.SetActive(false);
+        CreateCards();
+        
     }
     void ShuffleSprites(List<Sprite> spriteList)
     {

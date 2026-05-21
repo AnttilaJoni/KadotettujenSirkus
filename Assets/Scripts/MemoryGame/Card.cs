@@ -34,10 +34,14 @@ public class Card : MonoBehaviour
         yield return new WaitForSeconds(2f);
         Flip();
     }
-    private void Flip()
+    public void Flip()
     {
         flipped = !flipped;
         transform.DORotate(new(0, flipped ? 0f : 180f, 0), 0.25f);
+    }
+    public void Reset()
+    {
+        StartCoroutine(StartSetup());
     }
 
     public void OnCardClick()
