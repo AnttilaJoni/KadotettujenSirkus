@@ -9,9 +9,14 @@ public class MovementScript : MonoBehaviour
     public float moveSpeed = 5f;
     public Vector3 moveDirection;
     private Vector2 input;
+    private bool _canParry = true;
+    private float _parryTimer = 1f;
+    public float parryTime;
+    
+    
 
     [SerializeField] private Animator anim;
-    private string lastDirection = "Up";
+    public string lastDirection = "Up";
 
     List<Vector3> _attemptedMoveDirs = new List<Vector3>();
     
@@ -21,6 +26,13 @@ public class MovementScript : MonoBehaviour
     }
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space) && _canParry) 
+        {anim.SetTrigger("Parry");
+            Parry();
+            _canParry = false;
+        }
+        
+        //Debug.Log(lastDirection);
         Inputs();
         HandleAnimations();
     }
@@ -35,7 +47,9 @@ public class MovementScript : MonoBehaviour
         else
             animationName = "Walk";
 
-        anim.Play(animationName + lastDirection);
+        if (_canParry) {
+            anim.Play(animationName + lastDirection);
+        }
     }
 
     void Inputs()
@@ -108,6 +122,21 @@ public class MovementScript : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        _rb2d.MovePosition(transform.position + moveDirection.normalized * (moveSpeed / 50) );
+        if (_canParry) {
+            _rb2d.MovePosition(transform.position + moveDirection.normalized * (moveSpeed / 50));
+        }
+    }
+
+    void Parry()
+    {
+        anim.SetTrigger("Parry");
+        StartCoroutine(ParryCoroutine());
+    }
+
+    private IEnumerator ParryCoroutine()
+    {
+        
+        yield return new WaitForSeconds(_parryTimer);
+        _canParry = true;
     }
 }
