@@ -1751,19 +1751,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcaaa96cc3486e94491594e9a450eddb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Shooter
+  bossHandPositionLeft: {fileID: 1993003826}
+  bossHandPositionRight: {fileID: 1765103365}
   bossHandCollider: {fileID: 562682255}
   bossHealthScript: {fileID: 1001209889}
   bulletPrefab: {fileID: 1645731899419413916, guid: a627be4981cbf70429b1fc1f3e87fb82, type: 3}
   bulletMoveSpeed: 4
   burstCount: 1
-  timebetweenBursts: 0.1
-  projectilesPerBurst: 6
-  angleSpread: 100
+  timebetweenBursts: 0.2
+  projectilesPerBurst: 4
+  angleSpread: 50
   startingDistance: 0.1
   restTime: 1
   stagger: 0
   oscillate: 0
   countDownScript: {fileID: 1940774457}
+  right: 1
+  left: 0
+  lastPhase: 1
 --- !u!1 &804672664
 GameObject:
   m_ObjectHideFlags: 0
@@ -2039,6 +2044,8 @@ Transform:
   - {fileID: 758486753}
   - {fileID: 1709854319}
   - {fileID: 562682256}
+  - {fileID: 1993003826}
+  - {fileID: 1765103365}
   m_Father: {fileID: 2075342701}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1001209889
@@ -2850,7 +2857,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DontDestroyOnLoad
   playerHealth: 0
-  playerMaxHealth: 10
+  playerMaxHealth: 999
   healthText: {fileID: 1192462318}
 --- !u!4 &1431813930
 Transform:
@@ -3345,19 +3352,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcaaa96cc3486e94491594e9a450eddb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Shooter
+  bossHandPositionLeft: {fileID: 1993003826}
+  bossHandPositionRight: {fileID: 1765103365}
   bossHandCollider: {fileID: 562682255}
   bossHealthScript: {fileID: 1001209889}
   bulletPrefab: {fileID: 1645731899419413916, guid: a627be4981cbf70429b1fc1f3e87fb82, type: 3}
   bulletMoveSpeed: 4
   burstCount: 1
-  timebetweenBursts: 0.1
-  projectilesPerBurst: 6
-  angleSpread: 100
+  timebetweenBursts: 0.2
+  projectilesPerBurst: 4
+  angleSpread: 50
   startingDistance: 0.1
   restTime: 1
   stagger: 0
   oscillate: 0
   countDownScript: {fileID: 1940774457}
+  right: 0
+  left: 0
+  lastPhase: 0
 --- !u!4 &1717799607 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6408278241038328043, guid: d9c718e341517674f8f27e9f6771285e, type: 3}
@@ -3454,6 +3466,37 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &1765103364
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1765103365}
+  m_Layer: 0
+  m_Name: BossHandPositionRight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1765103365
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765103364}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.5, y: -3.4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1001209888}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1766944563
 GameObject:
   m_ObjectHideFlags: 0
@@ -4012,6 +4055,37 @@ Transform:
   - {fileID: 1235448506}
   - {fileID: 1534370329}
   m_Father: {fileID: 1436718752}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1993003825
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1993003826}
+  m_Layer: 0
+  m_Name: BossHandPositionLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1993003826
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1993003825}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.5, y: -3.4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1001209888}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2026929907 stripped
 GameObject:

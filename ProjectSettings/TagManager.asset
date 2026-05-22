@@ -10,6 +10,7 @@ TagManager:
   - PlayerStats
   - Interactable
   - Card
+  - Shape
   layers:
   - Default
   - TransparentFX
