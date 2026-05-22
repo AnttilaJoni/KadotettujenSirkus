@@ -11,11 +11,7 @@ public class WinLineScript : MonoBehaviour
 
     void Update()
     {
-        if (!minigame2.minigameActive) 
-        {
-            timerText.gameObject.SetActive(true);
-            timerText.text = _time.ToString("00");
-        }
+        
     }
     private void OnTriggerStay2D(Collider2D other)
     {
@@ -23,12 +19,14 @@ public class WinLineScript : MonoBehaviour
             
             _time -= Time.deltaTime;
 
-            if (_time <= 4.5f) {
+            if (_time <= 4.5f && _time > 0) {
                 minigame2.minigameActive = false;
+                timerText.gameObject.SetActive(true);
+                timerText.text = _time.ToString("00");
             }
 
             if (_time <= 0) {
-                Time.timeScale = 0f;
+                //Time.timeScale = 0f;
                 timerText.text = "You win!";
             }
 
