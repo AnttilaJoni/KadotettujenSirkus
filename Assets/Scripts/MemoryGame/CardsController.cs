@@ -106,12 +106,16 @@ public class CardsController : MonoBehaviour
     IEnumerator CheckMatching(Card a, Card b)
     {
         yield return new WaitForSeconds(0.4f);
+        Debug.Log("Checking match");
         if(a.iconSprite == b.iconSprite)
         {
             matchCounts++;
+            Debug.Log($"Match found, count: {matchCounts}, spritePairs.Count / 2: {spritePairs.Count / 2}");
             if(matchCounts == spritePairs.Count / 2)
             {
+                //StartCoroutine(EndFlip());
                 DestroyCards();
+                matchCounts = 0;
             }
             a.transform.DOPunchScale(new Vector3(0.08f, 0.08f, 0.08f), (float) 0.4, 3, 1F);
             b.transform.DOPunchScale(new Vector3(0.08f, 0.08f, 0.08f), (float) 0.4, 3, 1F);
@@ -124,6 +128,24 @@ public class CardsController : MonoBehaviour
             UpdateHealth();
         }
     }
+    IEnumerator EndFlip()
+    {
+        yield return new WaitForSeconds(0.4f);
+        //cards = GameObject.FindGameObjectsWithTag("Card");
+
+        /* for(int i = 0; i <= gridTransform.childCount; i++)
+        {
+            gridTransform.gameObject.transform.GetChild(i).Hide();
+        } */
+
+        /* foreach (GameObject c in cards)
+        {
+            gridTransform.GetChild(i);
+            c.Hide();
+        } */
+        DestroyCards();
+    }
+
     void UpdateHealth()
     {
         if (text_health.text == $"♥♥♥♥♥♥♥♥♥")

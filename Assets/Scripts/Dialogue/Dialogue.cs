@@ -10,6 +10,9 @@ public class Dialogue : MonoBehaviour
     public float textSpeed;
     private int index;
     public GameObject dialogue;
+    public GameObject characterToShow;
+    public GameObject expression;
+    
 
     void Start()
     {
