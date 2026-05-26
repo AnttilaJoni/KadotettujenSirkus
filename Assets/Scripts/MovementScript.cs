@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MovementScript : MonoBehaviour
 {
@@ -19,7 +21,18 @@ public class MovementScript : MonoBehaviour
     public string lastDirection = "Up";
 
     List<Vector3> _attemptedMoveDirs = new List<Vector3>();
-    
+
+    void Awake()
+    {
+        if (SceneManager.GetActiveScene().name == "TestSceneJoni") 
+        {
+            var playerPosition = GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().playerPosition;
+            
+            transform.position = playerPosition;
+            FindFirstObjectByType<CinemachineConfiner2D>().m_BoundingShape2D =
+                GameObject.Find(GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().mapBoundary).GetComponent<PolygonCollider2D>();
+        }
+    }
     void Start()
     {
         _rb2d = GetComponent<Rigidbody2D>();

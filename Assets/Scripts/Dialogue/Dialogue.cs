@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Dialogue : MonoBehaviour
 {
@@ -71,7 +72,13 @@ public class Dialogue : MonoBehaviour
     }
     private void LoadCombat1()
     {
-        SceneController.instance.ChangeSceneByIndex(2);
+        
+        //SceneController.instance.ChangeSceneByIndex(2);
+        
+        // Temp testing
+        GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().SavePlayerPosition();
+        SceneManager.LoadScene("Teemu2");
+        
     }
     private void LoadCombat2()
     {
