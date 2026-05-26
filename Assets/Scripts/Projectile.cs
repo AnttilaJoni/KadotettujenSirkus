@@ -6,6 +6,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] private float moveSpeed = 22f;
     //[SerializeField] private float projectileRange = 20f;
     public int projectileDamage = 1;
+    public bool bounceProjectile = false;
     
     private Vector3 _startPosition;
     
@@ -37,18 +38,41 @@ public class Projectile : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Player")) 
         {
+            Vector2 dir = other.transform.position - transform.position;
+            
+            
+            
             GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().TakeDamage(projectileDamage);
             Destroy(gameObject);
         }
+        
+        if (other.gameObject.layer == LayerMask.NameToLayer("Parry")) 
+        {
+            Debug.Log("Parry");
+            bounceProjectile = true;
+            //Destroy(gameObject);
+        }
+        
+        
 
         if (other.gameObject.layer == LayerMask.NameToLayer("Wall")) 
         {
-            Destroy(gameObject);
+            
         }
+        
+        
     }
 
     private void MoveProjectile()
     {
-        transform.Translate(Vector3.right * (Time.deltaTime * moveSpeed));
+        if (!bounceProjectile) {
+            transform.Translate(Vector3.right * (Time.deltaTime * moveSpeed));
+        }
+
+        else {
+            transform.Translate(-Vector3.right * (Time.deltaTime * moveSpeed));
+        }
     }
+
+    
 }

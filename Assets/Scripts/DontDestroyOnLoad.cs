@@ -53,7 +53,7 @@ public class DontDestroyOnLoad : MonoBehaviour
         }
     }
 
-    void GameOver()
+    public void GameOver()
     {
         if (SceneManager.GetActiveScene().name == "Teemu") 
         {

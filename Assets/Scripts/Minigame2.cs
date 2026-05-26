@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Minigame2 : MonoBehaviour
@@ -5,10 +6,15 @@ public class Minigame2 : MonoBehaviour
     [SerializeField] private GameObject shapes;
     [SerializeField] private GameObject spawnPoint;
     [SerializeField] private GameObject launcher;
+    [SerializeField] private Transform leftMost;
+    [SerializeField] private Transform rightMost;
+    [SerializeField] private float moveSpeed;
+    public bool minigameActive = true;
+    private bool _canSpawnShape = true;
 
     private Transform _spawnedShape;
 
-    public bool _launcherRotation = false;
+    public bool _moveLauncher = false;
     void Start()
     {
         SpawnShape();
@@ -17,16 +23,22 @@ public class Minigame2 : MonoBehaviour
     
     void Update()
     {
-        RotateLauncher();
+        if (minigameActive) {
+            MoveLauncher();
+        }
 
-        if (Input.GetKeyDown(KeyCode.Space)) 
+        if (Input.GetKeyDown(KeyCode.Space) && minigameActive && _canSpawnShape) 
         {
             //_spawnedShape.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
             _spawnedShape.transform.parent = null;
             _spawnedShape.GetComponent<Rigidbody2D>().gravityScale = 1;
-            _spawnedShape.GetComponent<Rigidbody2D>().AddForce(-launcher.transform.up * 5, ForceMode2D.Impulse);
-            _spawnedShape.GetComponent<ShapeScript>().active = true;
-            Invoke(nameof(SpawnShape), 1f);
+            //_spawnedShape.GetComponent<Rigidbody2D>().AddForce(-launcher.transform.up * 5, ForceMode2D.Impulse);
+            //_spawnedShape.GetComponent<ShapeScript>().active = true;
+
+            
+            StartCoroutine(ShapeTimer());
+            _canSpawnShape = false;
+
         }
 
         if (Input.GetKeyDown(KeyCode.E)) 
@@ -36,39 +48,49 @@ public class Minigame2 : MonoBehaviour
             
     }
 
-    void RotateLauncher()
+    void MoveLauncher()
     {
-        if (launcher.transform.rotation.z > -0.9f && !_launcherRotation) 
+        if (launcher.transform.position.x > leftMost.position.x && !_moveLauncher) 
         {
-            launcher.transform.Rotate(new Vector3(0, 0, -1));
-            
-            if (launcher.transform.rotation.z <= -0.9f) 
-            {
-                _launcherRotation = true;
+            launcher.transform.position = new Vector3(launcher.transform.position.x - Time.deltaTime * moveSpeed, launcher.transform.position.y, 0);
+
+            if (launcher.transform.position.x <= leftMost.position.x) {
+                _moveLauncher = true;
             }
         }
         
-        else if (launcher.transform.rotation.z < 0.9f && _launcherRotation) 
+        else if (launcher.transform.position.x < rightMost.position.x && _moveLauncher) 
         {
-            launcher.transform.Rotate(new Vector3(0, 0, 1));
-            if (launcher.transform.rotation.z > 0.9f) 
-            {
-                _launcherRotation = false;
-            }
+            launcher.transform.position = new Vector3(launcher.transform.position.x + Time.deltaTime * moveSpeed, launcher.transform.position.y, 0);
             
+            if (launcher.transform.position.x >= rightMost.position.x) {
+                _moveLauncher = false;
+            }
         }
         
     }
 
     void SpawnShape()
     {
-        int randomInt = Random.Range(0, shapes.transform.childCount);
+        if (minigameActive) {
+            int randomInt = Random.Range(0, shapes.transform.childCount);
+
+            _spawnedShape = Instantiate(shapes.transform.GetChild(randomInt), spawnPoint.transform.position, spawnPoint.transform.rotation,
+                spawnPoint.transform);
+
+            //_spawnedShape.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+            _spawnedShape.GetComponent<Rigidbody2D>().gravityScale = 0;
+
+            _spawnedShape.gameObject.SetActive(true);
+            
+        }
+    }
+
+    private IEnumerator ShapeTimer()
+    {
         
-        _spawnedShape = Instantiate(shapes.transform.GetChild(randomInt), spawnPoint.transform.position, spawnPoint.transform.rotation, spawnPoint.transform);
-        
-        //_spawnedShape.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
-        _spawnedShape.GetComponent<Rigidbody2D>().gravityScale = 0;
-        
-        _spawnedShape.gameObject.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        SpawnShape();
+        _canSpawnShape = true;
     }
 }
