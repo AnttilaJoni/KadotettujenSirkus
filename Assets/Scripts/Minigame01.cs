@@ -202,7 +202,8 @@ public class Minigame01 : MonoBehaviour
         bossHealthBar.GetComponent<Slider>().value = bossHealth;
 
         if (bossHealth <= 0) {
-            Time.timeScale = 0f;
+            //Time.timeScale = 0f;
+            _playerStats.GetComponent<DontDestroyOnLoad>().MinigameCompleted();
         }
     }
 

@@ -23,6 +23,7 @@ public class Minigame2 : MonoBehaviour
     
     void Update()
     {
+        
         if (minigameActive) {
             MoveLauncher();
         }
@@ -45,7 +46,30 @@ public class Minigame2 : MonoBehaviour
         {
             _spawnedShape.transform.Rotate(new Vector3(0, 0, -90f));
         }
-            
+        
+    }
+
+    void CalculateSpeed()
+    {
+        if (launcher.transform.position.x > rightMost.position.x / 4) 
+        {
+            Debug.Log("right");
+            moveSpeed = 7f;
+        }
+        
+        else if (launcher.transform.position.x < leftMost.position.x / 4) 
+        {
+            Debug.Log("left");
+            moveSpeed = 7f;
+        }
+
+        else {
+            moveSpeed += Time.deltaTime * 10;
+        }
+        
+        
+        
+        
     }
 
     void MoveLauncher()

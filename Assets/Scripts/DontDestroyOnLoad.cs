@@ -1,17 +1,24 @@
 using System;
+using Cinemachine;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class DontDestroyOnLoad : MonoBehaviour
 {
-
+    public Vector3 playerPosition;
+    
     public int playerHealth = 0;
     public int playerMaxHealth = 5;
 
     [SerializeField] private TextMeshProUGUI healthText;
     
     static bool _onceCall;
+
+    public GameObject player;
+    
+    
+    public string mapBoundary;
     
     private void Awake()
     {
@@ -26,13 +33,22 @@ public class DontDestroyOnLoad : MonoBehaviour
         {
             Destroy (gameObject);
         }
+        
+        if (SceneManager.GetActiveScene().name == "TestSceneJoni") 
+        {
+            playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
+            mapBoundary = FindFirstObjectByType<CinemachineConfiner2D>().m_BoundingShape2D.gameObject.name;
+        }
     }
     
     
     void Start()
     {
+        
+        
         playerHealth = playerMaxHealth;
         healthText.text = "Health: " + playerHealth.ToString();
+
         
         
     }
@@ -41,6 +57,12 @@ public class DontDestroyOnLoad : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void SavePlayerPosition()
+    {
+        playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
+        mapBoundary = FindFirstObjectByType<CinemachineConfiner2D>().m_BoundingShape2D.gameObject.name;
     }
 
     public void TakeDamage(int damage)
@@ -57,26 +79,31 @@ public class DontDestroyOnLoad : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "Teemu") 
         {
-            SceneManager.LoadScene("Teemu");
+            SceneManager.LoadScene("TestSceneJoni");
             playerHealth = playerMaxHealth;
             healthText.text = "Health: " + playerHealth.ToString();
         }
         
         else if (SceneManager.GetActiveScene().name == "Teemu2") 
         {
-            SceneManager.LoadScene("Teemu2");
+            SceneManager.LoadScene("TestSceneJoni");
             playerHealth = playerMaxHealth;
             healthText.text = "Health: " + playerHealth.ToString();
         }
         
         else if (SceneManager.GetActiveScene().name == "Teemu3") 
         {
-            SceneManager.LoadScene("Teemu3");
+            SceneManager.LoadScene("TestSceneJoni");
             playerHealth = playerMaxHealth;
             healthText.text = "Health: " + playerHealth.ToString();
         }
         
-        
-        
+    }
+
+    public void MinigameCompleted()
+    {
+        SceneManager.LoadScene("TestSceneJoni");
+
+        //player.transform.position = playerPosition;
     }
 }

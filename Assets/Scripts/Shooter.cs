@@ -11,6 +11,7 @@ public class Shooter : MonoBehaviour
     [SerializeField] private GameObject bossHandCollider;
     [SerializeField] private BossHealthScript bossHealthScript;
     [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private GameObject bulletPrefab2;
     [SerializeField] private float bulletMoveSpeed;
     [SerializeField] private int burstCount;
     [SerializeField] private float timebetweenBursts;
@@ -30,6 +31,8 @@ public class Shooter : MonoBehaviour
 
     public bool lastPhase = false;
     
+    private bool phase2_1 = true;
+    private bool phase2_2 = false;
 
     //private float startAngle;
     //float currentAngle;
@@ -118,73 +121,147 @@ public class Shooter : MonoBehaviour
     // Phase 2
     private IEnumerator Phase2()
     {
-        _isShooting = true;
-        stagger = true;
-        oscillate = true;
-        burstCount = 3;
-        projectilesPerBurst = 8;
-        angleSpread = 100;
-        startingDistance = 0.3f;
-        timebetweenBursts = 1;
-        
-        float startAngle, currentAngle, angleStep, endAngle;
-        float timeBetweenProjectiles = 0f;
-        
-        TargetConeOfInfluence(out startAngle, out currentAngle, out angleStep, out endAngle);
 
-        
+        if (phase2_1) {
 
-        if (stagger) {
-            timeBetweenProjectiles = timebetweenBursts / projectilesPerBurst;
+            _isShooting = true;
+            stagger = true;
+            oscillate = true;
+            burstCount = 3;
+            projectilesPerBurst = 8;
+            angleSpread = 100;
+            startingDistance = 0.3f;
+            timebetweenBursts = 1;
+            restTime = 0.5f;
+
+            float startAngle, currentAngle, angleStep, endAngle;
+            float timeBetweenProjectiles = 0f;
+
+            TargetConeOfInfluence(out startAngle, out currentAngle, out angleStep, out endAngle);
+
+
+
+            if (stagger) {
+                timeBetweenProjectiles = timebetweenBursts / projectilesPerBurst;
+            }
+
+
+            for (int i = 0; i < burstCount; i++) {
+
+                if (!oscillate) {
+                    TargetConeOfInfluence(out startAngle, out currentAngle, out angleStep, out endAngle);
+                }
+
+                if (oscillate && i % 2 != 1) {
+                    TargetConeOfInfluence(out startAngle, out currentAngle, out angleStep, out endAngle);
+                }
+
+                else if (oscillate) {
+                    currentAngle = endAngle;
+                    endAngle = startAngle;
+                    startAngle = currentAngle;
+                    angleStep *= -1;
+                }
+
+                for (int j = 0; j < projectilesPerBurst; j++) {
+                    Vector2 pos = FindBulletSpawnPos(currentAngle);
+
+
+                    GameObject newBullet = Instantiate(bulletPrefab, pos, Quaternion.identity);
+                    newBullet.transform.right = newBullet.transform.position - transform.position;
+
+                    if (newBullet.TryGetComponent(out Projectile projectile)) {
+                        projectile.UpdateMoveSpeed(bulletMoveSpeed);
+                    }
+
+                    currentAngle += angleStep;
+
+                    if (stagger) {
+                        yield return new WaitForSeconds(timeBetweenProjectiles);
+                    }
+                }
+                currentAngle = startAngle;
+
+                yield return new WaitForSeconds(timebetweenBursts);
+
+            }
+
+            yield return new WaitForSeconds(restTime);
+            _isShooting = false;
+            StartCoroutine(Phase2_1Timer());
         }
-        
-        
-        for (int i = 0; i < burstCount; i++)
+
+        if (phase2_1) 
         {
+            restTime = 0.5f;
+            _isShooting = true;
+            burstCount = 3;
+            projectilesPerBurst = 3;
+            angleSpread = 100;
+            startingDistance = 0.3f;
+            timebetweenBursts = 1f;
 
-            if (!oscillate) {
-                TargetConeOfInfluence(out startAngle, out currentAngle, out angleStep, out endAngle);
+            float startAngle, currentAngle, angleStep, endAngle;
+            float timeBetweenProjectiles = 0f;
+
+            TargetConeOfInfluence(out startAngle, out currentAngle, out angleStep, out endAngle);
+
+
+
+            if (stagger) {
+                timeBetweenProjectiles = timebetweenBursts / projectilesPerBurst;
             }
 
-            if (oscillate && i % 2 != 1) {
-                TargetConeOfInfluence(out startAngle, out currentAngle, out angleStep, out endAngle);
-            }
-            
-            else if (oscillate) {
-                currentAngle = endAngle;
-                endAngle = startAngle;
-                startAngle = currentAngle;
-                angleStep *= -1;
-            }
 
-            for (int j = 0; j < projectilesPerBurst; j++)
-            {
-                Vector2 pos = FindBulletSpawnPos(currentAngle);
+            for (int i = 0; i < burstCount; i++) {
 
-
-                GameObject newBullet = Instantiate(bulletPrefab, pos, Quaternion.identity);
-                newBullet.transform.right = newBullet.transform.position - transform.position;
-
-                if (newBullet.TryGetComponent(out Projectile projectile))
-                {
-                    projectile.UpdateMoveSpeed(bulletMoveSpeed);
+                if (!oscillate) {
+                    TargetConeOfInfluence(out startAngle, out currentAngle, out angleStep, out endAngle);
                 }
 
-                currentAngle += angleStep;
-
-                if (stagger) {
-                    yield return new WaitForSeconds(timeBetweenProjectiles);
+                if (oscillate && i % 2 != 1) {
+                    TargetConeOfInfluence(out startAngle, out currentAngle, out angleStep, out endAngle);
                 }
-            }
-            currentAngle = startAngle;
 
-            yield return new WaitForSeconds(timebetweenBursts);
+                else if (oscillate) {
+                    currentAngle = endAngle;
+                    endAngle = startAngle;
+                    startAngle = currentAngle;
+                    angleStep *= -1;
+                }
+
+                for (int j = 0; j < projectilesPerBurst; j++) {
+                    Vector2 pos = FindBulletSpawnPos(currentAngle);
+
+
+                    GameObject newBullet = Instantiate(bulletPrefab2, pos, Quaternion.identity);
+                    newBullet.transform.right = newBullet.transform.position - transform.position;
+
+                    if (newBullet.TryGetComponent(out Projectile projectile)) {
+                        projectile.UpdateMoveSpeed(bulletMoveSpeed);
+                    }
+
+                    currentAngle += angleStep;
+
+                    if (stagger) {
+                        yield return new WaitForSeconds(timeBetweenProjectiles);
+                    }
+                }
+                currentAngle = startAngle;
+
+                yield return new WaitForSeconds(timebetweenBursts);
+
+            }
+
+            yield return new WaitForSeconds(restTime);
+            _isShooting = false;
+            StartCoroutine(Phase2_2Timer());
             
         }
 
-        yield return new WaitForSeconds(restTime);
-        _isShooting = false;
     }
+    
+    
     
     // Phase 3
     private IEnumerator Phase3()
@@ -296,6 +373,20 @@ public class Shooter : MonoBehaviour
         left = false;
         right = true;
         
+    }
+
+    private IEnumerator Phase2_1Timer()
+    {
+        yield return new WaitForSeconds(3f);
+        phase2_1 = false;
+        phase2_2 = true;
+    }
+    
+    private IEnumerator Phase2_2Timer()
+    {
+        yield return new WaitForSeconds(3f);
+        phase2_2 = false;
+        phase2_1 = true;
     }
 }
 
