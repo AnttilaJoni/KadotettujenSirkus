@@ -31,7 +31,6 @@ public class MovementScript : MonoBehaviour
             Parry();
             _canParry = false;
         }
-        
         //Debug.Log(lastDirection);
         Inputs();
         HandleAnimations();

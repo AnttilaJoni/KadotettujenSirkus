@@ -3,10 +3,11 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 22f;
+    public float moveSpeed = 22f;
     //[SerializeField] private float projectileRange = 20f;
     public int projectileDamage = 1;
     public bool bounceProjectile = false;
+    public bool canBounce = true;
     
     private Vector3 _startPosition;
     
@@ -57,7 +58,7 @@ public class Projectile : MonoBehaviour
 
         if (other.gameObject.layer == LayerMask.NameToLayer("Wall")) 
         {
-            
+            Destroy(gameObject);
         }
         
         
@@ -65,11 +66,12 @@ public class Projectile : MonoBehaviour
 
     private void MoveProjectile()
     {
+        
         if (!bounceProjectile) {
             transform.Translate(Vector3.right * (Time.deltaTime * moveSpeed));
         }
 
-        else {
+        else if (canBounce && bounceProjectile) {
             transform.Translate(-Vector3.right * (Time.deltaTime * moveSpeed));
         }
     }
