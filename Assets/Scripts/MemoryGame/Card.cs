@@ -23,6 +23,7 @@ public class Card : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space)) Flip();
     } */
+    
     IEnumerator StartSetup()
     {
         yield return new WaitForSeconds(1f);

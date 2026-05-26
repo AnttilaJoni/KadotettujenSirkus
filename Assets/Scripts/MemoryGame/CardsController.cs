@@ -111,12 +111,7 @@ public class CardsController : MonoBehaviour
             matchCounts++;
             if(matchCounts == spritePairs.Count / 2)
             {
-                cards = GameObject.FindGameObjectsWithTag("Card");
-                foreach (GameObject c in cards)
-                {
-                    c.transform.DORotate(new(0, 180f, 0), 0.25f);
-                }
-                DestroyCards(); //odota kunnnes destroyyaa
+                DestroyCards();
             }
             a.transform.DOPunchScale(new Vector3(0.08f, 0.08f, 0.08f), (float) 0.4, 3, 1F);
             b.transform.DOPunchScale(new Vector3(0.08f, 0.08f, 0.08f), (float) 0.4, 3, 1F);
