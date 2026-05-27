@@ -51,7 +51,8 @@ public class BossHealthScript : MonoBehaviour
 
         if (bossHealth <= 0) 
         {
-            SceneManager.LoadScene("Menu");
+            GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().MinigameCompleted(4);
+            //SceneManager.LoadScene("Menu");
         }
     }
     

@@ -182,9 +182,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f96cd0ffc7c358a4da66f5fd57105b3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DontDestroyOnLoad
+  playerPosition: {x: 0, y: 0, z: 0}
   playerHealth: 0
-  playerMaxHealth: 999
+  playerMaxHealth: 10
   healthText: {fileID: 4794852525699550771}
+  player: {fileID: 0}
+  mapBoundary: 
+  minigame1Completed: 0
+  minigame2Completed: 0
+  minigame3Completed: 0
+  bossFightCompleted: 0
+  playerAlive: 1
 --- !u!1 &9018891941894531825
 GameObject:
   m_ObjectHideFlags: 0

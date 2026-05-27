@@ -11,10 +11,7 @@ TagManager:
   - Interactable
   - Card
   - Shape
-  - Minigame_1_start
-  - Minigame_2_start
-  - Minigame_3_start
-  - Boss_start
+  - SaveController
   layers:
   - Default
   - TransparentFX

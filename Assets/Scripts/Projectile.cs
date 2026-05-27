@@ -41,8 +41,6 @@ public class Projectile : MonoBehaviour
         {
             Vector2 dir = other.transform.position - transform.position;
             
-            
-            
             GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().TakeDamage(projectileDamage);
             Destroy(gameObject);
         }
