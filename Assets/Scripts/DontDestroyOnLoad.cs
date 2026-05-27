@@ -17,8 +17,14 @@ public class DontDestroyOnLoad : MonoBehaviour
 
     public GameObject player;
     
-    
     public string mapBoundary;
+    
+    public bool minigame1Completed;
+    public bool minigame2Completed;
+    public bool minigame3Completed;
+    public bool bossFightCompleted;
+
+    public bool playerAlive = true;
     
     private void Awake()
     {
@@ -44,12 +50,8 @@ public class DontDestroyOnLoad : MonoBehaviour
     
     void Start()
     {
-        
-        
         playerHealth = playerMaxHealth;
         healthText.text = "Health: " + playerHealth.ToString();
-
-        
         
     }
 
@@ -69,9 +71,11 @@ public class DontDestroyOnLoad : MonoBehaviour
     {
         playerHealth -= damage;
         healthText.text = "Health: " + playerHealth.ToString();
-
+        
         if (playerHealth <= 0) {
-            GameOver();
+            //GameOver();
+            playerAlive = false;
+            SceneManager.LoadScene("Teemu");
         }
     }
 
@@ -100,9 +104,26 @@ public class DontDestroyOnLoad : MonoBehaviour
         
     }
 
-    public void MinigameCompleted()
+    public void MinigameCompleted(int id)
     {
-        SceneManager.LoadScene("TestSceneJoni");
+        if (id == 1) {
+            minigame1Completed = true;
+        }
+        
+        else if (id == 2) {
+            minigame2Completed = true;
+        }
+        
+        else if (id == 3) {
+            minigame3Completed = true;
+        }
+        
+        else if (id == 4) {
+            bossFightCompleted = true;
+        }
+        
+        SceneManager.LoadScene("Teemu");
+        //SceneManager.LoadScene("TestSceneJoni");
 
         //player.transform.position = playerPosition;
     }

@@ -24,18 +24,23 @@ public class MovementScript : MonoBehaviour
 
     void Awake()
     {
-        if (SceneManager.GetActiveScene().name == "TestSceneJoni") 
+        if (SceneManager.GetActiveScene().name == "TestSceneJoni" || SceneManager.GetActiveScene().name == "Teemu") 
         {
+            Debug.Log("Load player pos");
             var playerPosition = GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().playerPosition;
             
             transform.position = playerPosition;
-            FindFirstObjectByType<CinemachineConfiner2D>().m_BoundingShape2D =
-                GameObject.Find(GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().mapBoundary).GetComponent<PolygonCollider2D>();
+            //FindFirstObjectByType<CinemachineConfiner2D>().m_BoundingShape2D = GameObject.Find(GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().mapBoundary).GetComponent<PolygonCollider2D>();
         }
+        
+        
     }
     void Start()
     {
         _rb2d = GetComponent<Rigidbody2D>();
+        //GameObject.FindGameObjectWithTag("SaveController").GetComponent<SaveController>().SaveGame();
+        
+        //_rb2d = GetComponent<Rigidbody2D>();
     }
     void Update()
     {
@@ -47,6 +52,12 @@ public class MovementScript : MonoBehaviour
         //Debug.Log(lastDirection);
         Inputs();
         HandleAnimations();
+
+        if (Input.GetKeyDown(KeyCode.X)) 
+        {
+            GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().playerPosition = transform.position;
+            SceneManager.LoadScene("Teemu2");    
+        }
     }
     private void HandleAnimations()
     {

@@ -11,6 +11,7 @@ TagManager:
   - Interactable
   - Card
   - Shape
+  - SaveController
   layers:
   - Default
   - TransparentFX

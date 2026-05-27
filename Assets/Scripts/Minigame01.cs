@@ -203,7 +203,7 @@ public class Minigame01 : MonoBehaviour
 
         if (bossHealth <= 0) {
             //Time.timeScale = 0f;
-            _playerStats.GetComponent<DontDestroyOnLoad>().MinigameCompleted();
+            _playerStats.GetComponent<DontDestroyOnLoad>().MinigameCompleted(1);
         }
     }
 

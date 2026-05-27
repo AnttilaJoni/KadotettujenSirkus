@@ -67,9 +67,6 @@ public class Minigame2 : MonoBehaviour
             moveSpeed += Time.deltaTime * 10;
         }
         
-        
-        
-        
     }
 
     void MoveLauncher()
