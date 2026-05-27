@@ -75,7 +75,10 @@ public class DontDestroyOnLoad : MonoBehaviour
         if (playerHealth <= 0) {
             //GameOver();
             playerAlive = false;
-            SceneManager.LoadScene("Teemu");
+            //SceneManager.LoadScene("Teemu");
+            SceneManager.LoadScene("Teemu4");
+            playerHealth = playerMaxHealth;
+            healthText.text = "Health: " + playerHealth.ToString();
         }
     }
 
@@ -98,6 +101,13 @@ public class DontDestroyOnLoad : MonoBehaviour
         else if (SceneManager.GetActiveScene().name == "Teemu3") 
         {
             SceneManager.LoadScene("TestSceneJoni");
+            playerHealth = playerMaxHealth;
+            healthText.text = "Health: " + playerHealth.ToString();
+        }
+        
+        else if (SceneManager.GetActiveScene().name == "Teemu4") 
+        {
+            SceneManager.LoadScene("Teemu4");
             playerHealth = playerMaxHealth;
             healthText.text = "Health: " + playerHealth.ToString();
         }

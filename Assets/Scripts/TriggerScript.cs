@@ -20,8 +20,8 @@ public class TriggerScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Shape")) 
         {
-            //GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().GameOver();
-            SceneManager.LoadScene("Teemu4");
+            GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().TakeDamage(1);
+            //SceneManager.LoadScene("Teemu4");
         }
     }
     

@@ -17,6 +17,8 @@ public class Minigame2 : MonoBehaviour
     public bool _moveLauncher = false;
     void Start()
     {
+        
+        
         SpawnShape();
     }
 
