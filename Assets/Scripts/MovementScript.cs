@@ -70,62 +70,69 @@ public class MovementScript : MonoBehaviour
         float vertical = Input.GetAxisRaw("Vertical");
         
         Vector3 finalDirection = Vector2.zero;
-        if (vertical > 0.01f)
+        if(PauseController.IsGamePaused)
         {
-            if (ShouldMoveInDirection(Vector3.up))
-            {
-                finalDirection = new Vector2(0, 1);
-                lastDirection = "Down";
-            }
-            if (!_attemptedMoveDirs.Contains(Vector3.up))
-                _attemptedMoveDirs.Add(Vector3.up);
+            moveDirection = Vector3.zero;
         }
         else
-            _attemptedMoveDirs.Remove(Vector3.up);
-        
-        if (vertical < -0.01f)
         {
-            if (ShouldMoveInDirection(Vector3.down))
+            if (vertical > 0.01f)
             {
-                finalDirection = new Vector2(0, -1);
-                lastDirection = "Up";
+                if (ShouldMoveInDirection(Vector3.up))
+                {
+                    finalDirection = new Vector2(0, 1);
+                    lastDirection = "Down";
+                }
+                if (!_attemptedMoveDirs.Contains(Vector3.up))
+                    _attemptedMoveDirs.Add(Vector3.up);
             }
-            if (!_attemptedMoveDirs.Contains(Vector3.down))
-                _attemptedMoveDirs.Add(Vector3.down);
-        }
-        else
-            _attemptedMoveDirs.Remove(Vector3.down);
-
-        if (horizontal > 0.01f)
-        {
-            if (ShouldMoveInDirection(Vector3.right))
+            else
+                _attemptedMoveDirs.Remove(Vector3.up);
+            
+            if (vertical < -0.01f)
             {
-                finalDirection = new Vector2(1, 0);
-                lastDirection = "Right";
+                if (ShouldMoveInDirection(Vector3.down))
+                {
+                    finalDirection = new Vector2(0, -1);
+                    lastDirection = "Up";
+                }
+                if (!_attemptedMoveDirs.Contains(Vector3.down))
+                    _attemptedMoveDirs.Add(Vector3.down);
             }
-            if (!_attemptedMoveDirs.Contains(Vector3.right))
-                _attemptedMoveDirs.Add(Vector3.right);
-        }
-        else
-            _attemptedMoveDirs.Remove(Vector3.right);
+            else
+                _attemptedMoveDirs.Remove(Vector3.down);
 
-        if (horizontal < -0.01f)
-        {
-            if (ShouldMoveInDirection(Vector3.left))
+            if (horizontal > 0.01f)
             {
-                finalDirection = new Vector2(-1, 0);
-                lastDirection = "Left";
+                if (ShouldMoveInDirection(Vector3.right))
+                {
+                    finalDirection = new Vector2(1, 0);
+                    lastDirection = "Right";
+                }
+                if (!_attemptedMoveDirs.Contains(Vector3.right))
+                    _attemptedMoveDirs.Add(Vector3.right);
             }
-            if (!_attemptedMoveDirs.Contains(Vector3.left))
-                _attemptedMoveDirs.Add(Vector3.left);
+            else
+                _attemptedMoveDirs.Remove(Vector3.right);
+
+            if (horizontal < -0.01f)
+            {
+                if (ShouldMoveInDirection(Vector3.left))
+                {
+                    finalDirection = new Vector2(-1, 0);
+                    lastDirection = "Left";
+                }
+                if (!_attemptedMoveDirs.Contains(Vector3.left))
+                    _attemptedMoveDirs.Add(Vector3.left);
+            }
+            else
+                _attemptedMoveDirs.Remove(Vector3.left);
+
+            //else
+                //finalDirection = Vector2.zero;
+                
+            moveDirection = finalDirection;
         }
-        else
-            _attemptedMoveDirs.Remove(Vector3.left);
-
-        //else
-            //finalDirection = Vector2.zero;
-
-        moveDirection = finalDirection;
     }
 
     bool ShouldMoveInDirection (Vector3 dir)

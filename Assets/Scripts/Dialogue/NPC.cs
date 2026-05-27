@@ -8,10 +8,15 @@ public class NPC : MonoBehaviour, IInteractable
 {
     public NPCDialogue dialogueData;
     public GameObject dialoguePanel;
-    public TMP_Text dialogueText, nameText;
+    public GameObject dialogueBox;
+    private bool flipped;
+    public TMP_Text dialogueText, nameText, nameTextNPC;
     public Image portraitImage;
+    public Image portraitImage_NPC;
+    public GameObject _NPCGameObj;
 
     private int dialogueIndex;
+    private int expressionIndex;
     private bool isTyping, isDialogueActive;
 
     public bool CanInteract()
@@ -20,7 +25,7 @@ public class NPC : MonoBehaviour, IInteractable
     }
     public void Interact()
     {
-        if(dialogueData == null)// || (PauseController.IsGamePaused && !isDialogueActive))
+        if(dialogueData == null || (PauseController.IsGamePaused && !isDialogueActive))
             return;
 
         if (isDialogueActive)
@@ -37,12 +42,14 @@ public class NPC : MonoBehaviour, IInteractable
     {
         isDialogueActive = true;
         dialogueIndex = 0;
+        expressionIndex = 0;        
 
-        nameText.SetText(dialogueData.npcName);
-        portraitImage.sprite = dialogueData.npcPortrait;
+        nameText.SetText(dialogueData.playerName);
+        nameTextNPC.SetText("");
+        portraitImage.sprite = dialogueData.npcPortrait[expressionIndex];
 
         dialoguePanel.SetActive(true);
-        //PauseController.SetPause(true);
+        PauseController.SetPause(true);
 
         StartCoroutine(TypeLine());
 
@@ -59,10 +66,42 @@ public class NPC : MonoBehaviour, IInteractable
         else if(++dialogueIndex < dialogueData.dialogueLines.Length)
         {
             StartCoroutine(TypeLine());
+            if(dialogueIndex >= 2)
+            {
+                
+                ++expressionIndex;
+                if(dialogueIndex == 2)
+                {
+                    portraitImage.GetComponent<Image>().color = new Color(1f,1f,1f,0.0f);
+                    dialogueBox.transform.Rotate(0.0f, 180.0f, 0.0f, Space.Self);
+                    nameText.SetText("");
+                    nameTextNPC.SetText(dialogueData.npcName);
+                    flipped = true;
+                }
+                
+                portraitImage_NPC.sprite = dialogueData.npcPortrait[expressionIndex];
+            }
+            else
+            {
+                ++expressionIndex;
+                portraitImage.sprite = dialogueData.npcPortrait[expressionIndex];
+                nameText.SetText(dialogueData.playerName);
+                nameTextNPC.SetText("");
+                if(flipped) dialogueBox.transform.Rotate(0.0f, 180.0f, 0.0f, Space.Self);
+                flipped = false;
+            }
+            
+            
+            
         }
         else
         {
+            nameText.SetText("");
+            nameTextNPC.SetText("");
+            if(flipped) dialogueBox.transform.Rotate(0.0f, 180.0f, 0.0f, Space.Self);
+            flipped = false;
             EndDialogue();
+            
         }
     }
 
@@ -74,6 +113,7 @@ public class NPC : MonoBehaviour, IInteractable
         foreach(char letter in dialogueData.dialogueLines[dialogueIndex])
         {
             dialogueText.text += letter;
+            AudioManager.PlayVoice(dialogueData.voiceSound, dialogueData.voicePitch);
             yield return new WaitForSeconds(dialogueData.typingSpeed);
         }
 
@@ -92,6 +132,23 @@ public class NPC : MonoBehaviour, IInteractable
         isDialogueActive = false;
         dialogueText.SetText("");
         dialoguePanel.SetActive(false);
-        //PauseController.SetPause(false);
+        PauseController.SetPause(false);
+        if (_NPCGameObj.CompareTag("Minigame_1_start"))
+        {
+            SceneController.instance.ChangeScene("Teemu2");
+        } 
+        else if(_NPCGameObj.CompareTag("Minigame_2_start"))
+        {
+            SceneController.instance.ChangeScene("MemoryGame");
+    
+        } 
+        else if(_NPCGameObj.CompareTag("Minigame_3_start"))
+        {
+            SceneController.instance.ChangeScene("Teemu4");
+        } 
+        else if(_NPCGameObj.CompareTag("Boss_start"))
+        {
+            SceneController.instance.ChangeScene("Teemu3");
+        } 
     }
 }

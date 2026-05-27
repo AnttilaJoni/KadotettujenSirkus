@@ -73,7 +73,9 @@ public class InteractionDetector : MonoBehaviour
         {
             interactableInRange = interactable;
             inInteractRange = true;
-            if (collision.gameObject.CompareTag("NPC")) 
+            if (collision.gameObject.CompareTag("NPC") || collision.gameObject.CompareTag("Minigame_1_start") 
+                || collision.gameObject.CompareTag("Minigame_2_start") || collision.gameObject.CompareTag("Minigame_3_start")
+                || collision.gameObject.CompareTag("Boss_start")) 
             {
                 talkIcon.SetActive(true);
             }

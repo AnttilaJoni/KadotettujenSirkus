@@ -6,13 +6,17 @@ public class AudioManager : MonoBehaviour
     public static AudioManager Instance;
 
     public Sound[] musicSounds, sfxSounds;
-    public AudioSource musicSource, sfxSource;
+    public static AudioSource musicSource, sfxSource, voiceAudioSource;
+    //private static AudioSource voiceAudioSource;
 
     private void Awake()
     {
        if (Instance == null)
         {
             Instance = this;
+            AudioSource[] audioSources = GetComponents<AudioSource>();
+
+            voiceAudioSource = audioSources[0];
             DontDestroyOnLoad(gameObject);
         }
         else
@@ -48,6 +52,14 @@ public class AudioManager : MonoBehaviour
         {
             sfxSource.PlayOneShot(s.clip[UnityEngine.Random.Range(0, s.clip.Length)]);
         }
+    }
+    public static void PlayVoice(AudioClip audioClip, float pitch = 1f)
+    {
+        voiceAudioSource.pitch = pitch;
+        voiceAudioSource.PlayOneShot(audioClip);
+
+        //voiceAudioSource.pitch = pitch;
+        //voiceAudioSource.PlayOneShot(audioClip);
     }
 
 }
