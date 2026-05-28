@@ -39,6 +39,7 @@ public class WinLineScript : MonoBehaviour
     {
         if (other.CompareTag("Shape")) {
             _time = 5f;
+            minigame2.minigameActive = true;
             timerText.gameObject.SetActive(false);
         }
     }

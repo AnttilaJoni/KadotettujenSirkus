@@ -45,19 +45,22 @@ public class MovementScript : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) && _canParry) 
-        {anim.SetTrigger("Parry");
+        {
+            anim.SetTrigger("Parry");
             Parry();
             _canParry = false;
         }
-        //Debug.Log(lastDirection);
+        
         Inputs();
         HandleAnimations();
-
+        
+        /*
         if (Input.GetKeyDown(KeyCode.X)) 
         {
             GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().playerPosition = transform.position;
             SceneManager.LoadScene("Teemu2");    
         }
+        */
     }
     private void HandleAnimations()
     {
