@@ -132,8 +132,8 @@ public class DontDestroyOnLoad : MonoBehaviour
             bossFightCompleted = true;
         }
         
-        SceneManager.LoadScene("Teemu");
-        //SceneManager.LoadScene("TestSceneJoni");
+        //SceneManager.LoadScene("Teemu");
+        SceneManager.LoadScene("TestSceneJoni");
 
         //player.transform.position = playerPosition;
     }
