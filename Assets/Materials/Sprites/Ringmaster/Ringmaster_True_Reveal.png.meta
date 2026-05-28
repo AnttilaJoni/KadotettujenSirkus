@@ -64,7 +64,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -78,7 +78,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 195
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -102,7 +102,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -127,57 +127,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ringmaster_True_Reveal_0
-      rect:
-        serializedVersion: 2
-        x: 45
-        y: 259
-        width: 66
-        height: 195
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 986cdda48de2355f0800000000000000
-      internalID: -769219604846360951
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Ringmaster_True_Reveal_1
       rect:
         serializedVersion: 2
-        x: 137
-        y: 258
-        width: 66
-        height: 195
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 27e29c769bd07f180800000000000000
-      internalID: -9081775033607967118
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ringmaster_True_Reveal_2
-      rect:
-        serializedVersion: 2
-        x: 229
+        x: 138
         y: 259
-        width: 66
-        height: 195
+        width: 64
+        height: 193
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,13 +149,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ringmaster_True_Reveal_3
+      name: Ringmaster_True_Reveal_2
       rect:
         serializedVersion: 2
-        x: 309
-        y: 258
-        width: 103
-        height: 194
+        x: 230
+        y: 260
+        width: 64
+        height: 193
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,10 +174,10 @@ TextureImporter:
       name: Ringmaster_True_Reveal_4
       rect:
         serializedVersion: 2
-        x: 437
-        y: 255
-        width: 106
-        height: 198
+        x: 438
+        y: 256
+        width: 104
+        height: 196
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -237,13 +193,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ringmaster_True_Reveal_5
+      name: Ringmaster_True_Reveal_3
       rect:
         serializedVersion: 2
-        x: 568
-        y: 256
-        width: 118
-        height: 198
+        x: 310
+        y: 259
+        width: 101
+        height: 192
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -259,35 +215,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ringmaster_True_Reveal_6
+      name: Ringmaster_True_Reveal_5
       rect:
         serializedVersion: 2
-        x: 38
-        y: 36
-        width: 117
-        height: 198
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 78ef40946c9003be0800000000000000
-      internalID: -1499687928681136505
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ringmaster_True_Reveal_7
-      rect:
-        serializedVersion: 2
-        x: 173
-        y: 37
-        width: 115
-        height: 198
+        x: 569
+        y: 257
+        width: 116
+        height: 196
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -303,13 +237,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ringmaster_True_Reveal_8
+      name: Ringmaster_True_Reveal_6
       rect:
         serializedVersion: 2
-        x: 308
+        x: 39
         y: 37
-        width: 119
-        height: 198
+        width: 115
+        height: 196
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -325,13 +259,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ringmaster_True_Reveal_9
+      name: Ringmaster_True_Reveal_7
       rect:
         serializedVersion: 2
-        x: 452
-        y: 37
-        width: 126
-        height: 197
+        x: 174
+        y: 38
+        width: 113
+        height: 196
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -346,11 +280,77 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Ringmaster_True_Reveal_0
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 260
+        width: 64
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c38837391a9d9614ca8981259b745c21
+      internalID: -769219604846360951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ringmaster_True_Reveal_8
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 38
+        width: 117
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a98c6674751da1d4fa35528b003cd0cb
+      internalID: 1435082774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ringmaster_True_Reveal_9
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 38
+        width: 124
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1ca2ae933fbfff43884d02f9c8c6890
+      internalID: -1951845821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: b11d49da70d09864d92b9728a969150f
     internalID: 0
     vertices: []
     indices: 
@@ -358,18 +358,20 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":1,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Ringmaster_True_Reveal_0: -769219604846360951
-      Ringmaster_True_Reveal_1: -9081775033607967118
-      Ringmaster_True_Reveal_2: -8915512837760507315
-      Ringmaster_True_Reveal_3: 5634391388600588019
+      Ringmaster_True_Reveal_1: -8915512837760507315
+      Ringmaster_True_Reveal_2: 5634391388600588019
+      Ringmaster_True_Reveal_3: -6887379578762095065
       Ringmaster_True_Reveal_4: 2254931050381244987
-      Ringmaster_True_Reveal_5: -6887379578762095065
-      Ringmaster_True_Reveal_6: -1499687928681136505
-      Ringmaster_True_Reveal_7: -8314806589615090743
-      Ringmaster_True_Reveal_8: 8081765627785532990
-      Ringmaster_True_Reveal_9: -880703105946570446
+      Ringmaster_True_Reveal_5: -8314806589615090743
+      Ringmaster_True_Reveal_6: 8081765627785532990
+      Ringmaster_True_Reveal_7: -880703105946570446
+      Ringmaster_True_Reveal_8: 1435082774
+      Ringmaster_True_Reveal_9: -1951845821
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
