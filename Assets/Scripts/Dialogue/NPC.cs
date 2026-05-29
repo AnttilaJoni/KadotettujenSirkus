@@ -64,11 +64,9 @@ public class NPC : MonoBehaviour, IInteractable
     {
         if(dialogueData.isPlayerLine.Length > dialogueIndex && dialogueData.isPlayerLine[dialogueIndex])
         {
-            if(flipped)
-            {
-                dialogueBox.transform.rotation = Quaternion.identity;
-                flipped = false;
-            }
+            dialogueBox.transform.rotation = Quaternion.identity;
+            flipped = false;
+
             portraitImage.GetComponent<Image>().color = new Color(1f,1f,1f,1.0f);
             portraitImage_NPC.GetComponent<Image>().color = new Color(1f,1f,1f,0.0f);
 
