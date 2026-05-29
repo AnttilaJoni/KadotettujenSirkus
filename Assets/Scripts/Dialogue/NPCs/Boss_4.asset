@@ -24,12 +24,9 @@ MonoBehaviour:
   - Line 2 Player
   - Line 3 NPC
   - Line 4 NPC
+  isPlayerLine: 01010000
   autoProgressLines: 01010100
   autoProgressDelay: 2.5
   typingSpeed: 0.05
   voiceSound: {fileID: 8300000, guid: 1c3b2f9ef77d0c44a8845b0bc22ce9c7, type: 3}
   voicePitch: 1
-  isBoss_1: 0
-  isBoss_2: 0
-  isBoss_3: 0
-  isBoss_4: 1

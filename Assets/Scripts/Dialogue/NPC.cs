@@ -13,7 +13,6 @@ public class NPC : MonoBehaviour, IInteractable
     public TMP_Text dialogueText, nameText, nameTextNPC;
     public Image portraitImage;
     public Image portraitImage_NPC;
-    public GameObject _NPCGameObj;
     public Button closeDialogue;
 
     private int dialogueIndex;
@@ -41,31 +40,56 @@ public class NPC : MonoBehaviour, IInteractable
         }
         else
         {
-            dialogueBox.transform.rotation = Quaternion.identity;
-
-            portraitImage.GetComponent<Image>().color = new Color(1f,1f,1f,1.0f);
-            portraitImage_NPC.GetComponent<Image>().color = new Color(1f,1f,1f,0.0f);
+            dialogueIndex = 0;
+            expressionIndex = 0;
+            DetermineSpeaker();
             StartDialogue();
         }
     }
 
     void StartDialogue()
     {
-        isDialogueActive = true;
-        dialogueIndex = 0;
-        expressionIndex = 0;        
+        isDialogueActive = true;   
 
-        nameText.SetText(dialogueData.playerName);
-        nameTextNPC.SetText("");
-        portraitImage.sprite = dialogueData.npcPortrait[expressionIndex];
         Button btn = closeDialogue.GetComponent<Button>();
-		btn.onClick.AddListener(CloseDialogue);
+		btn.onClick.AddListener(EndDialogue);
 
         dialoguePanel.SetActive(true);
         PauseController.SetPause(true);
 
         StartCoroutine(TypeLine());
+    }
 
+    public void DetermineSpeaker()
+    {
+        if(dialogueData.isPlayerLine.Length > dialogueIndex && dialogueData.isPlayerLine[dialogueIndex])
+        {
+            if(flipped)
+            {
+                dialogueBox.transform.rotation = Quaternion.identity;
+                flipped = false;
+            }
+            portraitImage.GetComponent<Image>().color = new Color(1f,1f,1f,1.0f);
+            portraitImage_NPC.GetComponent<Image>().color = new Color(1f,1f,1f,0.0f);
+
+            nameText.SetText(dialogueData.playerName);
+            nameTextNPC.SetText("");
+            portraitImage.sprite = dialogueData.npcPortrait[expressionIndex];
+        } 
+        else
+        {
+            if (!flipped)
+            {
+                dialogueBox.transform.Rotate(0.0f, 180.0f, 0.0f, Space.Self);
+                flipped = true;
+            }
+            portraitImage.GetComponent<Image>().color = new Color(1f,1f,1f,0.0f);
+            portraitImage_NPC.GetComponent<Image>().color = new Color(1f,1f,1f,1.0f);
+
+            nameText.SetText("");
+            nameTextNPC.SetText(dialogueData.npcName);
+            portraitImage_NPC.sprite = dialogueData.npcPortrait[expressionIndex];
+        }
     }
 
     void NextLine()
@@ -79,47 +103,13 @@ public class NPC : MonoBehaviour, IInteractable
         else if(++dialogueIndex < dialogueData.dialogueLines.Length)
         {
             StartCoroutine(TypeLine());
-            if(dialogueIndex >= 2)
-            {
-                
-                ++expressionIndex;
-                if(dialogueIndex == 2)
-                {
-                    portraitImage.GetComponent<Image>().color = new Color(1f,1f,1f,0.0f);
-                    dialogueBox.transform.Rotate(0.0f, 180.0f, 0.0f, Space.Self);
-                    nameText.SetText("");
-                    nameTextNPC.SetText(dialogueData.npcName);
-                    //flipped = true;
-                }
-                portraitImage_NPC.GetComponent<Image>().color = new Color(1f,1f,1f,1.0f);
-                portraitImage_NPC.sprite = dialogueData.npcPortrait[expressionIndex];
-            }
-            else
-            {
-                ++expressionIndex;
-                portraitImage.sprite = dialogueData.npcPortrait[expressionIndex];
-                nameText.SetText(dialogueData.playerName);
-                nameTextNPC.SetText("");
-                //if(flipped) dialogueBox.transform.Rotate(0.0f, 180.0f, 0.0f, Space.Self);
-                //flipped = false;
-            }
-            
-            
-            
+            ++expressionIndex;
+
+            DetermineSpeaker(); 
         }
         else
         {
-            nameText.SetText("");
-            nameTextNPC.SetText("");
-            /* if(flipped = true)
-            {
-                dialogueBox.transform.Rotate(0.0f, 180f, 0.0f, Space.Self);
-                flipped = false;
-            } */
-            //if(flipped) dialogueBox.transform.Rotate(0.0f, 0f, 0.0f, Space.Self);
-            //flipped = false;
             EndDialogue();
-            
         }
     }
 
@@ -173,32 +163,8 @@ public class NPC : MonoBehaviour, IInteractable
             dialogueText.SetText("");
             dialoguePanel.SetActive(false);
             PauseController.SetPause(false);
-        }
-    }
-    void CloseDialogue()
-    {
-        if (isBoss_1)
-        {
-            SceneController.instance.ChangeScene("Teemu2");
-        } 
-        else if(isBoss_2)
-        {
-            SceneController.instance.ChangeScene("MemoryGame");
-        } 
-        else if(isBoss_3)
-        {
-            SceneController.instance.ChangeScene("Teemu4");
-        } 
-        else if(isBoss_4)
-        {
-            SceneController.instance.ChangeScene("Teemu3");
-        } else
-        {
-            StopAllCoroutines();
-            isDialogueActive = false;
-            dialogueText.SetText("");
-            dialoguePanel.SetActive(false);
-            PauseController.SetPause(false);
+            dialogueIndex = 0;
+            expressionIndex = 0;
         }
     }
 }

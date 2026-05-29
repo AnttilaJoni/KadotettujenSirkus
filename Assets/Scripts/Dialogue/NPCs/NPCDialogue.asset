@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: NPCDialogue
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
   playerName: Emma
-  npcName: NPC
+  npcName: Taika
   npcPortrait:
   - {fileID: 21300000, guid: 0af262158fdd6d24ba0ca215264212ae, type: 3}
   - {fileID: 21300000, guid: e54a8e30c4b013042bac5cda328d5349, type: 3}
@@ -24,9 +24,9 @@ MonoBehaviour:
   - Line 2 Player
   - Line 3 NPC
   - Line 4 NPC
+  isPlayerLine: 01010000
   autoProgressLines: 01010100
   autoProgressDelay: 2.5
   typingSpeed: 0.05
   voiceSound: {fileID: 8300000, guid: 1c3b2f9ef77d0c44a8845b0bc22ce9c7, type: 3}
   voicePitch: 1
-  isBoss: 00000000
