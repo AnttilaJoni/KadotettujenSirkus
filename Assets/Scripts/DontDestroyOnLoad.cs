@@ -1,17 +1,23 @@
 using System;
+using System.IO;
 using Cinemachine;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class DontDestroyOnLoad : MonoBehaviour
 {
+    [SerializeField] private GameObject playerHealthBar;
+    [SerializeField] private Sprite fullHeartImage;
+    [SerializeField] private Sprite halfHeartImage;
+    [SerializeField] private Sprite emptyHeartImage;
     public Vector3 playerPosition;
     
     public int playerHealth = 0;
     public int playerMaxHealth = 5;
 
-    [SerializeField] private TextMeshProUGUI healthText;
+    public TextMeshProUGUI healthText;
     
     static bool _onceCall;
 
@@ -25,60 +31,67 @@ public class DontDestroyOnLoad : MonoBehaviour
     public bool bossFightCompleted;
 
     public bool playerAlive = true;
+
+    public bool minigameCompleted = false;
     
     private void Awake()
     {
-        
-        
-        if (!_onceCall) 
-        {
-            DontDestroyOnLoad (this);
+        SetPlayerHealth();
+
+        if (!_onceCall) {
+            DontDestroyOnLoad(this);
             _onceCall = true;
-        } 
-        else 
-        {
-            Destroy (gameObject);
+            
+            playerHealth = playerMaxHealth;
+            healthText.text = playerHealth.ToString();
+            
+        }
+        else {
+            Destroy(gameObject);
         }
         
-        if (SceneManager.GetActiveScene().name == "TestSceneJoni") 
-        {
-            playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
-            mapBoundary = FindFirstObjectByType<CinemachineConfiner2D>().m_BoundingShape2D.gameObject.name;
-        }
     }
-    
-    
+
     void Start()
     {
-        playerHealth = playerMaxHealth;
-        healthText.text = "Health: " + playerHealth.ToString();
         
+        GameObject.FindGameObjectWithTag("SaveController").GetComponent<SaveController>().SaveGame();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetPlayerHealth()
     {
-        
+        playerHealth = playerMaxHealth;
+        healthText.text = playerHealth.ToString();
     }
-
+    
     public void SavePlayerPosition()
     {
         playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
         mapBoundary = FindFirstObjectByType<CinemachineConfiner2D>().m_BoundingShape2D.gameObject.name;
     }
 
+    public void LoadPlayerPosition()
+    {
+        if (SceneManager.GetActiveScene().name == "MainScene") 
+        {
+            //playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
+            mapBoundary = FindFirstObjectByType<CinemachineConfiner2D>().m_BoundingShape2D.gameObject.name;
+            minigameCompleted = false;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<MovementScript>().SetPlayerPosition(playerPosition);
+            Debug.Log("Loaded player pos");
+            
+        }
+    }
+
     public void TakeDamage(int damage)
     {
         playerHealth -= damage;
-        healthText.text = "Health: " + playerHealth.ToString();
+        healthText.text = playerHealth.ToString();
         
-        if (playerHealth <= 0) {
-            //GameOver();
+        if (playerHealth <= 0) 
+        {
             playerAlive = false;
-            //SceneManager.LoadScene("Teemu");
-            SceneManager.LoadScene("Teemu4");
-            playerHealth = playerMaxHealth;
-            healthText.text = "Health: " + playerHealth.ToString();
+            SceneManager.LoadScene("MainScene");
         }
     }
 
@@ -107,7 +120,7 @@ public class DontDestroyOnLoad : MonoBehaviour
         
         else if (SceneManager.GetActiveScene().name == "Teemu4") 
         {
-            SceneManager.LoadScene("Teemu4");
+            SceneManager.LoadScene("MainScene");
             playerHealth = playerMaxHealth;
             healthText.text = "Health: " + playerHealth.ToString();
         }
@@ -132,9 +145,7 @@ public class DontDestroyOnLoad : MonoBehaviour
             bossFightCompleted = true;
         }
         
-        //SceneManager.LoadScene("Teemu");
-        SceneManager.LoadScene("TestSceneJoni");
-
-        //player.transform.position = playerPosition;
+        minigameCompleted = true;
+        SceneManager.LoadScene("MainScene");
     }
 }
