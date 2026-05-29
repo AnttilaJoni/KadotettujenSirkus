@@ -2981,7 +2981,7 @@ MonoBehaviour:
   score: 0
   scoreText: {fileID: 318524517}
   bossHealth: 0
-  bossMaxHealth: 100
+  bossMaxHealth: 10
   gameActive: 0
 --- !u!4 &1313555535
 Transform:
@@ -4908,6 +4908,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f96cd0ffc7c358a4da66f5fd57105b3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DontDestroyOnLoad
+  playerHealthBar: {fileID: 0}
+  fullHeartImage: {fileID: 0}
+  halfHeartImage: {fileID: 0}
+  emptyHeartImage: {fileID: 0}
   playerPosition: {x: 0, y: 0, z: 0}
   playerHealth: 0
   playerMaxHealth: 5
@@ -4919,6 +4923,7 @@ MonoBehaviour:
   minigame3Completed: 0
   bossFightCompleted: 0
   playerAlive: 1
+  minigameCompleted: 0
 --- !u!114 &2073296072
 MonoBehaviour:
   m_ObjectHideFlags: 0

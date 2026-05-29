@@ -4,6 +4,7 @@ using UnityEngine;
 public class SaveData
 {
     public Vector3 playerPosition;
+    public int playerHealth;
     public string mapBoundary;
 
     public bool minigame1Completed;
