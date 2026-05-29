@@ -14,10 +14,16 @@ public class NPC : MonoBehaviour, IInteractable
     public Image portraitImage;
     public Image portraitImage_NPC;
     public GameObject _NPCGameObj;
+    public Button closeDialogue;
 
     private int dialogueIndex;
     private int expressionIndex;
     private bool isTyping, isDialogueActive;
+
+    public bool isBoss_1;
+    public bool isBoss_2;
+    public bool isBoss_3;
+    public bool isBoss_4;
 
     public bool CanInteract()
     {
@@ -26,14 +32,19 @@ public class NPC : MonoBehaviour, IInteractable
     public void Interact()
     {
         if(dialogueData == null || (PauseController.IsGamePaused && !isDialogueActive))
+        {
             return;
-
+        }
         if (isDialogueActive)
         {
             NextLine();
         }
         else
         {
+            dialogueBox.transform.rotation = Quaternion.identity;
+
+            portraitImage.GetComponent<Image>().color = new Color(1f,1f,1f,1.0f);
+            portraitImage_NPC.GetComponent<Image>().color = new Color(1f,1f,1f,0.0f);
             StartDialogue();
         }
     }
@@ -47,6 +58,8 @@ public class NPC : MonoBehaviour, IInteractable
         nameText.SetText(dialogueData.playerName);
         nameTextNPC.SetText("");
         portraitImage.sprite = dialogueData.npcPortrait[expressionIndex];
+        Button btn = closeDialogue.GetComponent<Button>();
+		btn.onClick.AddListener(CloseDialogue);
 
         dialoguePanel.SetActive(true);
         PauseController.SetPause(true);
@@ -76,9 +89,9 @@ public class NPC : MonoBehaviour, IInteractable
                     dialogueBox.transform.Rotate(0.0f, 180.0f, 0.0f, Space.Self);
                     nameText.SetText("");
                     nameTextNPC.SetText(dialogueData.npcName);
-                    flipped = true;
+                    //flipped = true;
                 }
-                
+                portraitImage_NPC.GetComponent<Image>().color = new Color(1f,1f,1f,1.0f);
                 portraitImage_NPC.sprite = dialogueData.npcPortrait[expressionIndex];
             }
             else
@@ -87,8 +100,8 @@ public class NPC : MonoBehaviour, IInteractable
                 portraitImage.sprite = dialogueData.npcPortrait[expressionIndex];
                 nameText.SetText(dialogueData.playerName);
                 nameTextNPC.SetText("");
-                if(flipped) dialogueBox.transform.Rotate(0.0f, 180.0f, 0.0f, Space.Self);
-                flipped = false;
+                //if(flipped) dialogueBox.transform.Rotate(0.0f, 180.0f, 0.0f, Space.Self);
+                //flipped = false;
             }
             
             
@@ -98,8 +111,13 @@ public class NPC : MonoBehaviour, IInteractable
         {
             nameText.SetText("");
             nameTextNPC.SetText("");
-            if(flipped) dialogueBox.transform.Rotate(0.0f, 180.0f, 0.0f, Space.Self);
-            flipped = false;
+            /* if(flipped = true)
+            {
+                dialogueBox.transform.Rotate(0.0f, 180f, 0.0f, Space.Self);
+                flipped = false;
+            } */
+            //if(flipped) dialogueBox.transform.Rotate(0.0f, 0f, 0.0f, Space.Self);
+            //flipped = false;
             EndDialogue();
             
         }
@@ -124,31 +142,63 @@ public class NPC : MonoBehaviour, IInteractable
             yield return new WaitForSeconds(dialogueData.autoProgressDelay);
             NextLine();
         }
+        if(dialogueData.autoProgressLines.Length == dialogueIndex && dialogueData.autoProgressLines[dialogueIndex])
+        {
+            yield return new WaitForSeconds(dialogueData.autoProgressDelay);
+            EndDialogue();
+        }
     }
 
     public void EndDialogue()
     {
-        StopAllCoroutines();
-        isDialogueActive = false;
-        dialogueText.SetText("");
-        dialoguePanel.SetActive(false);
-        PauseController.SetPause(false);
-        if (_NPCGameObj.CompareTag("Minigame_1_start"))
+        if (isBoss_1)
         {
             SceneController.instance.ChangeScene("Teemu2");
         } 
-        else if(_NPCGameObj.CompareTag("Minigame_2_start"))
+        else if(isBoss_2)
         {
             SceneController.instance.ChangeScene("MemoryGame");
-    
         } 
-        else if(_NPCGameObj.CompareTag("Minigame_3_start"))
+        else if(isBoss_3)
         {
             SceneController.instance.ChangeScene("Teemu4");
         } 
-        else if(_NPCGameObj.CompareTag("Boss_start"))
+        else if(isBoss_4)
         {
             SceneController.instance.ChangeScene("Teemu3");
+        } else
+        {
+            StopAllCoroutines();
+            isDialogueActive = false;
+            dialogueText.SetText("");
+            dialoguePanel.SetActive(false);
+            PauseController.SetPause(false);
+        }
+    }
+    void CloseDialogue()
+    {
+        if (isBoss_1)
+        {
+            SceneController.instance.ChangeScene("Teemu2");
         } 
+        else if(isBoss_2)
+        {
+            SceneController.instance.ChangeScene("MemoryGame");
+        } 
+        else if(isBoss_3)
+        {
+            SceneController.instance.ChangeScene("Teemu4");
+        } 
+        else if(isBoss_4)
+        {
+            SceneController.instance.ChangeScene("Teemu3");
+        } else
+        {
+            StopAllCoroutines();
+            isDialogueActive = false;
+            dialogueText.SetText("");
+            dialoguePanel.SetActive(false);
+            PauseController.SetPause(false);
+        }
     }
 }

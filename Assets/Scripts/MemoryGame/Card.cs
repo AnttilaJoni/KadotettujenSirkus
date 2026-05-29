@@ -26,7 +26,7 @@ public class Card : MonoBehaviour
     
     IEnumerator StartSetup()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         Flip();
         StartCoroutine(StartDelayedFlip());
     }

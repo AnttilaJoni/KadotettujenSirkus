@@ -1156,7 +1156,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8378409093103015205, guid: f2b8b339d9be1d84f913dd36b2e26afd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: TestSceneJoni
+      value: MainScene
       objectReference: {fileID: 0}
     - target: {fileID: 8378409093103015205, guid: f2b8b339d9be1d84f913dd36b2e26afd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName

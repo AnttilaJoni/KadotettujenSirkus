@@ -459,7 +459,7 @@ GameObject:
   - component: {fileID: 190033088}
   m_Layer: 0
   m_Name: NPC (4)
-  m_TagString: Boss_start
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -491,7 +491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d6076e85bf393c4081dfc9d47b2af32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  dialogueData: {fileID: 11400000, guid: 8938bde640488c448bdcade66c28c145, type: 2}
+  dialogueData: {fileID: 11400000, guid: 59439037af11a6a449cd3bbdca09b201, type: 2}
   dialoguePanel: {fileID: 613839402}
   dialogueBox: {fileID: 1747840051}
   dialogueText: {fileID: 1270528975}
@@ -500,6 +500,11 @@ MonoBehaviour:
   portraitImage: {fileID: 1280548057}
   portraitImage_NPC: {fileID: 817021836}
   _NPCGameObj: {fileID: 190033086}
+  closeDialogue: {fileID: 2081096422}
+  isBoss_1: 0
+  isBoss_2: 0
+  isBoss_3: 0
+  isBoss_4: 1
 --- !u!95 &190033089
 Animator:
   serializedVersion: 7
@@ -2412,6 +2417,11 @@ MonoBehaviour:
   portraitImage: {fileID: 1280548057}
   portraitImage_NPC: {fileID: 817021836}
   _NPCGameObj: {fileID: 0}
+  closeDialogue: {fileID: 2081096422}
+  isBoss_1: 0
+  isBoss_2: 0
+  isBoss_3: 0
+  isBoss_4: 0
 --- !u!61 &423866225
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6323,7 +6333,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1278285524
 Transform:
   m_ObjectHideFlags: 0
@@ -6693,7 +6703,7 @@ GameObject:
   - component: {fileID: 1382434954}
   m_Layer: 0
   m_Name: NPC (1)
-  m_TagString: Minigame_1_start
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6725,7 +6735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d6076e85bf393c4081dfc9d47b2af32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  dialogueData: {fileID: 11400000, guid: 8938bde640488c448bdcade66c28c145, type: 2}
+  dialogueData: {fileID: 11400000, guid: 1fe767e27fcc3a14980306dfda5c1afd, type: 2}
   dialoguePanel: {fileID: 613839402}
   dialogueBox: {fileID: 1747840051}
   dialogueText: {fileID: 1270528975}
@@ -6734,6 +6744,11 @@ MonoBehaviour:
   portraitImage: {fileID: 1280548057}
   portraitImage_NPC: {fileID: 817021836}
   _NPCGameObj: {fileID: 1382434952}
+  closeDialogue: {fileID: 2081096422}
+  isBoss_1: 1
+  isBoss_2: 0
+  isBoss_3: 0
+  isBoss_4: 0
 --- !u!95 &1382434955
 Animator:
   serializedVersion: 7
@@ -7236,6 +7251,11 @@ MonoBehaviour:
   portraitImage: {fileID: 1280548057}
   portraitImage_NPC: {fileID: 817021836}
   _NPCGameObj: {fileID: 1512326692}
+  closeDialogue: {fileID: 2081096422}
+  isBoss_1: 0
+  isBoss_2: 0
+  isBoss_3: 0
+  isBoss_4: 0
 --- !u!1 &1536839035
 GameObject:
   m_ObjectHideFlags: 0
@@ -9392,7 +9412,7 @@ GameObject:
   - component: {fileID: 1860367925}
   m_Layer: 0
   m_Name: NPC (3)
-  m_TagString: Minigame_3_start
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9424,7 +9444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d6076e85bf393c4081dfc9d47b2af32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  dialogueData: {fileID: 11400000, guid: 8938bde640488c448bdcade66c28c145, type: 2}
+  dialogueData: {fileID: 11400000, guid: 320515ce4a6e95f43b34aa3991d40687, type: 2}
   dialoguePanel: {fileID: 613839402}
   dialogueBox: {fileID: 1747840051}
   dialogueText: {fileID: 1270528975}
@@ -9433,6 +9453,11 @@ MonoBehaviour:
   portraitImage: {fileID: 1280548057}
   portraitImage_NPC: {fileID: 817021836}
   _NPCGameObj: {fileID: 1860367923}
+  closeDialogue: {fileID: 2081096422}
+  isBoss_1: 0
+  isBoss_2: 0
+  isBoss_3: 1
+  isBoss_4: 0
 --- !u!95 &1860367926
 Animator:
   serializedVersion: 7
@@ -10018,7 +10043,7 @@ GameObject:
   - component: {fileID: 2065964244}
   m_Layer: 0
   m_Name: NPC (2)
-  m_TagString: Minigame_2_start
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10050,7 +10075,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d6076e85bf393c4081dfc9d47b2af32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  dialogueData: {fileID: 11400000, guid: 8938bde640488c448bdcade66c28c145, type: 2}
+  dialogueData: {fileID: 11400000, guid: 0a3fa6a65af81fe48a6143176e075fac, type: 2}
   dialoguePanel: {fileID: 613839402}
   dialogueBox: {fileID: 1747840051}
   dialogueText: {fileID: 1270528975}
@@ -10059,6 +10084,11 @@ MonoBehaviour:
   portraitImage: {fileID: 1280548057}
   portraitImage_NPC: {fileID: 817021836}
   _NPCGameObj: {fileID: 2065964242}
+  closeDialogue: {fileID: 2081096422}
+  isBoss_1: 0
+  isBoss_2: 1
+  isBoss_3: 0
+  isBoss_4: 0
 --- !u!95 &2065964245
 Animator:
   serializedVersion: 7
@@ -10267,19 +10297,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2081096423}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1512326697}
-        m_TargetAssemblyTypeName: NPC, Assembly-CSharp
-        m_MethodName: EndDialogue
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &2081096423
 MonoBehaviour:
   m_ObjectHideFlags: 0

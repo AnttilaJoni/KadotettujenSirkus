@@ -17,7 +17,9 @@ public class CardsController : MonoBehaviour
     Card secondSelected;
 
     int matchCounts;
+    int wins;
     public TextMeshProUGUI text_health;
+    public TextMeshProUGUI text_wins;
     public GameObject text_gameover;
 
     public GameObject cards_placeholder;
@@ -25,6 +27,8 @@ public class CardsController : MonoBehaviour
 
     private void Start()
     {
+        text_wins.text = $"0/3";
+        wins = 0;
         text_gameover.SetActive(false);
         cards_placeholder.SetActive(false);
         StartCoroutine(SetHealth());
@@ -114,8 +118,19 @@ public class CardsController : MonoBehaviour
             if(matchCounts == spritePairs.Count / 2)
             {
                 //StartCoroutine(EndFlip());
-                DestroyCards();
-                matchCounts = 0;
+                wins++;
+                if(wins == 3)
+                {
+                    text_wins.text = $"{wins}/3";
+                    StartCoroutine(GameWon());
+                }
+                else
+                {
+                    text_wins.text = $"{wins}/3";
+                    DestroyCards();
+                    matchCounts = 0;
+                }
+                
             }
             a.transform.DOPunchScale(new Vector3(0.08f, 0.08f, 0.08f), (float) 0.4, 3, 1F);
             b.transform.DOPunchScale(new Vector3(0.08f, 0.08f, 0.08f), (float) 0.4, 3, 1F);
@@ -127,6 +142,15 @@ public class CardsController : MonoBehaviour
             b.Hide();
             UpdateHealth();
         }
+    }
+    IEnumerator GameWon()
+    {
+        yield return new WaitForSeconds(2f);
+        SceneController.instance.ChangeSceneByIndex(7);
+    }
+    public void ExitGame()
+    {
+        SceneController.instance.ChangeSceneByIndex(7);
     }
     IEnumerator EndFlip()
     {
@@ -197,12 +221,24 @@ public class CardsController : MonoBehaviour
         {
             text_health.text = $"";
             GameOver();
+            
         }
     }
 
     void GameOver()
     {
         text_gameover.SetActive(true);
+        StartCoroutine(GameRestart());
+    }
+    IEnumerator GameRestart()
+    {
+        yield return new WaitForSeconds(3f);
+        matchCounts = 0;
+        wins = 0;
+        DestroyCards();
+        text_wins.text = $"0/3";
+        text_gameover.SetActive(false);
+        
     }
     IEnumerator GameReset()
     {

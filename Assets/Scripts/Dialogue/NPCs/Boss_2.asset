@@ -10,19 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b8f0dde067395140a3c2cbe4f68691f, type: 3}
-  m_Name: BarrelDialogue
+  m_Name: Boss_2
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
   playerName: Emma
-  npcName: Emma
+  npcName: Boss_2
   npcPortrait:
-  - {fileID: 21300000, guid: ed45ecddfa5ed164686633fc0044f8be, type: 3}
-  - {fileID: 21300000, guid: d1072acf725cf7d4faf27c6ef10a9540, type: 3}
+  - {fileID: 21300000, guid: 0af262158fdd6d24ba0ca215264212ae, type: 3}
+  - {fileID: 21300000, guid: e54a8e30c4b013042bac5cda328d5349, type: 3}
+  - {fileID: 21300000, guid: cd83077c9d4a38945a6931a885f2be87, type: 3}
+  - {fileID: 21300000, guid: f83896aa02878d340942c4ac11e4d93a, type: 3}
   dialogueLines:
-  - Tis a barrel.
-  - Neat I guess.
-  autoProgressLines: 0100
+  - Line 1 Player
+  - Line 2 Player
+  - Line 3 NPC
+  - Line 4 NPC
+  autoProgressLines: 01010100
   autoProgressDelay: 2.5
   typingSpeed: 0.05
   voiceSound: {fileID: 8300000, guid: 1c3b2f9ef77d0c44a8845b0bc22ce9c7, type: 3}
   voicePitch: 1
-  isBoss: 
+  isBoss_1: 0
+  isBoss_2: 1
+  isBoss_3: 0
+  isBoss_4: 0
