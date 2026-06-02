@@ -443,10 +443,17 @@ MonoBehaviour:
   healthText: {fileID: 0}
   player: {fileID: 0}
   mapBoundary: 
-  minigame1Completed: 0
-  minigame2Completed: 0
-  minigame3Completed: 0
-  bossFightCompleted: 0
+  boss1dialogue: 0
+  boss2dialogue: 0
+  boss3dialogue: 0
+  boss4dialogue: 0
+  boss1Completed: 0
+  boss2Completed: 0
+  boss3Completed: 0
+  boss4Completed: 0
+  key1: 0
+  key2: 0
+  key3: 0
   playerAlive: 1
   minigameCompleted: 0
 --- !u!4 &206500451
@@ -475,6 +482,7 @@ GameObject:
   - component: {fileID: 222894173}
   - component: {fileID: 222894174}
   - component: {fileID: 222894177}
+  - component: {fileID: 222894178}
   m_Layer: 0
   m_Name: I_Shape
   m_TagString: Shape
@@ -571,6 +579,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 3, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &222894178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222894172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6e050c35eae4e842b91f84ec401e6b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ShapeScript
 --- !u!1 &244504090
 GameObject:
   m_ObjectHideFlags: 0
@@ -2088,8 +2108,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 734736474}
-  - component: {fileID: 734736476}
   - component: {fileID: 734736475}
+  - component: {fileID: 734736476}
+  - component: {fileID: 734736477}
   m_Layer: 0
   m_Name: Square_Shape
   m_TagString: Shape
@@ -2192,6 +2213,18 @@ PolygonCollider2D:
       - {x: 1, y: -1}
       - {x: 1, y: 1}
   m_UseDelaunayMesh: 1
+--- !u!114 &734736477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734736473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6e050c35eae4e842b91f84ec401e6b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &787493615
 GameObject:
   m_ObjectHideFlags: 0
