@@ -537,6 +537,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+--- !u!114 &1306782764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1306782758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e94b50ffa7de1dd458986706ebf7b85b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  playButton: {fileID: 1306782760}
 --- !u!1 &1336139201 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8160368614678468318, guid: f2b8b339d9be1d84f913dd36b2e26afd, type: 3}
@@ -1120,7 +1133,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8378409093103015205, guid: f2b8b339d9be1d84f913dd36b2e26afd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8378409093103015205, guid: f2b8b339d9be1d84f913dd36b2e26afd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -1189,6 +1202,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3563744794411022326, guid: f2b8b339d9be1d84f913dd36b2e26afd, type: 3}
       insertIndex: -1
       addedObject: {fileID: 49427061}
+    - targetCorrespondingSourceObject: {fileID: 2747662275168120669, guid: f2b8b339d9be1d84f913dd36b2e26afd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1306782764}
     - targetCorrespondingSourceObject: {fileID: 8160368614678468318, guid: f2b8b339d9be1d84f913dd36b2e26afd, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1336139206}

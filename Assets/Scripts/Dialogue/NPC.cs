@@ -119,7 +119,7 @@ public class NPC : MonoBehaviour, IInteractable
         foreach(char letter in dialogueData.dialogueLines[dialogueIndex])
         {
             dialogueText.text += letter;
-            AudioManager.PlayVoice(dialogueData.voiceSound, dialogueData.voicePitch);
+            AudioManager.PlayVoice(dialogueData.voiceSounds_player[0], dialogueData.voicePitch);
             yield return new WaitForSeconds(dialogueData.typingSpeed);
         }
 

@@ -10,9 +10,11 @@ public class NPCDialogue : ScriptableObject
     public Sprite[] npcPortrait;
     public string[] dialogueLines;
     public bool[] isPlayerLine;
+    public bool[] isScreenShakeLine;
     public bool[] autoProgressLines;
     public float autoProgressDelay = 1.5f;
     public float typingSpeed = 0.05f;
-    public AudioClip voiceSound;
+    public AudioClip[] voiceSounds_player;
+    public AudioClip[] voiceSounds_npc;
     public float voicePitch = 1f;
 }

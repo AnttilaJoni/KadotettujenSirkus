@@ -25,8 +25,13 @@ MonoBehaviour:
   - Line 3 NPC
   - Line 4 NPC
   isPlayerLine: 01010000
+  isScreenShakeLine: 
   autoProgressLines: 01010100
   autoProgressDelay: 2.5
   typingSpeed: 0.05
-  voiceSound: {fileID: 8300000, guid: 1c3b2f9ef77d0c44a8845b0bc22ce9c7, type: 3}
+  voiceSounds_player:
+  - {fileID: 8300000, guid: 1c3b2f9ef77d0c44a8845b0bc22ce9c7, type: 3}
+  - {fileID: 8300000, guid: 42e36910413b41b42878acc8190feac5, type: 3}
+  - {fileID: 8300000, guid: 95e22a425cdaf5143a476ee2a063c2ac, type: 3}
+  voiceSounds_npc: []
   voicePitch: 1
