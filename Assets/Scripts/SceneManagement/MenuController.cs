@@ -33,6 +33,12 @@ public class MenuController : MonoBehaviour
     }
     public void Quit()
     {
+        if(!menuCanvas.activeSelf && PauseController.IsGamePaused)
+        {
+            return;
+        }
+        menuCanvas.SetActive(!menuCanvas.activeSelf);
+        PauseController.SetPause(menuCanvas.activeSelf);
         SceneController.instance.ChangeSceneByIndex(0);
     }
 }

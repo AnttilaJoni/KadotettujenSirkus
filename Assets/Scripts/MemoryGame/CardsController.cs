@@ -27,6 +27,7 @@ public class CardsController : MonoBehaviour
 
     private void Start()
     {
+        PauseController.SetPause(false);
         text_wins.text = $"0/3";
         wins = 0;
         text_gameover.SetActive(false);
