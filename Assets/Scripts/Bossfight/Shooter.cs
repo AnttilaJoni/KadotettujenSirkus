@@ -41,15 +41,19 @@ public class Shooter : MonoBehaviour
 
     private void Start()
     {
-        
+        PauseController.SetPause(false);
     }
 
     private void Update()
     {
+        /*
         if (countDownScript.gameActive) {
 
             Attack();
         }
+        */
+        
+        Attack();
     }
 
     private void Attack()
