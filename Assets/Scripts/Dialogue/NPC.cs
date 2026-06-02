@@ -28,6 +28,16 @@ public class NPC : MonoBehaviour, IInteractable
     {
         return !isDialogueActive;
     }
+    void Update()
+    {
+        if (isDialogueActive)
+        {
+            if (Input.GetKeyDown(KeyCode.Space)) 
+            {
+                NextLine();
+            }
+        }
+    }
     public void Interact()
     {
         if(dialogueData == null || (PauseController.IsGamePaused && !isDialogueActive))
