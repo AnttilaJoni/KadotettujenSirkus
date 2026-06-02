@@ -79,7 +79,7 @@ public class MovementScript : MonoBehaviour
         Vector3 finalDirection = Vector2.zero;
         if(PauseController.IsGamePaused)
         {
-            Debug.Log("Is paused");
+            //Debug.Log("Is paused");
             moveDirection = Vector3.zero;
         }
         else
