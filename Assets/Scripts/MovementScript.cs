@@ -29,7 +29,7 @@ public class MovementScript : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && _canParry) 
+        if (Input.GetKeyDown(KeyCode.Space) && _canParry && !PauseController.IsGamePaused) 
         {
             anim.SetTrigger("Parry");
             Parry();
