@@ -86,7 +86,7 @@ public class Shooter : MonoBehaviour
         _isShooting = true;
         
         projectilesPerBurst = 4;
-        angleSpread = 50;
+        angleSpread = 30;
         
         
 
@@ -192,7 +192,6 @@ public class Shooter : MonoBehaviour
 
             yield return new WaitForSeconds(restTime);
             _isShooting = false;
-            StartCoroutine(Phase2_1Timer());
         }
 
         if (phase2_1) 
@@ -259,7 +258,6 @@ public class Shooter : MonoBehaviour
 
             yield return new WaitForSeconds(restTime);
             _isShooting = false;
-            StartCoroutine(Phase2_2Timer());
             
         }
 

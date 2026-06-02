@@ -56,10 +56,19 @@ public class SaveController : MonoBehaviour
             playerHealth = GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().playerHealth,
             mapBoundary = FindFirstObjectByType<CinemachineConfiner2D>().m_BoundingShape2D.gameObject.name,
             
-            minigame1Completed = GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().minigame1Completed,
-            minigame2Completed = GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().minigame2Completed,
-            minigame3Completed = GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().minigame3Completed,
-            bossFightCompleted = GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().bossFightCompleted
+            boss1dialogue = GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().boss1dialogue,
+            boss2dialogue = GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().boss2dialogue,
+            boss3dialogue = GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().boss3dialogue,
+            boss4dialogue = GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().boss4dialogue,
+            
+            boss1Completed = GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().boss1Completed,
+            boss2Completed = GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().boss2Completed,
+            boss3Completed = GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().boss3Completed,
+            boss4Completed = GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().boss4Completed,
+            
+            key1 = GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().key1,
+            key2 = GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().key1,
+            key3 = GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().key1
             
         };
         
@@ -78,10 +87,19 @@ public class SaveController : MonoBehaviour
             GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().playerHealth = saveData.playerHealth;
             FindFirstObjectByType<CinemachineConfiner2D>().m_BoundingShape2D = GameObject.Find(saveData.mapBoundary).GetComponent<PolygonCollider2D>();
             
-            GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().minigame1Completed = saveData.minigame1Completed;
-            GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().minigame2Completed = saveData.minigame2Completed;
-            GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().minigame3Completed = saveData.minigame3Completed;
-            GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().bossFightCompleted = saveData.bossFightCompleted;
+            GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().boss1dialogue = saveData.boss1dialogue;
+            GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().boss2dialogue = saveData.boss2dialogue;
+            GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().boss3dialogue = saveData.boss3dialogue;
+            GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().boss4dialogue = saveData.boss4dialogue;
+            
+            GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().boss1Completed = saveData.boss1Completed;
+            GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().boss2Completed = saveData.boss2Completed;
+            GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().boss3Completed = saveData.boss3Completed;
+            GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().boss4Completed = saveData.boss4Completed;
+            
+            GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().key1 = saveData.key1;
+            GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().key2 = saveData.key2;
+            GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().key3 = saveData.key3;
             
             Debug.Log("Game loaded");
         }

@@ -24,12 +24,21 @@ public class DontDestroyOnLoad : MonoBehaviour
     public GameObject player;
     
     public string mapBoundary;
-    
-    public bool minigame1Completed;
-    public bool minigame2Completed;
-    public bool minigame3Completed;
-    public bool bossFightCompleted;
 
+    public bool boss1dialogue = false;
+    public bool boss2dialogue = false;
+    public bool boss3dialogue = false;
+    public bool boss4dialogue = false;
+    
+    public bool boss1Completed = false;
+    public bool boss2Completed = false;
+    public bool boss3Completed = false;
+    public bool boss4Completed = false;
+    
+    public bool key1 = false;
+    public bool key2 = false;
+    public bool key3 = false;
+    
     public bool playerAlive = true;
 
     public bool minigameCompleted = false;
@@ -79,6 +88,35 @@ public class DontDestroyOnLoad : MonoBehaviour
             minigameCompleted = false;
             GameObject.FindGameObjectWithTag("Player").GetComponent<MovementScript>().SetPlayerPosition(playerPosition);
             Debug.Log("Loaded player pos");
+
+            if (boss1Completed) {
+                GameObject.Find("NPC (1)").gameObject.SetActive(false);    
+            }
+            else {
+                GameObject.Find("NPC (1)").gameObject.SetActive(true);
+            }
+            
+            if (boss2Completed) {
+                GameObject.Find("NPC (2)").gameObject.SetActive(false);    
+            }
+            else {
+                GameObject.Find("NPC (2)").gameObject.SetActive(true);
+            }
+            
+            if (boss2Completed) {
+                GameObject.Find("NPC (3)").gameObject.SetActive(false);    
+            }
+            else {
+                GameObject.Find("NPC (3)").gameObject.SetActive(true);
+            }
+            
+            if (boss4Completed) {
+                GameObject.Find("NPC (4)").gameObject.SetActive(false);    
+            }
+            else {
+                GameObject.Find("NPC (4)").gameObject.SetActive(true);
+            }
+            
             
         }
     }
@@ -130,19 +168,22 @@ public class DontDestroyOnLoad : MonoBehaviour
     public void MinigameCompleted(int id)
     {
         if (id == 1) {
-            minigame1Completed = true;
+            boss1Completed = true;
+            key1 = true;
         }
         
         else if (id == 2) {
-            minigame2Completed = true;
+            boss2Completed = true;
+            key2 = true;
         }
         
         else if (id == 3) {
-            minigame3Completed = true;
+            boss3Completed = true;
+            key3 = true;
         }
         
         else if (id == 4) {
-            bossFightCompleted = true;
+            boss4Completed = true;
         }
         
         minigameCompleted = true;
