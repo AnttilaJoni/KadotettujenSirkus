@@ -25,7 +25,6 @@ public class MovementScript : MonoBehaviour
     void Start()
     {
         _rb2d = GetComponent<Rigidbody2D>();
-        
     }
     void Update()
     {

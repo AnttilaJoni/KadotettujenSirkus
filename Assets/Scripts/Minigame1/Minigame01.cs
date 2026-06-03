@@ -14,6 +14,7 @@ public class Minigame01 : MonoBehaviour
     [SerializeField] private GameObject notesSpawnPoint;
     [SerializeField] private GameObject notes;
     [SerializeField] private GameObject goal;
+    public int playerHealth = 10;
     
     private GameObject _playerStats;
     
@@ -49,12 +50,15 @@ public class Minigame01 : MonoBehaviour
         bossHealth = bossMaxHealth;
         
         comboCounterText.text = comboCounter.ToString();
+        
+        GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().ChangePlayerHealth(playerHealth);
+
     }
 
     
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W)) 
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) 
         {
             if (notesList.Count > 0) 
             {
@@ -77,7 +81,7 @@ public class Minigame01 : MonoBehaviour
             }
         }
         
-        if (Input.GetKeyDown(KeyCode.A)) 
+        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)) 
         {
             if (notesList.Count > 0) 
             {
@@ -100,7 +104,7 @@ public class Minigame01 : MonoBehaviour
             }
         }
         
-        if (Input.GetKeyDown(KeyCode.S)) 
+        if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) 
         {
             if (notesList.Count > 0) 
             {
@@ -123,7 +127,7 @@ public class Minigame01 : MonoBehaviour
             }
         }
         
-        if (Input.GetKeyDown(KeyCode.D)) 
+        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) 
         {
             if (notesList.Count > 0) 
             {

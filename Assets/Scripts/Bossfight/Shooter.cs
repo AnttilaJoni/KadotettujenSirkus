@@ -34,6 +34,8 @@ public class Shooter : MonoBehaviour
     private bool phase2_1 = true;
     private bool phase2_2 = false;
 
+    public int playerHealth = 30;
+
     //private float startAngle;
     //float currentAngle;
     //private float angleStep;
@@ -42,6 +44,8 @@ public class Shooter : MonoBehaviour
     private void Start()
     {
         PauseController.SetPause(false);
+        GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().ChangePlayerHealth(playerHealth);
+
     }
 
     private void Update()
