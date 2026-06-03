@@ -21,9 +21,24 @@ public class Card : MonoBehaviour
     }
     /* void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space)) Flip();
+        if (CardsController.canFlip)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Flip();
+                CardsController.canFlip = false;
+                StartCoroutine(Destroy());
+            }
+            
+            
+        }
+        
+    }  */
+    /* IEnumerator Destroy()
+    {
+        yield return new WaitForSeconds(0.4f);
+        CardsController.DestroyCards();
     } */
-    
     IEnumerator StartSetup()
     {
         yield return new WaitForSeconds(2f);

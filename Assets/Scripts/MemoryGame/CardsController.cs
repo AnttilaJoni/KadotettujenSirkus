@@ -10,6 +10,7 @@ public class CardsController : MonoBehaviour
     [SerializeField] Card cardPrefab;
     [SerializeField] Transform gridTransform;
     [SerializeField] Sprite[] sprites;
+    public bool canFlip;
 
     private List <Sprite> spritePairs;
 
@@ -21,16 +22,20 @@ public class CardsController : MonoBehaviour
     public TextMeshProUGUI text_health;
     public TextMeshProUGUI text_wins;
     public GameObject text_gameover;
+    public GameObject text_win;
+    public GameObject notClickable;
 
     public GameObject cards_placeholder;
     private GameObject[] cards;
 
     private void Start()
     {
+        canFlip = false;
         PauseController.SetPause(false);
         text_wins.text = $"0/3";
         wins = 0;
         text_gameover.SetActive(false);
+        notClickable.SetActive(true);
         cards_placeholder.SetActive(false);
         StartCoroutine(SetHealth());
         PrepareSprites();
@@ -75,8 +80,17 @@ public class CardsController : MonoBehaviour
             card.SetIconSprite(spritePairs[i]);
             card.controller = this;
         }
+        StartCoroutine(ClickableAgain());
+        
     }
-    void DestroyCards()
+    IEnumerator ClickableAgain()
+    {
+        yield return new WaitForSeconds(4f);
+        text_gameover.SetActive(false);
+        text_win.SetActive(false);
+        notClickable.SetActive(false);
+    }
+    public void DestroyCards()
     {
         cards_placeholder.SetActive(true);
         StartCoroutine(SetHealth());
@@ -128,8 +142,10 @@ public class CardsController : MonoBehaviour
                 else
                 {
                     text_wins.text = $"{wins}/3";
+                    text_win.SetActive(true);
                     DestroyCards();
                     matchCounts = 0;
+                    canFlip = true;
                 }
                 
             }
@@ -238,7 +254,7 @@ public class CardsController : MonoBehaviour
         wins = 0;
         DestroyCards();
         text_wins.text = $"0/3";
-        text_gameover.SetActive(false);
+        canFlip = true;
         
     }
     IEnumerator GameReset()
