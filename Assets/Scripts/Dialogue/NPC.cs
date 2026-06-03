@@ -155,21 +155,25 @@ public class NPC : MonoBehaviour, IInteractable
     {
         if (isBoss_1) {
             GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().boss1dialogue = true;
+            GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().SavePlayerPosition();
             SceneController.instance.ChangeScene("Teemu2");
         } 
         else if(isBoss_2)
         {
             GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().boss2dialogue = true;
+            GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().SavePlayerPosition();
             SceneController.instance.ChangeScene("MemoryGame");
         } 
         else if(isBoss_3)
         {
             GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().boss3dialogue = true;
+            GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().SavePlayerPosition();
             SceneController.instance.ChangeScene("Teemu4");
         } 
         else if(isBoss_4)
         {
             GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().boss4dialogue = true;
+            GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().SavePlayerPosition();
             SceneController.instance.ChangeScene("Teemu3");
         } 
         else if(isTaika)

@@ -18,6 +18,7 @@ public class SaveController : MonoBehaviour
             GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().playerAlive = true;
             GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().TakeDamage(0);
             PauseController.SetPause(false);
+            GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().DialogueState();
             
             Debug.Log("Loaded game after death");
         }
@@ -26,7 +27,9 @@ public class SaveController : MonoBehaviour
         {
             GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().SetPlayerHealth();
             PauseController.SetPause(false);
+            GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().DialogueState();
             Debug.Log("Set player health");
+            
         }
 
         else if (GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().minigameCompleted) 
@@ -34,6 +37,7 @@ public class SaveController : MonoBehaviour
             GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().TakeDamage(0);
             GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().LoadPlayerPosition();
             PauseController.SetPause(false);
+            GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().DialogueState();
             
             Debug.Log("Minigame completed");
         }

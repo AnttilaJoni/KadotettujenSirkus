@@ -295,6 +295,8 @@ public class Shooter : MonoBehaviour
         
             projectilesPerBurst = 12;
             angleSpread = 359;
+            restTime = 1.5f;
+            timebetweenBursts = 1.5f;
         
         
 
