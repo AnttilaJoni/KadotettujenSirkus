@@ -23,6 +23,10 @@ public class NPC : MonoBehaviour, IInteractable
     public bool isBoss_2;
     public bool isBoss_3;
     public bool isBoss_4;
+    public bool isTaika;
+    public GameObject _npc;
+    public GameObject _npc_dialogue_done;
+
 
     public bool CanInteract()
     {
@@ -167,7 +171,25 @@ public class NPC : MonoBehaviour, IInteractable
         {
             GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().boss4dialogue = true;
             SceneController.instance.ChangeScene("Teemu3");
-        } else
+        } 
+        else if(isTaika)
+        {
+            //GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().boss4dialogue = true;
+            if(_npc != null && _npc_dialogue_done != null)
+            {
+                StopAllCoroutines();
+                isDialogueActive = false;
+                dialogueText.SetText("");
+                dialoguePanel.SetActive(false);
+                PauseController.SetPause(false);
+                dialogueIndex = 0;
+                expressionIndex = 0;
+                
+                _npc.SetActive(false);
+                _npc_dialogue_done.SetActive(true);
+            }
+        }
+        else
         {
             StopAllCoroutines();
             isDialogueActive = false;

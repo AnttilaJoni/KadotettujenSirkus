@@ -850,7 +850,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 3.75
+  orthographic size: 1.96875
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -964,6 +964,9 @@ MonoBehaviour:
   isBoss_2: 0
   isBoss_3: 0
   isBoss_4: 0
+  isTaika: 0
+  _npc: {fileID: 0}
+  _npc_dialogue_done: {fileID: 0}
 --- !u!61 &77968803
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2577,6 +2580,187 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 367641393}
   m_CullTransparentMesh: 1
+--- !u!1 &375120647
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 375120648}
+  - component: {fileID: 375120652}
+  - component: {fileID: 375120651}
+  - component: {fileID: 375120650}
+  - component: {fileID: 375120649}
+  m_Layer: 0
+  m_Name: Taika Dialogue Done
+  m_TagString: NPC
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &375120648
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 375120647}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -9.11, y: 0.15, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1518642808}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &375120649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 375120647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d6076e85bf393c4081dfc9d47b2af32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  dialogueData: {fileID: 11400000, guid: 2431b5d4ee9cfb34e9ce3063ba19e95d, type: 2}
+  dialoguePanel: {fileID: 1664868098}
+  dialogueBox: {fileID: 508493879}
+  dialogueText: {fileID: 886617673}
+  nameText: {fileID: 492925715}
+  nameTextNPC: {fileID: 2103446844}
+  portraitImage: {fileID: 1763784728}
+  portraitImage_NPC: {fileID: 1771310251}
+  closeDialogue: {fileID: 1451272781}
+  isBoss_1: 0
+  isBoss_2: 0
+  isBoss_3: 0
+  isBoss_4: 0
+  isTaika: 0
+  _npc: {fileID: 0}
+  _npc_dialogue_done: {fileID: 0}
+--- !u!95 &375120650
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 375120647}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ed08d51e3f4833a48a0b4fceb02384ee, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!70 &375120651
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 375120647}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.6875, y: 1}
+  m_Direction: 0
+--- !u!212 &375120652
+SpriteRenderer:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 375120647}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 2
+  m_MaskInteraction: 0
+  m_Sprite: {fileID: -1062701919271962853, guid: 44b2902b04962af4ea4029fc387be8b2, type: 3}
+  m_Color: {r: 0.91247636, g: 0.5801887, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_SpriteSortPoint: 0
 --- !u!1 &393823255
 GameObject:
   m_ObjectHideFlags: 0
@@ -3289,6 +3473,9 @@ MonoBehaviour:
   isBoss_2: 0
   isBoss_3: 0
   isBoss_4: 1
+  isTaika: 0
+  _npc: {fileID: 0}
+  _npc_dialogue_done: {fileID: 0}
 --- !u!95 &510837642
 Animator:
   serializedVersion: 7
@@ -3533,6 +3720,187 @@ Transform:
   - {fileID: 1090970832}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &546509144
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 546509145}
+  - component: {fileID: 546509149}
+  - component: {fileID: 546509148}
+  - component: {fileID: 546509147}
+  - component: {fileID: 546509146}
+  m_Layer: 0
+  m_Name: NPC Taika
+  m_TagString: NPC
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &546509145
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546509144}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -9.11, y: 0.15, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1518642808}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &546509146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546509144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d6076e85bf393c4081dfc9d47b2af32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  dialogueData: {fileID: 11400000, guid: 1fe767e27fcc3a14980306dfda5c1afd, type: 2}
+  dialoguePanel: {fileID: 1664868098}
+  dialogueBox: {fileID: 508493879}
+  dialogueText: {fileID: 886617673}
+  nameText: {fileID: 492925715}
+  nameTextNPC: {fileID: 2103446844}
+  portraitImage: {fileID: 1763784728}
+  portraitImage_NPC: {fileID: 1771310251}
+  closeDialogue: {fileID: 1451272781}
+  isBoss_1: 0
+  isBoss_2: 0
+  isBoss_3: 0
+  isBoss_4: 0
+  isTaika: 1
+  _npc: {fileID: 546509144}
+  _npc_dialogue_done: {fileID: 375120647}
+--- !u!95 &546509147
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546509144}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ed08d51e3f4833a48a0b4fceb02384ee, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!70 &546509148
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546509144}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.6875, y: 1}
+  m_Direction: 0
+--- !u!212 &546509149
+SpriteRenderer:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546509144}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 2
+  m_MaskInteraction: 0
+  m_Sprite: {fileID: -1062701919271962853, guid: 44b2902b04962af4ea4029fc387be8b2, type: 3}
+  m_Color: {r: 0.5803922, g: 1, b: 0.880071, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_SpriteSortPoint: 0
 --- !u!1 &554208844
 GameObject:
   m_ObjectHideFlags: 0
@@ -4001,6 +4369,9 @@ MonoBehaviour:
   isBoss_2: 0
   isBoss_3: 1
   isBoss_4: 0
+  isTaika: 0
+  _npc: {fileID: 0}
+  _npc_dialogue_done: {fileID: 0}
 --- !u!95 &622521324
 Animator:
   serializedVersion: 7
@@ -4281,6 +4652,9 @@ MonoBehaviour:
   isBoss_2: 1
   isBoss_3: 0
   isBoss_4: 0
+  isTaika: 0
+  _npc: {fileID: 0}
+  _npc_dialogue_done: {fileID: 0}
 --- !u!95 &652684110
 Animator:
   serializedVersion: 7
@@ -10351,6 +10725,9 @@ MonoBehaviour:
   isBoss_2: 0
   isBoss_3: 0
   isBoss_4: 0
+  isTaika: 0
+  _npc: {fileID: 0}
+  _npc_dialogue_done: {fileID: 0}
 --- !u!61 &980198623
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11046,6 +11423,9 @@ MonoBehaviour:
   isBoss_2: 0
   isBoss_3: 0
   isBoss_4: 0
+  isTaika: 0
+  _npc: {fileID: 0}
+  _npc_dialogue_done: {fileID: 0}
 --- !u!61 &1027642026
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11796,6 +12176,9 @@ MonoBehaviour:
   isBoss_2: 0
   isBoss_3: 0
   isBoss_4: 0
+  isTaika: 0
+  _npc: {fileID: 0}
+  _npc_dialogue_done: {fileID: 0}
 --- !u!95 &1191516974
 Animator:
   serializedVersion: 7
@@ -13186,6 +13569,9 @@ MonoBehaviour:
   isBoss_2: 0
   isBoss_3: 0
   isBoss_4: 0
+  isTaika: 0
+  _npc: {fileID: 0}
+  _npc_dialogue_done: {fileID: 0}
 --- !u!95 &1488099958
 Animator:
   serializedVersion: 7
@@ -13519,6 +13905,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1502837194}
   m_CullTransparentMesh: 1
+--- !u!1 &1518642807
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1518642808}
+  m_Layer: 0
+  m_Name: Taika
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1518642808
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518642807}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.96, y: 2.56, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 546509145}
+  - {fileID: 375120648}
+  m_Father: {fileID: 1653061484}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1521703147
 GameObject:
   m_ObjectHideFlags: 0
@@ -14327,6 +14746,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1191516972}
+  - {fileID: 1518642808}
   - {fileID: 774554080}
   - {fileID: 123592473}
   - {fileID: 1561557999}
@@ -14716,6 +15136,9 @@ MonoBehaviour:
   isBoss_2: 0
   isBoss_3: 0
   isBoss_4: 0
+  isTaika: 0
+  _npc: {fileID: 0}
+  _npc_dialogue_done: {fileID: 0}
 --- !u!95 &1755323185
 Animator:
   serializedVersion: 7
@@ -56955,6 +57378,9 @@ MonoBehaviour:
   isBoss_2: 0
   isBoss_3: 0
   isBoss_4: 0
+  isTaika: 0
+  _npc: {fileID: 0}
+  _npc_dialogue_done: {fileID: 0}
 --- !u!61 &1909544027
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -57346,6 +57772,9 @@ MonoBehaviour:
   isBoss_2: 0
   isBoss_3: 0
   isBoss_4: 0
+  isTaika: 0
+  _npc: {fileID: 0}
+  _npc_dialogue_done: {fileID: 0}
 --- !u!95 &2070056462
 Animator:
   serializedVersion: 7
@@ -57693,6 +58122,9 @@ MonoBehaviour:
   isBoss_2: 0
   isBoss_3: 0
   isBoss_4: 0
+  isTaika: 0
+  _npc: {fileID: 0}
+  _npc_dialogue_done: {fileID: 0}
 --- !u!95 &2118386455
 Animator:
   serializedVersion: 7
