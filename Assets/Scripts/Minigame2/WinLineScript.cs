@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WinLineScript : MonoBehaviour
 {
@@ -28,6 +29,7 @@ public class WinLineScript : MonoBehaviour
             if (_time <= 0) {
                 //Time.timeScale = 0f;
                 timerText.text = "You win!";
+                minigame2.minigameActive = false;
                 GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().MinigameCompleted(2);
             }
 
@@ -37,10 +39,16 @@ public class WinLineScript : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Shape")) {
-            _time = 5f;
-            minigame2.minigameActive = true;
-            timerText.gameObject.SetActive(false);
+        if (SceneManager.GetActiveScene().name != "MainScene") 
+        {
+            if (other.CompareTag("Shape")) {
+                _time = 5f;
+                minigame2.minigameActive = true;
+
+                if (timerText.gameObject != null) {
+                    timerText.gameObject.SetActive(false);
+                }
+            }
         }
     }
 }

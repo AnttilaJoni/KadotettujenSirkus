@@ -57,6 +57,8 @@ public class DontDestroyOnLoad : MonoBehaviour
             Destroy(gameObject);
         }
         
+        //heartImage = Resources.Load("HeartImage") as Image;
+        
     }
 
     void Start()
@@ -108,37 +110,104 @@ public class DontDestroyOnLoad : MonoBehaviour
             minigameCompleted = false;
             GameObject.FindGameObjectWithTag("Player").GetComponent<MovementScript>().SetPlayerPosition(playerPosition);
             Debug.Log("Loaded player pos");
-
+            
+            DialogueState();
+            
+            /*
             if (boss1Completed) {
-                GameObject.Find("NPC (1)").gameObject.SetActive(false);    
+                GameObject.Find("DDR - Boss 1").transform.GetChild(0).gameObject.SetActive(false);
+                GameObject.Find("DDR - Boss 1").transform.GetChild(1).gameObject.SetActive(true);
+                LockState();
             }
             else {
-                GameObject.Find("NPC (1)").gameObject.SetActive(true);
+                GameObject.Find("DDR - Boss 1").transform.GetChild(0).gameObject.SetActive(true); 
             }
             
             if (boss2Completed) {
-                GameObject.Find("NPC (2)").gameObject.SetActive(false);    
+                GameObject.Find("Muistipeli - Boss 2").transform.GetChild(0).gameObject.SetActive(false);
+                GameObject.Find("Muistipeli - Boss 2").transform.GetChild(1).gameObject.SetActive(true);
+                LockState();
             }
             else {
-                GameObject.Find("NPC (2)").gameObject.SetActive(true);
+                GameObject.Find("Muistipeli - Boss 2").transform.GetChild(0).gameObject.SetActive(true);  
             }
             
-            if (boss2Completed) {
-                GameObject.Find("NPC (3)").gameObject.SetActive(false);    
+            if (boss3Completed) {
+                GameObject.Find("Stacking - Boss 3").transform.GetChild(0).gameObject.SetActive(false);
+                GameObject.Find("Stacking - Boss 3").transform.GetChild(1).gameObject.SetActive(false);
+                LockState();
             }
             else {
-                GameObject.Find("NPC (3)").gameObject.SetActive(true);
+                GameObject.Find("Stacking - Boss 3").transform.GetChild(0).gameObject.SetActive(true);  
             }
             
-            if (boss4Completed) {
-                GameObject.Find("NPC (4)").gameObject.SetActive(false);    
+            if (boss1Completed && boss2Completed && boss3Completed) 
+            {
+                GameObject.Find("Lukot").gameObject.SetActive(false);
+                GameObject.Find("NPC Final Boss").gameObject.SetActive(true);    
             }
             else {
-                GameObject.Find("NPC (4)").gameObject.SetActive(true);
+                //GameObject.Find("NPC Final Boss").gameObject.SetActive(true);
             }
-            
+            */
             
         }
+    }
+
+    public void DialogueState()
+    {
+        if (boss1Completed) {
+            GameObject.Find("DDR - Boss 1").transform.GetChild(0).gameObject.SetActive(false);
+            GameObject.Find("DDR - Boss 1").transform.GetChild(1).gameObject.SetActive(true);
+            LockState();
+        }
+        else {
+            GameObject.Find("DDR - Boss 1").transform.GetChild(0).gameObject.SetActive(true); 
+        }
+            
+        if (boss2Completed) {
+            GameObject.Find("Muistipeli - Boss 2").transform.GetChild(0).gameObject.SetActive(false);
+            GameObject.Find("Muistipeli - Boss 2").transform.GetChild(1).gameObject.SetActive(true);
+            LockState();
+        }
+        else {
+            GameObject.Find("Muistipeli - Boss 2").transform.GetChild(0).gameObject.SetActive(true);  
+        }
+            
+        if (boss3Completed) {
+            GameObject.Find("Stacking - Boss 3").transform.GetChild(0).gameObject.SetActive(false);
+            GameObject.Find("Stacking - Boss 3").transform.GetChild(1).gameObject.SetActive(false);
+            LockState();
+        }
+        else {
+            GameObject.Find("Stacking - Boss 3").transform.GetChild(0).gameObject.SetActive(true);  
+        }
+            
+        if (boss1Completed && boss2Completed && boss3Completed) 
+        {
+            GameObject.Find("Lukot").gameObject.SetActive(false);
+            GameObject.Find("NPC Final Boss").gameObject.SetActive(true);    
+        }
+        else {
+            //GameObject.Find("NPC Final Boss").gameObject.SetActive(true);
+        }
+    }
+
+    void LockState()
+    {
+        if (key1) {
+            GameObject.Find("Lukot").transform.GetChild(0).transform.GetChild(0).gameObject.SetActive(false);
+        }
+
+        if (key2) {
+            GameObject.Find("Lukot").transform.GetChild(0).transform.GetChild(1).gameObject.SetActive(false);
+        }
+
+        if (key3) {
+            GameObject.Find("Lukot").transform.GetChild(0).transform.GetChild(2).gameObject.SetActive(false);
+        }
+
+
     }
 
     public void TakeDamage(int damage)

@@ -33,7 +33,7 @@ public class ShapeScript : MonoBehaviour
             
             var pos = (transform.position.y + startBlock.position.y) / 2;
 
-            Debug.Log(Mathf.Abs(pos) / 2);
+            //Debug.Log(Mathf.Abs(pos) / 2);
             
             _rb2d.mass = Mathf.Abs(pos) / 2;
             _hasCollided = true;
