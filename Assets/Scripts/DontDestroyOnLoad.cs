@@ -9,9 +9,7 @@ using UnityEngine.UI;
 public class DontDestroyOnLoad : MonoBehaviour
 {
     [SerializeField] private GameObject playerHealthBar;
-    [SerializeField] private Sprite fullHeartImage;
-    [SerializeField] private Sprite halfHeartImage;
-    [SerializeField] private Sprite emptyHeartImage;
+    [SerializeField] private GameObject heartImage;
     public Vector3 playerPosition;
     
     public int playerHealth = 0;
@@ -63,14 +61,36 @@ public class DontDestroyOnLoad : MonoBehaviour
 
     void Start()
     {
+        if (SceneManager.GetActiveScene().name != "Teemu2") {
+            GameObject.FindGameObjectWithTag("SaveController")
+                .GetComponent<SaveController>().SaveGame();
+        }
+    }
+
+    void Update()
+    {
+        if (SceneManager.GetActiveScene().name == "MainScene") {
+            healthText.gameObject.SetActive(false);
+            heartImage.gameObject.SetActive(false);
+        }
         
-        GameObject.FindGameObjectWithTag("SaveController").GetComponent<SaveController>().SaveGame();
+        
     }
 
     public void SetPlayerHealth()
     {
         playerHealth = playerMaxHealth;
         healthText.text = playerHealth.ToString();
+        healthText.gameObject.SetActive(true);
+        heartImage.gameObject.SetActive(true);
+    }
+    
+    public void ChangePlayerHealth(int healthChange)
+    {
+        playerHealth = healthChange;
+        healthText.text = playerHealth.ToString();
+        healthText.gameObject.SetActive(true);
+        heartImage.gameObject.SetActive(true);
     }
     
     public void SavePlayerPosition()
