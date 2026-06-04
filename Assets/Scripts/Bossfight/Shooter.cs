@@ -22,8 +22,8 @@ public class Shooter : MonoBehaviour
     [SerializeField] private bool stagger;
     [SerializeField] private bool oscillate;
     [SerializeField] private CountDownScript countDownScript;
-    
 
+    [SerializeField] private float animationDelay = 0.3f;
     private bool _isShooting = false;
     
     [SerializeField] private bool right = false;
@@ -92,6 +92,11 @@ public class Shooter : MonoBehaviour
         projectilesPerBurst = 4;
         angleSpread = 30;
         
+        // Play animation
+        animationDelay = 0.5f;
+        
+        yield return new WaitForSeconds(animationDelay);
+        
         
 
         float startAngle, currentAngle, angleStep, endAngle;
@@ -146,6 +151,11 @@ public class Shooter : MonoBehaviour
             float timeBetweenProjectiles = 0f;
 
             TargetConeOfInfluence(out startAngle, out currentAngle, out angleStep, out endAngle);
+            
+            // Play animation
+            animationDelay = 0.5f;
+        
+            yield return new WaitForSeconds(animationDelay);
 
 
 
@@ -212,6 +222,11 @@ public class Shooter : MonoBehaviour
             float timeBetweenProjectiles = 0f;
 
             TargetConeOfInfluence(out startAngle, out currentAngle, out angleStep, out endAngle);
+            
+            // Play animation
+            animationDelay = 0.5f;
+        
+            yield return new WaitForSeconds(animationDelay);
 
 
 
@@ -297,8 +312,23 @@ public class Shooter : MonoBehaviour
             angleSpread = 359;
             restTime = 1.5f;
             timebetweenBursts = 1.5f;
-        
-        
+
+
+            if (right) {
+                // Play right hand animation
+                animationDelay = 0.5f;
+
+                yield return new WaitForSeconds(animationDelay);
+            } 
+            
+            else if (left) {
+                // Play left hand animation
+                animationDelay = 0.5f;
+
+                yield return new WaitForSeconds(animationDelay);
+            }
+
+
 
             float startAngle, currentAngle, angleStep, endAngle;
             float timeBetweenProjectiles = 0f;
