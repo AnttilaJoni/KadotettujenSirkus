@@ -100,7 +100,7 @@ public class Shooter : MonoBehaviour
         
 
         float startAngle, currentAngle, angleStep, endAngle;
-        float timeBetweenProjectiles = 0f;
+        //float timeBetweenProjectiles = 0f;
 
         TargetConeOfInfluence(out startAngle, out currentAngle, out angleStep, out endAngle);
 
@@ -316,14 +316,14 @@ public class Shooter : MonoBehaviour
 
             if (right) {
                 // Play right hand animation
-                animationDelay = 0.5f;
+                animationDelay = 0.4f;
 
                 yield return new WaitForSeconds(animationDelay);
             } 
             
             else if (left) {
                 // Play left hand animation
-                animationDelay = 0.5f;
+                animationDelay = 0.4f;
 
                 yield return new WaitForSeconds(animationDelay);
             }
@@ -331,7 +331,7 @@ public class Shooter : MonoBehaviour
 
 
             float startAngle, currentAngle, angleStep, endAngle;
-            float timeBetweenProjectiles = 0f;
+            //float timeBetweenProjectiles = 0f;
 
             TargetConeOfInfluence(out startAngle, out currentAngle, out angleStep, out endAngle);
 

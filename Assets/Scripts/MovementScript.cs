@@ -28,7 +28,7 @@ public class MovementScript : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && _canParry && !PauseController.IsGamePaused) 
+        if (Input.GetKeyDown(KeyCode.Space) && _canParry && !PauseController.IsGamePaused && SceneManager.GetActiveScene().name == "Teemu3") 
         {
             anim.SetTrigger("Parry");
             Parry();
