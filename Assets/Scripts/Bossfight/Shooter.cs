@@ -33,7 +33,7 @@ public class Shooter : MonoBehaviour
     public bool lastPhase = false;
     
     private bool phase2_1 = true;
-    private bool phase2_2 = false;
+    //private bool phase2_2 = false;
 
     public int playerHealth = 30;
 
@@ -433,20 +433,7 @@ public class Shooter : MonoBehaviour
         right = true;
         
     }
-
-    private IEnumerator Phase2_1Timer()
-    {
-        yield return new WaitForSeconds(3f);
-        phase2_1 = false;
-        phase2_2 = true;
-    }
     
-    private IEnumerator Phase2_2Timer()
-    {
-        yield return new WaitForSeconds(3f);
-        phase2_2 = false;
-        phase2_1 = true;
-    }
 }
 
 
