@@ -7,7 +7,8 @@ public class Shooter : MonoBehaviour
 {
     [SerializeField] private Transform bossHandPositionLeft;
     [SerializeField] private Transform bossHandPositionRight;
-    
+
+    [SerializeField] private Animator bossAnimator;
     [SerializeField] private GameObject bossHandCollider;
     [SerializeField] private BossHealthScript bossHealthScript;
     [SerializeField] private GameObject bulletPrefab;
@@ -22,8 +23,8 @@ public class Shooter : MonoBehaviour
     [SerializeField] private bool stagger;
     [SerializeField] private bool oscillate;
     [SerializeField] private CountDownScript countDownScript;
-    
 
+    [SerializeField] private float animationDelay = 0.3f;
     private bool _isShooting = false;
     
     [SerializeField] private bool right = false;
@@ -92,10 +93,15 @@ public class Shooter : MonoBehaviour
         projectilesPerBurst = 4;
         angleSpread = 30;
         
+        // Play animation
+        animationDelay = 0.5f;
+        
+        yield return new WaitForSeconds(animationDelay);
+        
         
 
         float startAngle, currentAngle, angleStep, endAngle;
-        float timeBetweenProjectiles = 0f;
+        //float timeBetweenProjectiles = 0f;
 
         TargetConeOfInfluence(out startAngle, out currentAngle, out angleStep, out endAngle);
 
@@ -146,6 +152,11 @@ public class Shooter : MonoBehaviour
             float timeBetweenProjectiles = 0f;
 
             TargetConeOfInfluence(out startAngle, out currentAngle, out angleStep, out endAngle);
+            
+            // Play animation
+            animationDelay = 0.5f;
+        
+            yield return new WaitForSeconds(animationDelay);
 
 
 
@@ -187,6 +198,13 @@ public class Shooter : MonoBehaviour
                     if (stagger) {
                         yield return new WaitForSeconds(timeBetweenProjectiles);
                     }
+                    
+                    if (bossHealthScript.bossPhase == 3) {
+                        
+                        StopAllCoroutines();
+                        _isShooting = false;
+                        break;
+                    }
                 }
                 currentAngle = startAngle;
 
@@ -202,7 +220,7 @@ public class Shooter : MonoBehaviour
         {
             restTime = 0.5f;
             _isShooting = true;
-            burstCount = 3;
+            burstCount = 2;
             projectilesPerBurst = 3;
             angleSpread = 100;
             startingDistance = 0.3f;
@@ -212,6 +230,11 @@ public class Shooter : MonoBehaviour
             float timeBetweenProjectiles = 0f;
 
             TargetConeOfInfluence(out startAngle, out currentAngle, out angleStep, out endAngle);
+            
+            // Play animation
+            animationDelay = 0.5f;
+        
+            yield return new WaitForSeconds(animationDelay);
 
 
 
@@ -253,6 +276,13 @@ public class Shooter : MonoBehaviour
                     if (stagger) {
                         yield return new WaitForSeconds(timeBetweenProjectiles);
                     }
+
+                    if (bossHealthScript.bossPhase == 3) {
+                        
+                        StopAllCoroutines();
+                        _isShooting = false;
+                        break;
+                    }
                 }
                 currentAngle = startAngle;
 
@@ -276,37 +306,58 @@ public class Shooter : MonoBehaviour
             gameObject.SetActive(false);
         }
         
-        if (lastPhase) {
+        if (lastPhase) 
+        {
+            GetComponentInChildren<SpriteRenderer>().enabled = false;
+            if (right) {
+                // Play right hand animation
+                animationDelay = 0.3f;
+                bossAnimator.SetTrigger("RightHand");
 
+                //yield return new WaitForSeconds(animationDelay);
+            } 
+            
+            else if (left) {
+                // Play left hand animation
+                animationDelay = 0.3f;
+                bossAnimator.SetTrigger("LeftHand");
+
+                //yield return new WaitForSeconds(animationDelay);
+            }
 
             if (right) {
                 transform.position = bossHandPositionRight.position;
-                StartCoroutine(TimerRight(5f));
+                StartCoroutine(TimerRight(6.5f));
             }
 
             else if (left) {
                 transform.position = bossHandPositionLeft.position;
-                StartCoroutine(TimerLeft(5f));
+                StartCoroutine(TimerLeft(6.5f));
             }
-
-
-
+            
+            
+            
             _isShooting = true;
-        
-            projectilesPerBurst = 12;
+            oscillate = false;
+            stagger = false;
+            
+            bulletMoveSpeed = 5f;
+            projectilesPerBurst = 18;
             angleSpread = 359;
-            restTime = 1.5f;
-            timebetweenBursts = 1.5f;
-        
-        
+            restTime = 2.5f;
+            timebetweenBursts = 1.25f;
+            burstCount = 3;
+
 
             float startAngle, currentAngle, angleStep, endAngle;
-            float timeBetweenProjectiles = 0f;
+            //float timeBetweenProjectiles = 0f;
 
             TargetConeOfInfluence(out startAngle, out currentAngle, out angleStep, out endAngle);
 
             for (int i = 0; i < burstCount; i++)
             {
+                yield return new WaitForSeconds(0.50f);
+                
                 for (int j = 0; j < projectilesPerBurst; j++)
                 {
                     Vector2 pos = FindBulletSpawnPos(currentAngle);

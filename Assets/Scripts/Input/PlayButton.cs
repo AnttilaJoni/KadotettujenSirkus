@@ -1,15 +1,30 @@
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEditor;
 
 public class PlayButton : MonoBehaviour
 {
+    private string _saveLocation;
     public Button playButton;
-    private bool playPressed;
-
     void Start()
     {
-        playPressed = false;
+        _saveLocation = Path.Combine(Application.persistentDataPath, "saveData.json");
+        try {
+            if (File.Exists(_saveLocation)) {
+                File.Delete(_saveLocation);
+                Debug.Log("Save file deleted");
+            }
+
+            else {
+                Debug.Log("No save file found");
+            }
+        }
+
+        catch (DirectoryNotFoundException) {
+            Debug.Log("File not found");
+        }
+        
         Button btn = playButton.GetComponent<Button>();
 		btn.onClick.AddListener(PlayStart);
     }
@@ -26,15 +41,6 @@ public class PlayButton : MonoBehaviour
 
     public void PlayStart()
     {
-        if(playPressed)
-        {
-            return;
-        } 
-        else
-        {
-            SceneController.instance.ChangeScene("MainScene");
-            playPressed = true;
-        }
-        
+        SceneController.instance.ChangeScene("MainScene");
     }
 }

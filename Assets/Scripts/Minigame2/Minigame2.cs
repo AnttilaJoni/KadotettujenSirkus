@@ -22,6 +22,14 @@ public class Minigame2 : MonoBehaviour
         GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().ChangePlayerHealth(playerHealth);
         
         SpawnShape();
+        
+        Invoke(nameof(StartGame), 1f);
+    }
+
+    void StartGame()
+    {
+        GameObject.FindGameObjectWithTag("Fade").GetComponent<FadeScript>().fadeComplete = false;
+        GameObject.FindGameObjectWithTag("Fade").GetComponent<FadeScript>().fadeOut = true;
     }
 
     
