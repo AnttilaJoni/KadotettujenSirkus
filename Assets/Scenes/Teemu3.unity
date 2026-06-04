@@ -2005,6 +2005,7 @@ MonoBehaviour:
   stagger: 0
   oscillate: 0
   countDownScript: {fileID: 1940774457}
+  animationDelay: 0.3
   right: 1
   left: 0
   lastPhase: 1
@@ -2148,6 +2149,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6117867308297486339, guid: c97061201dce9fd40a8c180b8eaca9cc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.1935349
+      objectReference: {fileID: 0}
     - target: {fileID: -5948791878300560687, guid: c97061201dce9fd40a8c180b8eaca9cc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.433767
@@ -2186,11 +2191,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -3763766193196414867, guid: c97061201dce9fd40a8c180b8eaca9cc, type: 3}
       propertyPath: m_SortingLayer
-      value: -2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -3763766193196414867, guid: c97061201dce9fd40a8c180b8eaca9cc, type: 3}
       propertyPath: m_SortingLayerID
-      value: -2037800283
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -3333413783726248552, guid: c97061201dce9fd40a8c180b8eaca9cc, type: 3}
       propertyPath: m_SortingLayer
@@ -3721,6 +3726,7 @@ MonoBehaviour:
   stagger: 0
   oscillate: 0
   countDownScript: {fileID: 1940774457}
+  animationDelay: 0.3
   right: 0
   left: 0
   lastPhase: 0
