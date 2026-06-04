@@ -45,10 +45,16 @@ public class CutsceneInitiator : MonoBehaviour
         } 
         else
         {
-            //if(savegameExists) -> SceneController.instance.ChangeScene("MainScene");
-            //else ->
-            cutsceneHandler.PlayNextElement();
-            playPressed = true;
+            if(File.Exists(_saveLocation))
+            {
+                SceneController.instance.ChangeScene("MainScene");
+                playPressed = true;
+            }
+            else
+            {
+                cutsceneHandler.PlayNextElement();
+                playPressed = true;
+            }
         }
     }
 }
