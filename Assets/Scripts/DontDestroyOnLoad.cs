@@ -156,40 +156,50 @@ public class DontDestroyOnLoad : MonoBehaviour
 
     public void DialogueState()
     {
-        if (boss1Completed) {
-            GameObject.Find("DDR - Boss 1").transform.GetChild(0).gameObject.SetActive(false);
-            GameObject.Find("DDR - Boss 1").transform.GetChild(1).gameObject.SetActive(true);
-            LockState();
-        }
-        else {
-            GameObject.Find("DDR - Boss 1").transform.GetChild(0).gameObject.SetActive(true); 
-        }
-            
-        if (boss2Completed) {
-            GameObject.Find("Muistipeli - Boss 2").transform.GetChild(0).gameObject.SetActive(false);
-            GameObject.Find("Muistipeli - Boss 2").transform.GetChild(1).gameObject.SetActive(true);
-            LockState();
-        }
-        else {
-            GameObject.Find("Muistipeli - Boss 2").transform.GetChild(0).gameObject.SetActive(true);  
-        }
-            
-        if (boss3Completed) {
-            GameObject.Find("Stacking - Boss 3").transform.GetChild(0).gameObject.SetActive(false);
-            GameObject.Find("Stacking - Boss 3").transform.GetChild(1).gameObject.SetActive(false);
-            LockState();
-        }
-        else {
-            GameObject.Find("Stacking - Boss 3").transform.GetChild(0).gameObject.SetActive(true);  
-        }
-            
-        if (boss1Completed && boss2Completed && boss3Completed) 
-        {
-            GameObject.Find("Lukot").gameObject.SetActive(false);
-            GameObject.Find("NPC Final Boss").gameObject.SetActive(true);    
-        }
-        else {
-            //GameObject.Find("NPC Final Boss").gameObject.SetActive(true);
+        if (SceneManager.GetActiveScene().name == "MainScene") {
+            if (boss1Completed) {
+                GameObject.Find("DDR - Boss 1").transform.GetChild(0).gameObject
+                    .SetActive(false);
+                GameObject.Find("DDR - Boss 1").transform.GetChild(1).gameObject
+                    .SetActive(true);
+                LockState();
+            }
+            else {
+                GameObject.Find("DDR - Boss 1").transform.GetChild(0).gameObject
+                    .SetActive(true);
+            }
+
+            if (boss2Completed) {
+                GameObject.Find("Muistipeli - Boss 2").transform.GetChild(0)
+                    .gameObject.SetActive(false);
+                GameObject.Find("Muistipeli - Boss 2").transform.GetChild(1)
+                    .gameObject.SetActive(true);
+                LockState();
+            }
+            else {
+                GameObject.Find("Muistipeli - Boss 2").transform.GetChild(0)
+                    .gameObject.SetActive(true);
+            }
+
+            if (boss3Completed) {
+                GameObject.Find("Stacking - Boss 3").transform.GetChild(0)
+                    .gameObject.SetActive(false);
+                GameObject.Find("Stacking - Boss 3").transform.GetChild(1)
+                    .gameObject.SetActive(false);
+                LockState();
+            }
+            else {
+                GameObject.Find("Stacking - Boss 3").transform.GetChild(0)
+                    .gameObject.SetActive(true);
+            }
+
+            if (boss1Completed && boss2Completed && boss3Completed) {
+                GameObject.Find("Lukot").gameObject.SetActive(false);
+                GameObject.Find("NPC Final Boss").gameObject.SetActive(true);
+            }
+            else {
+                //GameObject.Find("NPC Final Boss").gameObject.SetActive(true);
+            }
         }
     }
 

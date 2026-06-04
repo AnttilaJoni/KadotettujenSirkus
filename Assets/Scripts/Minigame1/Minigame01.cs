@@ -227,6 +227,8 @@ public class Minigame01 : MonoBehaviour
         yield return new WaitForSeconds(1f);
         startCountDownText.gameObject.SetActive(false);
         gameActive = true;
+        
+        // Play song audio
     }
 
     void AddCombo(int scoreToAdd)
