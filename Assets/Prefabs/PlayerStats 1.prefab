@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DontDestroyOnLoad
   playerHealthBar: {fileID: 0}
-  heartImage: {fileID: 0}
+  heartImage: {fileID: 171027484663793833}
   playerPosition: {x: 0, y: 0, z: 0}
   playerHealth: 0
   playerMaxHealth: 10
