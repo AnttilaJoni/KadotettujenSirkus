@@ -63,7 +63,7 @@ public class DontDestroyOnLoad : MonoBehaviour
 
     void Start()
     {
-        if (SceneManager.GetActiveScene().name != "Teemu2") {
+        if (SceneManager.GetActiveScene().name == "MainScene") {
             GameObject.FindGameObjectWithTag("SaveController")
                 .GetComponent<SaveController>().SaveGame();
         }
