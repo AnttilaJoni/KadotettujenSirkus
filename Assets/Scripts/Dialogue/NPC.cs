@@ -27,7 +27,7 @@ public class NPC : MonoBehaviour, IInteractable
     public GameObject _npc;
     public GameObject _npc_dialogue_done;
 
-
+    private bool dialogueEnded;
     public bool CanInteract()
     {
         return !isDialogueActive;
@@ -63,6 +63,7 @@ public class NPC : MonoBehaviour, IInteractable
 
     void StartDialogue()
     {
+        dialogueEnded = false;
         isDialogueActive = true;   
 
         Button btn = closeDialogue.GetComponent<Button>();
@@ -153,28 +154,33 @@ public class NPC : MonoBehaviour, IInteractable
 
     public void EndDialogue()
     {
+        if(dialogueEnded == true) return;
         if (isBoss_1) {
             GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().boss1dialogue = true;
             GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().SavePlayerPosition();
             SceneController.instance.ChangeScene("Teemu2");
+            dialogueEnded = true;
         } 
         else if(isBoss_2)
         {
             GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().boss2dialogue = true;
             GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().SavePlayerPosition();
             SceneController.instance.ChangeScene("MemoryGame");
+            dialogueEnded = true;
         } 
         else if(isBoss_3)
         {
             GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().boss3dialogue = true;
             GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().SavePlayerPosition();
             SceneController.instance.ChangeScene("Teemu4");
+            dialogueEnded = true;
         } 
         else if(isBoss_4)
         {
             GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().boss4dialogue = true;
             GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().SavePlayerPosition();
             SceneController.instance.ChangeScene("Teemu3");
+            dialogueEnded = true;
         } 
         else if(isTaika)
         {
@@ -191,6 +197,7 @@ public class NPC : MonoBehaviour, IInteractable
                 
                 _npc.SetActive(false);
                 _npc_dialogue_done.SetActive(true);
+                dialogueEnded = false;
             }
         }
         else
@@ -202,6 +209,7 @@ public class NPC : MonoBehaviour, IInteractable
             PauseController.SetPause(false);
             dialogueIndex = 0;
             expressionIndex = 0;
+            dialogueEnded = false;
         }
     }
 }

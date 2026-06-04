@@ -5,8 +5,11 @@ using UnityEditor;
 public class PlayButton : MonoBehaviour
 {
     public Button playButton;
+    private bool playPressed;
+
     void Start()
     {
+        playPressed = false;
         Button btn = playButton.GetComponent<Button>();
 		btn.onClick.AddListener(PlayStart);
     }
@@ -23,6 +26,15 @@ public class PlayButton : MonoBehaviour
 
     public void PlayStart()
     {
-        SceneController.instance.ChangeScene("MainScene");
+        if(playPressed)
+        {
+            return;
+        } 
+        else
+        {
+            SceneController.instance.ChangeScene("MainScene");
+            playPressed = true;
+        }
+        
     }
 }
