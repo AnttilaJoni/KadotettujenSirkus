@@ -107,9 +107,9 @@ public class DontDestroyOnLoad : MonoBehaviour
         {
             //playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
             mapBoundary = FindFirstObjectByType<CinemachineConfiner2D>().m_BoundingShape2D.gameObject.name;
-            minigameCompleted = false;
             GameObject.FindGameObjectWithTag("Player").GetComponent<MovementScript>().SetPlayerPosition(playerPosition);
             Debug.Log("Loaded player pos");
+            minigameCompleted = false;
             
             DialogueState();
             
@@ -194,6 +194,8 @@ public class DontDestroyOnLoad : MonoBehaviour
             }
 
             if (boss1Completed && boss2Completed && boss3Completed) {
+                
+                // Disable boss door collider
                 GameObject.Find("Lukot").gameObject.SetActive(false);
                 GameObject.Find("NPC Final Boss").gameObject.SetActive(true);
             }

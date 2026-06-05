@@ -12,6 +12,7 @@ TagManager:
   - Card
   - Shape
   - SaveController
+  - Wall
   layers:
   - Default
   - TransparentFX
