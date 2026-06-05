@@ -12,6 +12,7 @@ TagManager:
   - Card
   - Shape
   - SaveController
+  - CardRotate
   layers:
   - Default
   - TransparentFX

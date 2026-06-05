@@ -1,8 +1,13 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
     public GameObject menuCanvas;
+    public GameObject pauseMenuButton;
+    private GameObject[] cards;
+    
 
     void Start()
     {
@@ -19,6 +24,7 @@ public class MenuController : MonoBehaviour
             }
             menuCanvas.SetActive(!menuCanvas.activeSelf);
             PauseController.SetPause(menuCanvas.activeSelf);
+            EventSystem.current.SetSelectedGameObject(pauseMenuButton);
         }
     }
 
@@ -30,6 +36,7 @@ public class MenuController : MonoBehaviour
             }
             menuCanvas.SetActive(!menuCanvas.activeSelf);
             PauseController.SetPause(menuCanvas.activeSelf);
+            
     }
     public void Quit()
     {
