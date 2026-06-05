@@ -30,7 +30,7 @@ public class WinLineScript : MonoBehaviour
                 //Time.timeScale = 0f;
                 timerText.text = "You win!";
                 minigame2.minigameActive = false;
-                GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().MinigameCompleted(2);
+                GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().MinigameCompleted(3);
             }
 
 

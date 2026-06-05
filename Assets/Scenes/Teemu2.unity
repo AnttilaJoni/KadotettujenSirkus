@@ -3467,7 +3467,7 @@ MonoBehaviour:
   score: 0
   scoreText: {fileID: 318524517}
   bossHealth: 0
-  bossMaxHealth: 50
+  bossMaxHealth: 100
   gameActive: 0
 --- !u!4 &1313555535
 Transform:
@@ -4101,6 +4101,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2804782749880354408, guid: 63f100deee16e3f49a6c521ea0ee83ad, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -910
+      objectReference: {fileID: 0}
+    - target: {fileID: 2804782749880354408, guid: 63f100deee16e3f49a6c521ea0ee83ad, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 494
+      objectReference: {fileID: 0}
     - target: {fileID: 3940054163222117480, guid: 63f100deee16e3f49a6c521ea0ee83ad, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.8888
@@ -4140,6 +4148,14 @@ PrefabInstance:
     - target: {fileID: 3940054163222117480, guid: 63f100deee16e3f49a6c521ea0ee83ad, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7172952296904332752, guid: 63f100deee16e3f49a6c521ea0ee83ad, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -850
+      objectReference: {fileID: 0}
+    - target: {fileID: 7172952296904332752, guid: 63f100deee16e3f49a6c521ea0ee83ad, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 494
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
