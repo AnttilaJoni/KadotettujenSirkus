@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9d5fd6c63374dde48868b95dd53ad173
+guid: 862cffb5d1db5af468d364e601f805a4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3656460908884691643
-    second: MA_LockMoretta_0
+      213: 213708214274180647
+    second: telttarivi vaaka moretta_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MA_LockMoretta_0
+      name: telttarivi vaaka moretta_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1
         y: 0
-        width: 98
-        height: 120
+        width: 561
+        height: 296
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 54573d61d24a14dc0800000000000000
-      internalID: -3656460908884691643
+      spriteID: 72645651d7e37f200800000000000000
+      internalID: 213708214274180647
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      MA_LockMoretta_0: -3656460908884691643
+      telttarivi vaaka moretta_0: 213708214274180647
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
