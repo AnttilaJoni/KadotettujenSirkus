@@ -192,6 +192,8 @@ public class DontDestroyOnLoad : MonoBehaviour
                 GameObject.Find("Stacking - Boss 3").transform.GetChild(0)
                     .gameObject.SetActive(true);
             }
+            
+            
 
             if (boss1Completed && boss2Completed && boss3Completed) {
                 
@@ -271,23 +273,35 @@ public class DontDestroyOnLoad : MonoBehaviour
         if (id == 1) {
             boss1Completed = true;
             key1 = true;
+            
+            minigameCompleted = true;
+            SceneManager.LoadScene("MainScene");
         }
         
         else if (id == 2) {
             boss2Completed = true;
             key2 = true;
+            
+            minigameCompleted = true;
         }
         
         else if (id == 3) {
             boss3Completed = true;
+            
+            minigameCompleted = true;
+            SceneManager.LoadScene("MainScene");
+            
             key3 = true;
         }
         
         else if (id == 4) {
             boss4Completed = true;
+            
+            minigameCompleted = true;
+            SceneManager.LoadScene("MainScene");
+
         }
         
-        minigameCompleted = true;
-        SceneManager.LoadScene("MainScene");
+        
     }
 }

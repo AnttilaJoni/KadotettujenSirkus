@@ -44,17 +44,17 @@ public class Projectile : MonoBehaviour
             {
                 if (randomInt == 1) 
                 {   
-                    //AudioManager.Instance.PlaySFX("SFX_E NDamage 1");
+                    //AudioManager.Instance.PlaySFX("SFX_P LDamage 2");
                 }
                 
                 else if (randomInt == 2)
                 {
-                    //AudioManager.Instance.PlaySFX("SFX_E NDamage 2");
+                    //AudioManager.Instance.PlaySFX("SFX_P LDamage 3");
                 }
                 
                 else if (randomInt == 3) 
                 {
-                    //AudioManager.Instance.PlaySFX("SFX_E NDamage 3");
+                    //AudioManager.Instance.PlaySFX("SFX_P LDamage 4");
                 }
             }
             
