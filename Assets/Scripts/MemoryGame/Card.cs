@@ -52,8 +52,9 @@ public class Card : MonoBehaviour
     }
     public void Flip()
     {
+        transform.GetChild(0);
         flipped = !flipped;
-        transform.DORotate(new(0, flipped ? 0f : 180f, 0), 0.25f);
+        transform.GetChild(0).DORotate(new(0, flipped ? 0f : 180f, 0), 0.25f);
     }
     public void Reset()
     {

@@ -21,6 +21,7 @@ public class SetUIElementToSelectOnInteraction : MonoBehaviour
         Gizmos.color = navigationColour;
         Gizmos.DrawLine(gameObject.transform.position, elementToSelect.gameObject.transform.position);
     }
+    
     private void Reset()
     {
         eventSystem = Object.FindAnyObjectByType<EventSystem>();

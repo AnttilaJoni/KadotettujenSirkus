@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.EventSystems;
 
 public class CardsController : MonoBehaviour
 {
@@ -40,6 +41,23 @@ public class CardsController : MonoBehaviour
         StartCoroutine(SetHealth());
         PrepareSprites();
         CreateCards();
+    }
+    private void Update()
+    {
+        if(!PauseController.IsGamePaused)
+        {
+            if(EventSystem.current.currentSelectedGameObject == null)
+            {
+                return;
+            }
+            if(EventSystem.current.currentSelectedGameObject.name == "Button (resume) (1)" && !notClickable.activeSelf)
+            {
+                cards = GameObject.FindGameObjectsWithTag("Card");
+                EventSystem.current.SetSelectedGameObject(cards[0]);
+            }
+            
+        }
+        
     }
     IEnumerator SetHealth()
     {
@@ -89,6 +107,8 @@ public class CardsController : MonoBehaviour
         text_gameover.SetActive(false);
         text_win.SetActive(false);
         notClickable.SetActive(false);
+        cards = GameObject.FindGameObjectsWithTag("Card");
+        EventSystem.current.SetSelectedGameObject(cards[0]);
     }
     public void DestroyCards()
     {
@@ -246,12 +266,16 @@ public class CardsController : MonoBehaviour
 
     void GameOver()
     {
+        notClickable.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(null);
         text_gameover.SetActive(true);
         StartCoroutine(GameRestart());
     }
     IEnumerator GameRestart()
     {
         yield return new WaitForSeconds(3f);
+        text_gameover.SetActive(false);
+        text_win.SetActive(false);
         matchCounts = 0;
         wins = 0;
         DestroyCards();
