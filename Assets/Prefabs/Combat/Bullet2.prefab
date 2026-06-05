@@ -482,7 +482,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Projectile
   moveSpeed: 22
-  projectileDamage: 1
+  projectileDamage: 0
   bounceProjectile: 0
   canBounce: 0
   playerStats: {fileID: 0}
