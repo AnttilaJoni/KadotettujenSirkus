@@ -183,6 +183,8 @@ public class CardsController : MonoBehaviour
     IEnumerator GameWon()
     {
         yield return new WaitForSeconds(2f);
+        GameObject.FindGameObjectWithTag("PlayerStats")
+            .GetComponent<DontDestroyOnLoad>().MinigameCompleted(2);
         SceneController.instance.ChangeSceneByIndex(7);
     }
     public void ExitGame()

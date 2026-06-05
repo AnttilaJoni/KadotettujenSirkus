@@ -23,11 +23,12 @@ public class ShapeScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        /*
-        if (gameObject.transform.position.y < -2) {
-            _rb2d.mass = 5f;
+        // Play collision audio
+        if (other.gameObject.CompareTag("Shape")) 
+        {
+            // Play bullet spawn audio
+            //AudioManager.Instance.PlaySFX("SFX_Palikka hit");    
         }
-        */
 
         if (!_hasCollided) {
             

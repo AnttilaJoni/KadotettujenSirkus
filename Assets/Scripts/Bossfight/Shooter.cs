@@ -33,7 +33,7 @@ public class Shooter : MonoBehaviour
     public bool lastPhase = false;
     
     private bool phase2_1 = true;
-    private bool phase2_2 = false;
+    //private bool phase2_2 = false;
 
     public int playerHealth = 30;
 
@@ -107,8 +107,12 @@ public class Shooter : MonoBehaviour
 
         for (int i = 0; i < burstCount; i++)
         {
+            
             for (int j = 0; j < projectilesPerBurst; j++)
             {
+                // Play bullet spawn audio
+                //AudioManager.Instance.PlaySFX("SFX_F Bbulletspawn 3");
+                
                 Vector2 pos = FindBulletSpawnPos(currentAngle);
 
 
@@ -182,7 +186,11 @@ public class Shooter : MonoBehaviour
                     angleStep *= -1;
                 }
 
-                for (int j = 0; j < projectilesPerBurst; j++) {
+                for (int j = 0; j < projectilesPerBurst; j++) 
+                {
+                    // Play bullet spawn audio
+                    //AudioManager.Instance.PlaySFX("SFX_F Bbulletspawn 3");
+                    
                     Vector2 pos = FindBulletSpawnPos(currentAngle);
 
 
@@ -260,7 +268,11 @@ public class Shooter : MonoBehaviour
                     angleStep *= -1;
                 }
 
-                for (int j = 0; j < projectilesPerBurst; j++) {
+                for (int j = 0; j < projectilesPerBurst; j++) 
+                {
+                    // Play bullet spawn audio
+                    //AudioManager.Instance.PlaySFX("SFX_F Bbulletspawn 3");
+                    
                     Vector2 pos = FindBulletSpawnPos(currentAngle);
 
 
@@ -358,9 +370,15 @@ public class Shooter : MonoBehaviour
             {
                 yield return new WaitForSeconds(0.50f);
                 
+                // Play ground slam audio
+                //AudioManager.Instance.PlaySFX("SFX_F Bgroundpound");
+                
                 for (int j = 0; j < projectilesPerBurst; j++)
                 {
                     Vector2 pos = FindBulletSpawnPos(currentAngle);
+                    
+                    // Play bullet spawn audio
+                    //AudioManager.Instance.PlaySFX("SFX_F Bbulletspawn 3");
 
 
                     GameObject newBullet = Instantiate(bulletPrefab, pos, Quaternion.identity);
@@ -433,20 +451,7 @@ public class Shooter : MonoBehaviour
         right = true;
         
     }
-
-    private IEnumerator Phase2_1Timer()
-    {
-        yield return new WaitForSeconds(3f);
-        phase2_1 = false;
-        phase2_2 = true;
-    }
     
-    private IEnumerator Phase2_2Timer()
-    {
-        yield return new WaitForSeconds(3f);
-        phase2_2 = false;
-        phase2_1 = true;
-    }
 }
 
 

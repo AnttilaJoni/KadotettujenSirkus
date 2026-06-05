@@ -39,7 +39,26 @@ public class Projectile : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Player")) 
         {
-            Vector2 dir = other.transform.position - transform.position;
+            // Play bullet hit audio
+            int randomInt = UnityEngine.Random.Range(1, 4);
+            {
+                if (randomInt == 1) 
+                {   
+                    //AudioManager.Instance.PlaySFX("SFX_E NDamage 1");
+                }
+                
+                else if (randomInt == 2)
+                {
+                    //AudioManager.Instance.PlaySFX("SFX_E NDamage 2");
+                }
+                
+                else if (randomInt == 3) 
+                {
+                    //AudioManager.Instance.PlaySFX("SFX_E NDamage 3");
+                }
+            }
+            
+            //Vector2 dir = other.transform.position - transform.position;
             
             GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().TakeDamage(projectileDamage);
             Destroy(gameObject);
@@ -47,6 +66,9 @@ public class Projectile : MonoBehaviour
         
         if (other.gameObject.layer == LayerMask.NameToLayer("Parry")) 
         {
+            // Play parry audio
+            //AudioManager.Instance.PlaySFX("SFX_F Bparry");
+            
             Debug.Log("Parry");
             bounceProjectile = true;
             //Destroy(gameObject);
@@ -56,8 +78,10 @@ public class Projectile : MonoBehaviour
 
         if (other.gameObject.layer == LayerMask.NameToLayer("Wall")) 
         {
+            //Debug.Log("Wall");
             Destroy(gameObject);
         }
+        
         
         
     }

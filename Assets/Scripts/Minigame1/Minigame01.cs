@@ -65,6 +65,9 @@ public class Minigame01 : MonoBehaviour
                 if (notesList[0].transform.position.y > goal.transform.position.y - _noteTime &&
                     notesList[0].transform.position.y < goal.transform.position.y + _noteTime && notesList[0].gameObject.name == "W") 
                 {
+                    // Play note audio
+                    //AudioManager.Instance.PlaySFX("SFX_DD Rclick");
+                    
                     var note = notesList[0];
                     notesList.Remove(notesList[0]);
                     Destroy(note);
@@ -75,6 +78,9 @@ public class Minigame01 : MonoBehaviour
             }
             
             else {
+                // Play note audio
+                //AudioManager.Instance.PlaySFX("SFX_DD Rmiss");
+                
                 Debug.Log("Note W not hit");
                 _playerStats.GetComponent<DontDestroyOnLoad>().TakeDamage(damage);
                 ResetCombo();
@@ -88,6 +94,9 @@ public class Minigame01 : MonoBehaviour
                 if (notesList[0].transform.position.y > goal.transform.position.y - _noteTime &&
                     notesList[0].transform.position.y < goal.transform.position.y + _noteTime && notesList[0].gameObject.name == "A") 
                 {
+                    // Play note audio
+                    //AudioManager.Instance.PlaySFX("SFX_DD Rclick");
+                    
                     var note = notesList[0];
                     notesList.Remove(notesList[0]);
                     Destroy(note);
@@ -97,6 +106,9 @@ public class Minigame01 : MonoBehaviour
                 }
                 
                 else {
+                    // Play note audio
+                    //AudioManager.Instance.PlaySFX("SFX_DD Rmiss");
+                    
                     Debug.Log("Note A not hit");
                     _playerStats.GetComponent<DontDestroyOnLoad>().TakeDamage(damage);
                     ResetCombo();
@@ -111,6 +123,9 @@ public class Minigame01 : MonoBehaviour
                 if (notesList[0].transform.position.y > goal.transform.position.y - _noteTime &&
                     notesList[0].transform.position.y < goal.transform.position.y + _noteTime && notesList[0].gameObject.name == "S") 
                 {
+                    // Play note audio
+                    //AudioManager.Instance.PlaySFX("SFX_DD Rclick");
+                    
                     var note = notesList[0];
                     notesList.Remove(notesList[0]);
                     Destroy(note);
@@ -120,6 +135,9 @@ public class Minigame01 : MonoBehaviour
                 }
                 
                 else {
+                    // Play note audio
+                    //AudioManager.Instance.PlaySFX("SFX_DD Rmiss");
+                    
                     Debug.Log("Note S not hit");
                     _playerStats.GetComponent<DontDestroyOnLoad>().TakeDamage(damage);
                     ResetCombo();
@@ -134,6 +152,9 @@ public class Minigame01 : MonoBehaviour
                 if (notesList[0].transform.position.y > goal.transform.position.y - _noteTime &&
                     notesList[0].transform.position.y < goal.transform.position.y + _noteTime && notesList[0].gameObject.name == "D") 
                 {
+                    // Play note audio
+                    //AudioManager.Instance.PlaySFX("SFX_DD Rclick");
+                    
                     var note = notesList[0];
                     notesList.Remove(notesList[0]);
                     Destroy(note);
@@ -143,6 +164,10 @@ public class Minigame01 : MonoBehaviour
                 }
 
                 else {
+                    
+                    // Play note audio
+                    //AudioManager.Instance.PlaySFX("SFX_DD Rmiss");
+                    
                     Debug.Log("Note D not hit");
                     _playerStats.GetComponent<DontDestroyOnLoad>().TakeDamage(damage);
                     ResetCombo();
