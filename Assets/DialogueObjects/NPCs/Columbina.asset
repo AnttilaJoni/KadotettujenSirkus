@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b8f0dde067395140a3c2cbe4f68691f, type: 3}
-  m_Name: Boss_3
+  m_Name: Columbina
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
   playerName: Emma
-  npcName: Boss_3
+  npcName: Boss_1
   npcPortrait:
   - {fileID: 21300000, guid: 0af262158fdd6d24ba0ca215264212ae, type: 3}
   - {fileID: 21300000, guid: e54a8e30c4b013042bac5cda328d5349, type: 3}
