@@ -148,7 +148,7 @@ public class MovementScript : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (_canParry) {
+        if (_canParry && GameObject.FindGameObjectWithTag("Fade").GetComponent<FadeScript>().fadeComplete) {
             _rb2d.MovePosition(transform.position + moveDirection.normalized * (moveSpeed / 50));
         }
     }
