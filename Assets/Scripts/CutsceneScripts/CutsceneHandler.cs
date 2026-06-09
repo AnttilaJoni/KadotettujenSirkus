@@ -8,11 +8,13 @@ public class CutsceneHandler : MonoBehaviour
     private CutsceneElementBase[] cutsceneElements;
     private int index = -1;
     private bool gameStarted;
+    private bool gameEnded;
 
     public void Start()
     {
         cutsceneElements = GetComponents<CutsceneElementBase>();
         gameStarted = false;
+        gameEnded = false;
     }
     public void Update()
     {
@@ -39,6 +41,17 @@ public class CutsceneHandler : MonoBehaviour
         {   
             SceneController.instance.ChangeScene("MainScene");
             gameStarted = true;
+            //DataPersistenceManager.instance.NewGame();
+            //SceneManager.LoadSceneAsync(1);
+            
+            //Cursor.lockState = CursorLockMode.Locked;
+            //Time.timeScale = 1; //pausecontroller not paused?
+            //AudioListener.pause = false;
+        }
+        else if(gameEnded == false && scene.name == $"Endings")
+        {   
+            SceneController.instance.ChangeScene("Menu");
+            gameEnded = true;
             //DataPersistenceManager.instance.NewGame();
             //SceneManager.LoadSceneAsync(1);
             
