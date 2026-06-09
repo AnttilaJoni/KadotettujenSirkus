@@ -216,10 +216,14 @@ public class CardsController : MonoBehaviour
         yield return new WaitForSeconds(2f);
         GameObject.FindGameObjectWithTag("PlayerStats")
             .GetComponent<DontDestroyOnLoad>().MinigameCompleted(2);
-        SceneController.instance.ChangeSceneByIndex(7);
+        //SceneController.instance.ChangeSceneByIndex(7);
     }
     public void ExitGame()
     {
+        GameObject.FindGameObjectWithTag("PlayerStats")
+            .GetComponent<DontDestroyOnLoad>().playerAlive = false;
+        Debug.Log("Player dead");
+        
         SceneController.instance.ChangeSceneByIndex(7);
     }
     IEnumerator EndFlip()
@@ -304,6 +308,10 @@ public class CardsController : MonoBehaviour
         text_gameover.SetActive(true);
         StartCoroutine(GameRestart()); */
         yield return new WaitForSeconds(2f);
+        GameObject.FindGameObjectWithTag("PlayerStats")
+            .GetComponent<DontDestroyOnLoad>().playerAlive = false;
+        Debug.Log("Player dead");
+        
         SceneController.instance.ChangeSceneByIndex(7);
     }
     

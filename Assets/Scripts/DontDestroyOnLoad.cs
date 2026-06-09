@@ -108,50 +108,19 @@ public class DontDestroyOnLoad : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "MainScene") 
         {
             //playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
-            mapBoundary = FindFirstObjectByType<CinemachineConfiner2D>().m_BoundingShape2D.gameObject.name;
+            //mapBoundary = FindFirstObjectByType<CinemachineConfiner2D>().m_BoundingShape2D.gameObject.name;
+
+            GameObject.Find("PlayerCam").GetComponent<CinemachineConfiner2D>()
+                    .m_BoundingShape2D =
+                GameObject.Find(mapBoundary).GetComponent<PolygonCollider2D>();
+                
+                
+            //FindFirstObjectByType<CinemachineConfiner2D>().m_BoundingShape2D.gameObject.name = mapBoundary;
             GameObject.FindGameObjectWithTag("Player").GetComponent<MovementScript>().SetPlayerPosition(playerPosition);
             Debug.Log("Loaded player pos");
             minigameCompleted = false;
             
             DialogueState();
-            
-            /*
-            if (boss1Completed) {
-                GameObject.Find("DDR - Boss 1").transform.GetChild(0).gameObject.SetActive(false);
-                GameObject.Find("DDR - Boss 1").transform.GetChild(1).gameObject.SetActive(true);
-                LockState();
-            }
-            else {
-                GameObject.Find("DDR - Boss 1").transform.GetChild(0).gameObject.SetActive(true); 
-            }
-            
-            if (boss2Completed) {
-                GameObject.Find("Muistipeli - Boss 2").transform.GetChild(0).gameObject.SetActive(false);
-                GameObject.Find("Muistipeli - Boss 2").transform.GetChild(1).gameObject.SetActive(true);
-                LockState();
-            }
-            else {
-                GameObject.Find("Muistipeli - Boss 2").transform.GetChild(0).gameObject.SetActive(true);  
-            }
-            
-            if (boss3Completed) {
-                GameObject.Find("Stacking - Boss 3").transform.GetChild(0).gameObject.SetActive(false);
-                GameObject.Find("Stacking - Boss 3").transform.GetChild(1).gameObject.SetActive(false);
-                LockState();
-            }
-            else {
-                GameObject.Find("Stacking - Boss 3").transform.GetChild(0).gameObject.SetActive(true);  
-            }
-            
-            if (boss1Completed && boss2Completed && boss3Completed) 
-            {
-                GameObject.Find("Lukot").gameObject.SetActive(false);
-                GameObject.Find("NPC Final Boss").gameObject.SetActive(true);    
-            }
-            else {
-                //GameObject.Find("NPC Final Boss").gameObject.SetActive(true);
-            }
-            */
             
         }
     }
@@ -292,6 +261,8 @@ public class DontDestroyOnLoad : MonoBehaviour
             key2 = true;
             
             minigameCompleted = true;
+            Debug.Log("Memory game completed");
+            SceneController.instance.ChangeSceneByIndex(7);
         }
         
         else if (id == 3) {
@@ -307,7 +278,7 @@ public class DontDestroyOnLoad : MonoBehaviour
             boss4Completed = true;
             
             minigameCompleted = true;
-            SceneManager.LoadScene("MainScene");
+            SceneManager.LoadScene("Endings");
 
         }
         
