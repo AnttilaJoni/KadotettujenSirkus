@@ -17,6 +17,7 @@ public class Minigame2 : MonoBehaviour
     public int playerHealth = 10;
 
     public bool _moveLauncher = false;
+    
     void Start()
     {
         GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().ChangePlayerHealth(playerHealth);

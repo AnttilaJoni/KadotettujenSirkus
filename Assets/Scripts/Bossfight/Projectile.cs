@@ -12,6 +12,9 @@ public class Projectile : MonoBehaviour
     private Vector3 _startPosition;
     
     [SerializeField] private GameObject playerStats;
+
+    public AudioClip[] playerSounds;
+    public AudioClip[] playerParrySound;
     void Start()
     {
         _startPosition = transform.position;
@@ -40,23 +43,27 @@ public class Projectile : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Player")) 
         {
             // Play bullet hit audio
-            int randomInt = UnityEngine.Random.Range(1, 4);
+            
+            int randomInt = UnityEngine.Random.Range(0, 3);
             {
-                if (randomInt == 1) 
-                {   
-                    //AudioManager.Instance.PlaySFX("SFX_P LDamage 2");
+                if (randomInt == 0) {
+                    AudioManager.Instance.PlayerSFX(playerSounds[randomInt]);
                 }
                 
-                else if (randomInt == 2)
+                else if (randomInt == 1)
                 {
-                    //AudioManager.Instance.PlaySFX("SFX_P LDamage 3");
+                    AudioManager.Instance.PlayerSFX(playerSounds[randomInt]);
                 }
                 
-                else if (randomInt == 3) 
+                else if (randomInt == 2) 
                 {
-                    //AudioManager.Instance.PlaySFX("SFX_P LDamage 4");
+                    AudioManager.Instance.PlayerSFX(playerSounds[randomInt]);
                 }
             }
+            
+
+
+            //AudioManager.Instance.PlaySFX("PlayerDamaged");
             
             //Vector2 dir = other.transform.position - transform.position;
             
@@ -67,7 +74,7 @@ public class Projectile : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Parry")) 
         {
             // Play parry audio
-            //AudioManager.Instance.PlaySFX("SFX_F Bparry");
+            AudioManager.Instance.PlayerSFX(playerParrySound[0]);
             
             Debug.Log("Parry");
             bounceProjectile = true;

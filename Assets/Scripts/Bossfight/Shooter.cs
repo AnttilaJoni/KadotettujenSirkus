@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using Random = Unity.Mathematics.Random;
 
 public class Shooter : MonoBehaviour
 {
@@ -41,6 +42,14 @@ public class Shooter : MonoBehaviour
     //float currentAngle;
     //private float angleStep;
     //private float endAngle;
+    
+    public bool audioEnabled = false;
+    
+    public AudioClip [] bossBulletSpawnSounds;
+    
+    public AudioClip [] bossLaughSounds;
+    
+    public AudioClip [] bossSlamSounds;
 
     private void Start()
     {
@@ -96,8 +105,11 @@ public class Shooter : MonoBehaviour
         // Play animation
         animationDelay = 0.5f;
         
-        yield return new WaitForSeconds(animationDelay);
+        //yield return new WaitForSeconds(animationDelay);
         
+        // Play boss laugh audio
+        //var randomInt  = UnityEngine.Random.Range(0, 3);
+        //AudioManager.Instance.BossSFX(bossLaughSounds[randomInt]);
         
 
         float startAngle, currentAngle, angleStep, endAngle;
@@ -110,9 +122,11 @@ public class Shooter : MonoBehaviour
             
             for (int j = 0; j < projectilesPerBurst; j++)
             {
-                // Play bullet spawn audio
-                //AudioManager.Instance.PlaySFX("SFX_F Bbulletspawn 3");
-                
+                if (audioEnabled) {
+                    // Play bullet spawn audio
+                    AudioManager.Instance.BossSFX(bossBulletSpawnSounds[0]);
+                }
+
                 Vector2 pos = FindBulletSpawnPos(currentAngle);
 
 
@@ -139,7 +153,7 @@ public class Shooter : MonoBehaviour
     // Phase 2
     private IEnumerator Phase2()
     {
-
+        
         if (phase2_1) {
 
             _isShooting = true;
@@ -156,6 +170,10 @@ public class Shooter : MonoBehaviour
             float timeBetweenProjectiles = 0f;
 
             TargetConeOfInfluence(out startAngle, out currentAngle, out angleStep, out endAngle);
+            
+            // Play boss laugh audio
+            //var randomInt  = UnityEngine.Random.Range(0, 3);
+            //AudioManager.Instance.BossSFX(bossLaughSounds[randomInt]);
             
             // Play animation
             animationDelay = 0.5f;
@@ -188,9 +206,11 @@ public class Shooter : MonoBehaviour
 
                 for (int j = 0; j < projectilesPerBurst; j++) 
                 {
-                    // Play bullet spawn audio
-                    //AudioManager.Instance.PlaySFX("SFX_F Bbulletspawn 3");
-                    
+                    if (audioEnabled) {
+                        // Play bullet spawn audio
+                        AudioManager.Instance.BossSFX(bossBulletSpawnSounds[0]);
+                    }
+
                     Vector2 pos = FindBulletSpawnPos(currentAngle);
 
 
@@ -270,9 +290,11 @@ public class Shooter : MonoBehaviour
 
                 for (int j = 0; j < projectilesPerBurst; j++) 
                 {
-                    // Play bullet spawn audio
-                    //AudioManager.Instance.PlaySFX("SFX_F Bbulletspawn 3");
-                    
+                    if (audioEnabled) {
+                        // Play bullet spawn audio
+                        AudioManager.Instance.BossSFX(bossBulletSpawnSounds[0]);
+                    }
+
                     Vector2 pos = FindBulletSpawnPos(currentAngle);
 
 
@@ -314,6 +336,10 @@ public class Shooter : MonoBehaviour
     // Phase 3
     private IEnumerator Phase3()
     {
+        // Play boss laugh audio
+        var randomInt  = UnityEngine.Random.Range(0, 3);
+        AudioManager.Instance.BossSFX(bossLaughSounds[randomInt]);
+        
         if (!lastPhase) {
             gameObject.SetActive(false);
         }
@@ -365,20 +391,24 @@ public class Shooter : MonoBehaviour
             //float timeBetweenProjectiles = 0f;
 
             TargetConeOfInfluence(out startAngle, out currentAngle, out angleStep, out endAngle);
+            
+            // Play boss laugh audio
+            //var randomInt2  = UnityEngine.Random.Range(0, 3);
+            //AudioManager.Instance.BossSFX(bossLaughSounds[randomInt2]);
 
             for (int i = 0; i < burstCount; i++)
             {
                 yield return new WaitForSeconds(0.50f);
-                
-                // Play ground slam audio
-                //AudioManager.Instance.PlaySFX("SFX_F Bgroundpound");
-                
+
+                if (audioEnabled) {
+                    // Play bullet spawn audio
+                    AudioManager.Instance.BossSFX(bossBulletSpawnSounds[0]);
+                }
+
                 for (int j = 0; j < projectilesPerBurst; j++)
                 {
                     Vector2 pos = FindBulletSpawnPos(currentAngle);
                     
-                    // Play bullet spawn audio
-                    //AudioManager.Instance.PlaySFX("SFX_F Bbulletspawn 3");
 
 
                     GameObject newBullet = Instantiate(bulletPrefab, pos, Quaternion.identity);
@@ -437,16 +467,28 @@ public class Shooter : MonoBehaviour
 
     private IEnumerator TimerRight(float time)
     {
-        
-        yield return new WaitForSeconds(time);
+        yield return new WaitForSeconds(0.5f);
+
+        if (audioEnabled) {
+            // Play ground slam audio
+            AudioManager.Instance.BossSFX(bossSlamSounds[0]);
+        }
+
+        yield return new WaitForSeconds(time - 0.5f);
         right = false;
         left = true;
     }
     
     private IEnumerator TimerLeft(float time)
     {
-        
-        yield return new WaitForSeconds(time);
+        yield return new WaitForSeconds(0.5f);
+
+        if (audioEnabled) {
+            // Play ground slam audio
+            AudioManager.Instance.BossSFX(bossSlamSounds[0]);
+        }
+
+        yield return new WaitForSeconds(time - 0.5f);
         left = false;
         right = true;
         

@@ -66,4 +66,29 @@ public class AudioManager : MonoBehaviour
         //voiceAudioSource.PlayOneShot(audioClip);
     }
 
+    public void PlayerSFX(AudioClip audioClip)
+    {
+        voiceAudioSource.PlayOneShot(audioClip);
+    }
+    
+    public void BossSFX(AudioClip audioClip)
+    {
+        voiceAudioSource.PlayOneShot(audioClip);
+    }
+    
+    public void StackingSFX(AudioClip audioClip)
+    {
+        voiceAudioSource.PlayOneShot(audioClip);
+    }
+
+    public void DDRHitSFX(AudioClip audioClip)
+    {
+        voiceAudioSource.PlayOneShot(audioClip);
+    }
+    
+    public void DDRMissSFX(AudioClip audioClip)
+    {
+        voiceAudioSource.PlayOneShot(audioClip);
+    }
+
 }

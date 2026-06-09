@@ -20,5 +20,7 @@ public class SaveData
     public bool key1;
     public bool key2;
     public bool key3;
-    
+
+    public int gameEnding;
+
 }
