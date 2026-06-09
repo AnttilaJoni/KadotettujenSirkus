@@ -307,7 +307,7 @@ public class DontDestroyOnLoad : MonoBehaviour
             boss4Completed = true;
             
             minigameCompleted = true;
-            SceneManager.LoadScene("MainScene");
+            SceneManager.LoadScene("Endings");
 
         }
         
