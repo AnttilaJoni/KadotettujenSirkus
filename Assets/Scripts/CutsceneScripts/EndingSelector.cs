@@ -6,15 +6,16 @@ public class EndingSelector : MonoBehaviour
 {
     public GameObject neutral;
     public GameObject good;
+    
     void Start()
     {
-        /* if() //<-- Good ending saveState
+        if(GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().gameEnding == 2) //<-- Good ending saveState
         {
-            good.setActive(true);
-        } */
-        //else
-        //{
+            good.SetActive(true);
+        }
+        else
+        {
             neutral.SetActive(true);
-        //}
+        }
     }
 }
