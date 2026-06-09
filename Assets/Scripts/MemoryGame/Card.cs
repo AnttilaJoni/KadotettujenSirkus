@@ -42,12 +42,16 @@ public class Card : MonoBehaviour
     IEnumerator StartSetup()
     {
         yield return new WaitForSeconds(2f);
+        controller.hasPlayed = false;
+        controller.flipping = true;
         Flip();
         StartCoroutine(StartDelayedFlip());
     }
     IEnumerator StartDelayedFlip()
     {
         yield return new WaitForSeconds(2f);
+        controller.hasPlayed = false;
+        controller.flipping = true;
         Flip();
     }
     public void Flip()

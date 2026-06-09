@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Moretta_defeated
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
   playerName: Emma
-  npcName: Boss_2
+  npcName: Moretta
   npcPortrait:
-  - {fileID: 21300000, guid: 026a525d33b8cc14f9d02e26abaf76ce, type: 3}
+  - {fileID: 9081229327621099148, guid: 51959db564ea5ef42b59f28c2a877fdd, type: 3}
   dialogueLines:
   - Joever.
   isPlayerLine: 00

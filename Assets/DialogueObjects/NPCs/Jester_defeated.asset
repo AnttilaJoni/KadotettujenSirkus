@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Jester_defeated
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
   playerName: Emma
-  npcName: Boss_3
+  npcName: Arlecchino
   npcPortrait:
-  - {fileID: 21300000, guid: 026a525d33b8cc14f9d02e26abaf76ce, type: 3}
+  - {fileID: 21300000, guid: d667c64385224db42a954d2b7575bf9b, type: 3}
   dialogueLines:
   - Im so cooked. Fell off :(
   isPlayerLine: 00

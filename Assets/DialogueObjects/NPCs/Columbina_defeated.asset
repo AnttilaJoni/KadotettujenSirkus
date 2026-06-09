@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Columbina_defeated
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
   playerName: Emma
-  npcName: Boss_1
+  npcName: Columbina
   npcPortrait:
-  - {fileID: 21300000, guid: 026a525d33b8cc14f9d02e26abaf76ce, type: 3}
+  - {fileID: 21300000, guid: 9d87e408fff0638469c262f075481d86, type: 3}
   dialogueLines:
   - You got me damn.
   isPlayerLine: 00

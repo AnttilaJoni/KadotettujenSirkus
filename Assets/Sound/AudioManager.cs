@@ -6,7 +6,7 @@ public class AudioManager : MonoBehaviour
     public static AudioManager Instance;
 
     public Sound[] musicSounds, sfxSounds;
-    public static AudioSource musicSource, sfxSource, voiceAudioSource;
+    public static AudioSource musicSource, sfxSource, voiceAudioSource, cardAudioSource;
     //private static AudioSource voiceAudioSource;
 
     private void Awake()
@@ -52,6 +52,10 @@ public class AudioManager : MonoBehaviour
         {
             sfxSource.PlayOneShot(s.clip[UnityEngine.Random.Range(0, s.clip.Length)]);
         }
+    }
+    public static void PlayCardSFX(AudioClip audioClip)
+    {
+        voiceAudioSource.PlayOneShot(audioClip);
     }
     public static void PlayVoice(AudioClip audioClip, float pitch = 1f)
     {

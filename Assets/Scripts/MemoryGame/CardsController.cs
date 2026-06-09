@@ -28,6 +28,10 @@ public class CardsController : MonoBehaviour
 
     public GameObject cards_placeholder;
     private GameObject[] cards;
+    public AudioClip[] cardSounds;
+    public bool flipping;
+    public bool hasPlayed;
+    //private GameObject _selected;
 
     private void Start()
     {
@@ -41,9 +45,16 @@ public class CardsController : MonoBehaviour
         StartCoroutine(SetHealth());
         PrepareSprites();
         CreateCards();
+        AudioManager.PlayCardSFX(cardSounds[1]);
     }
     private void Update()
     {
+        if(flipping && !hasPlayed)
+        {
+            AudioManager.PlayCardSFX(cardSounds[2]);
+            hasPlayed = true;
+            flipping = false;
+        }
         if(!PauseController.IsGamePaused)
         {
             if(EventSystem.current.currentSelectedGameObject == null)
@@ -52,11 +63,27 @@ public class CardsController : MonoBehaviour
             }
             if(EventSystem.current.currentSelectedGameObject.name == "Button (resume) (1)" && !notClickable.activeSelf)
             {
-                cards = GameObject.FindGameObjectsWithTag("Card");
                 EventSystem.current.SetSelectedGameObject(cards[0]);
             }
-            
+            /* if(EventSystem.current.currentSelectedGameObject == _selected)
+            {
+                foreach (GameObject go in cards)
+                {
+                    if (EventSystem.current.currentSelectedGameObject == go)
+                    {
+                        transform.DOPunchScale(new Vector3(0.08f, 0.08f, 0.08f), (float) 0.4, 3, 1F);
+                        _selected = go;
+                    }  
+                }
+            } */
         }
+        
+        /* if(EventSystem.current.currentSelectedGameObject == cards[UnityEngine.Range(0, cards.Length)]])
+        {
+            
+        } */
+        //EventSystem.current.currentSelectedGameObject
+        //transform.DOPunchScale(new Vector3(0.08f, 0.08f, 0.08f), (float) 0.4, 3, 1F);
         
     }
     IEnumerator SetHealth()
@@ -79,6 +106,7 @@ public class CardsController : MonoBehaviour
         text_health.text = $"♥♥♥♥♥♥♥♥";
         yield return new WaitForSeconds(0.1f);
         text_health.text = $"♥♥♥♥♥♥♥♥♥";
+        
     }
     private void PrepareSprites()
     {
@@ -105,7 +133,6 @@ public class CardsController : MonoBehaviour
     {
         yield return new WaitForSeconds(4f);
         text_gameover.SetActive(false);
-        text_win.SetActive(false);
         notClickable.SetActive(false);
         cards = GameObject.FindGameObjectsWithTag("Card");
         EventSystem.current.SetSelectedGameObject(cards[0]);
@@ -131,11 +158,14 @@ public class CardsController : MonoBehaviour
             if(firstSelected == null)
             {
                 firstSelected = card;
+                //AudioManager.PlayCardSFX();
+                AudioManager.PlayCardSFX(cardSounds[2]);
                 return;
             }
             if(secondSelected == null)
             {
                 secondSelected = card;
+                AudioManager.PlayCardSFX(cardSounds[2]);
                 StartCoroutine(CheckMatching(firstSelected, secondSelected));
                 firstSelected = null;
                 secondSelected = null;
@@ -149,6 +179,7 @@ public class CardsController : MonoBehaviour
         if(a.iconSprite == b.iconSprite)
         {
             matchCounts++;
+            AudioManager.PlayCardSFX(cardSounds[0]);
             Debug.Log($"Match found, count: {matchCounts}, spritePairs.Count / 2: {spritePairs.Count / 2}");
             if(matchCounts == spritePairs.Count / 2)
             {
@@ -174,7 +205,7 @@ public class CardsController : MonoBehaviour
         }
         else
         {
-            
+            AudioManager.PlayCardSFX(cardSounds[3]);
             a.Hide();
             b.Hide();
             UpdateHealth();
@@ -259,18 +290,23 @@ public class CardsController : MonoBehaviour
         if (text_health.text == $"♥")
         {
             text_health.text = $"";
-            GameOver();
+            StartCoroutine(GameOver());
             
         }
     }
 
-    void GameOver()
+    IEnumerator GameOver()
     {
-        notClickable.SetActive(true);
         EventSystem.current.SetSelectedGameObject(null);
         text_gameover.SetActive(true);
-        StartCoroutine(GameRestart());
+        /* notClickable.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(null);
+        text_gameover.SetActive(true);
+        StartCoroutine(GameRestart()); */
+        yield return new WaitForSeconds(2f);
+        SceneController.instance.ChangeSceneByIndex(7);
     }
+    
     IEnumerator GameRestart()
     {
         yield return new WaitForSeconds(3f);
@@ -285,9 +321,12 @@ public class CardsController : MonoBehaviour
     }
     IEnumerator GameReset()
     {
+        AudioManager.PlayCardSFX(cardSounds[1]);
+        notClickable.SetActive(true);
         yield return new WaitForSeconds(1f);
         PrepareSprites();
         cards_placeholder.SetActive(false);
+        text_win.SetActive(false);
         CreateCards();
         
     }

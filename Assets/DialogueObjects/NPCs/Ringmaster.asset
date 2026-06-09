@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Ringmaster
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
   playerName: Emma
-  npcName: Boss_4
+  npcName: Ringmaster
   npcPortrait:
   - {fileID: 21300000, guid: 0af262158fdd6d24ba0ca215264212ae, type: 3}
   - {fileID: 21300000, guid: e54a8e30c4b013042bac5cda328d5349, type: 3}
-  - {fileID: 21300000, guid: cd83077c9d4a38945a6931a885f2be87, type: 3}
-  - {fileID: 21300000, guid: f83896aa02878d340942c4ac11e4d93a, type: 3}
+  - {fileID: 21300000, guid: eb490ebc9a6c36a47b645a982acf4154, type: 3}
+  - {fileID: 21300000, guid: 8635eca0edccc75448df23bfcd9356c9, type: 3}
   dialogueLines:
   - Line 1 Player
   - Line 2 Player
