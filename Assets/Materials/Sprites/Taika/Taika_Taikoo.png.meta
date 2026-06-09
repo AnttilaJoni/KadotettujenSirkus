@@ -1,0 +1,351 @@
+fileFormatVersion: 2
+guid: b1c0d45602c2c0c4fa542cbdd9b7e410
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6018038972131602058
+    second: Taika_Taikoo_0
+  - first:
+      213: 840080331003586014
+    second: Taika_Taikoo_1
+  - first:
+      213: 2481201647936221429
+    second: Taika_Taikoo_2
+  - first:
+      213: 3201781779959805576
+    second: Taika_Taikoo_3
+  - first:
+      213: 3104634221245048385
+    second: Taika_Taikoo_4
+  - first:
+      213: 3869168254622766841
+    second: Taika_Taikoo_5
+  - first:
+      213: -6427665830731424033
+    second: Taika_Taikoo_6
+  - first:
+      213: 9161855186303122182
+    second: Taika_Taikoo_7
+  - first:
+      213: 1902347812508644640
+    second: Taika_Taikoo_8
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Taika_Taikoo_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 5
+        width: 36
+        height: 65
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8e6c5a6f8e548350800000000000000
+      internalID: 6018038972131602058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Taika_Taikoo_1
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 5
+        width: 35
+        height: 63
+      alignment: 9
+      pivot: {x: 0.4857143, y: -0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed5e2403c9098ab00800000000000000
+      internalID: 840080331003586014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Taika_Taikoo_2
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 5
+        width: 33
+        height: 62
+      alignment: 9
+      pivot: {x: 0.4848485, y: -0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f03a59b0cffe6220800000000000000
+      internalID: 2481201647936221429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Taika_Taikoo_3
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 5
+        width: 51
+        height: 65
+      alignment: 9
+      pivot: {x: 0.5882353, y: -0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88672daa0930f6c20800000000000000
+      internalID: 3201781779959805576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Taika_Taikoo_4
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 5
+        width: 52
+        height: 64
+      alignment: 9
+      pivot: {x: 0.61538464, y: -0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14625da0060e51b20800000000000000
+      internalID: 3104634221245048385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Taika_Taikoo_5
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 5
+        width: 45
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5777778, y: -0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f61201270c02b530800000000000000
+      internalID: 3869168254622766841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Taika_Taikoo_6
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 5
+        width: 33
+        height: 62
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fde56507bf75cc6a0800000000000000
+      internalID: -6427665830731424033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Taika_Taikoo_7
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 5
+        width: 35
+        height: 63
+      alignment: 9
+      pivot: {x: 0.51428574, y: -0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60bfa2710c2752f70800000000000000
+      internalID: 9161855186303122182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Taika_Taikoo_8
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 5
+        width: 36
+        height: 65
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 025b1d3a14f766a10800000000000000
+      internalID: 1902347812508644640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 6aa8e6c9c7df9c84fb9ff0581343306c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Taika_Taikoo_0: 6018038972131602058
+      Taika_Taikoo_1: 840080331003586014
+      Taika_Taikoo_2: 2481201647936221429
+      Taika_Taikoo_3: 3201781779959805576
+      Taika_Taikoo_4: 3104634221245048385
+      Taika_Taikoo_5: 3869168254622766841
+      Taika_Taikoo_6: -6427665830731424033
+      Taika_Taikoo_7: 9161855186303122182
+      Taika_Taikoo_8: 1902347812508644640
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

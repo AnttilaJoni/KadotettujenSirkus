@@ -150,7 +150,7 @@ TextureImporter:
         width: 70
         height: 96
       alignment: 9
-      pivot: {x: 0.5, y: 0}
+      pivot: {x: 0.48428574, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -171,8 +171,8 @@ TextureImporter:
         y: 17
         width: 70
         height: 107
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.48428574, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -189,12 +189,12 @@ TextureImporter:
       name: Volto_Spritesheet_5
       rect:
         serializedVersion: 2
-        x: 182
+        x: 181
         y: 17
         width: 69
         height: 107
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5072464, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -214,9 +214,9 @@ TextureImporter:
         x: 262
         y: 17
         width: 73
-        height: 90
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 106
+      alignment: 9
+      pivot: {x: 0.53424656, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -237,8 +237,8 @@ TextureImporter:
         y: 17
         width: 75
         height: 90
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.56799996, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -258,9 +258,9 @@ TextureImporter:
         x: 437
         y: 17
         width: 72
-        height: 90
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5222222, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -280,9 +280,9 @@ TextureImporter:
         x: 519
         y: 17
         width: 69
-        height: 89
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5521739, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -302,9 +302,9 @@ TextureImporter:
         x: 598
         y: 17
         width: 71
-        height: 90
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 98
+      alignment: 9
+      pivot: {x: 0.51690143, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
