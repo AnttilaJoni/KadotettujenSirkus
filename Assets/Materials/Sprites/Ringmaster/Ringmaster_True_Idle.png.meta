@@ -116,8 +116,8 @@ TextureImporter:
         y: 26
         width: 124
         height: 195
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -134,12 +134,12 @@ TextureImporter:
       name: Ringmaster_True_Idle_1
       rect:
         serializedVersion: 2
-        x: 168
+        x: 169
         y: 26
         width: 128
-        height: 193
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 194
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -160,8 +160,8 @@ TextureImporter:
         y: 26
         width: 127
         height: 194
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -179,11 +179,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 449
-        y: 27
+        y: 26
         width: 124
-        height: 195
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 196
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
