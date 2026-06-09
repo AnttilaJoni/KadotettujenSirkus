@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b8f0dde067395140a3c2cbe4f68691f, type: 3}
-  m_Name: Taika_saved
+  m_Name: Taika_dialogue_done
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
   playerName: Emma
   npcName: Taika
