@@ -15,7 +15,9 @@ public class AudioManager : MonoBehaviour
         {
             Instance = this;
             AudioSource[] audioSources = GetComponents<AudioSource>();
-
+            
+            musicSource = audioSources[0];
+            //sfxSource = audioSources[0];
             voiceAudioSource = audioSources[0];
             DontDestroyOnLoad(gameObject);
         }
@@ -79,6 +81,13 @@ public class AudioManager : MonoBehaviour
     public void StackingSFX(AudioClip audioClip)
     {
         voiceAudioSource.PlayOneShot(audioClip);
+    }
+    
+    public void DDRMusic(AudioClip audioClip)
+    {
+        //musicSource.clip = audioClip;
+        //musicSource.Play();
+        //voiceAudioSource.PlayOneShot(audioClip);
     }
 
     public void DDRHitSFX(AudioClip audioClip)
