@@ -6,6 +6,8 @@ public class ShapeScript : MonoBehaviour
     [SerializeField] private Transform startBlock;
     private Rigidbody2D _rb2d;
     private bool _hasCollided = false;
+    
+    public AudioClip [] collidingSounds;
     void Start()
     {
         _rb2d = GetComponent<Rigidbody2D>();
@@ -26,8 +28,8 @@ public class ShapeScript : MonoBehaviour
         // Play collision audio
         if (other.gameObject.CompareTag("Shape")) 
         {
-            // Play bullet spawn audio
-            //AudioManager.Instance.PlaySFX("SFX_Palikka hit");    
+            // Play collision audio
+            AudioManager.Instance.StackingSFX(collidingSounds[0]);    
         }
 
         if (!_hasCollided) {

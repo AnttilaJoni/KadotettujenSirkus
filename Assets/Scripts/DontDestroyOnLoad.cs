@@ -40,6 +40,8 @@ public class DontDestroyOnLoad : MonoBehaviour
     public bool playerAlive = true;
 
     public bool minigameCompleted = false;
+
+    public int gameEnding = 0; // 0 = bad, 1 == neutral, 2 == good
     
     private void Awake()
     {
@@ -222,6 +224,11 @@ public class DontDestroyOnLoad : MonoBehaviour
         }
 
 
+    }
+
+    public void SetEndingState(int ending)
+    {
+        gameEnding = ending;
     }
 
     public void TakeDamage(int damage)

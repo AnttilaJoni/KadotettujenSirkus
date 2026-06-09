@@ -460,6 +460,7 @@ MonoBehaviour:
   key3: 0
   playerAlive: 1
   minigameCompleted: 0
+  gameEnding: 0
 --- !u!4 &206500451
 Transform:
   m_ObjectHideFlags: 0
@@ -596,6 +597,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShapeScript
   startBlock: {fileID: 1738698801}
+  collidingSounds:
+  - {fileID: 8300000, guid: 213c7a9918228f144af7d81845f9f3d6, type: 3}
 --- !u!1 &244504090
 GameObject:
   m_ObjectHideFlags: 0
@@ -1627,6 +1630,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   startBlock: {fileID: 1738698801}
+  collidingSounds:
+  - {fileID: 8300000, guid: 213c7a9918228f144af7d81845f9f3d6, type: 3}
 --- !u!1 &787493615
 GameObject:
   m_ObjectHideFlags: 0

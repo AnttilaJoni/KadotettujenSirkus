@@ -1250,7 +1250,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 3.0390625
+  orthographic size: 8.4375
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2016,6 +2016,15 @@ MonoBehaviour:
   left: 0
   lastPhase: 1
   playerHealth: 30
+  audioEnabled: 1
+  bossBulletSpawnSounds:
+  - {fileID: 8300000, guid: e2b502d651fc0bb4db6de7d226a3b0b5, type: 3}
+  bossLaughSounds:
+  - {fileID: 8300000, guid: 6615f1efdb53c9e4faf4eb7e6fbe1b64, type: 3}
+  - {fileID: 8300000, guid: 9b32961dfb9a8d44d8c656dde0b158e2, type: 3}
+  - {fileID: 8300000, guid: e9a6857f2c3a26a4cb44dae78353921e, type: 3}
+  bossSlamSounds:
+  - {fileID: 8300000, guid: 6586c3089236c5945914150c316486c2, type: 3}
 --- !u!1 &804672664
 GameObject:
   m_ObjectHideFlags: 0
@@ -3805,6 +3814,10 @@ MonoBehaviour:
   left: 0
   lastPhase: 0
   playerHealth: 30
+  audioEnabled: 0
+  bossBulletSpawnSounds: []
+  bossLaughSounds: []
+  bossSlamSounds: []
 --- !u!4 &1717799607 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6408278241038328043, guid: d9c718e341517674f8f27e9f6771285e, type: 3}

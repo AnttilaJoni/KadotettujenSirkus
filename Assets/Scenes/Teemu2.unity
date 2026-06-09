@@ -444,6 +444,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   goal: {fileID: 1953896654}
   minigameScript: {fileID: 1313555534}
+  missSounds:
+  - {fileID: 8300000, guid: e839052420e0e7d4bb11d77d5902378d, type: 3}
 --- !u!1 &242329481
 GameObject:
   m_ObjectHideFlags: 0
@@ -3530,6 +3532,10 @@ MonoBehaviour:
   bossHealth: 0
   bossMaxHealth: 100
   gameActive: 0
+  hitSounds:
+  - {fileID: 8300000, guid: f3e99fbe7cd323c4aaaa7432c6e14be7, type: 3}
+  missSounds:
+  - {fileID: 8300000, guid: e839052420e0e7d4bb11d77d5902378d, type: 3}
 --- !u!4 &1313555535
 Transform:
   m_ObjectHideFlags: 0
@@ -6025,6 +6031,7 @@ MonoBehaviour:
   key3: 0
   playerAlive: 1
   minigameCompleted: 0
+  gameEnding: 0
 --- !u!114 &2073296072
 MonoBehaviour:
   m_ObjectHideFlags: 0
