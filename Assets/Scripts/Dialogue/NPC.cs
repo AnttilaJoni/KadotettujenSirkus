@@ -187,6 +187,7 @@ public class NPC : MonoBehaviour, IInteractable
             //GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().boss4dialogue = true;
             if(_npc != null && _npc_dialogue_done != null)
             {
+                GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().SetEndingState(2);
                 StopAllCoroutines();
                 isDialogueActive = false;
                 dialogueText.SetText("");

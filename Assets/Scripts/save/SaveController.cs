@@ -72,7 +72,9 @@ public class SaveController : MonoBehaviour
             
             key1 = GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().key1,
             key2 = GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().key1,
-            key3 = GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().key1
+            key3 = GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().key1,
+            
+            gameEnding = GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().gameEnding
             
         };
         
@@ -105,6 +107,7 @@ public class SaveController : MonoBehaviour
             GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().key2 = saveData.key2;
             GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().key3 = saveData.key3;
             
+            GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().gameEnding = saveData.gameEnding;
             Debug.Log("Game loaded");
         }
 
