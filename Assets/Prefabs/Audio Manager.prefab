@@ -176,7 +176,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a1f56eb0d121b44eb0c6cfb3ede2863, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  musicSounds: []
+  musicSounds:
+  - name: DDR
+    clip:
+    - {fileID: 8300000, guid: 3ba39577aa2b71e49b4db0d67efe9fdc, type: 3}
   sfxSounds:
   - name: WalkOutside
     clip:

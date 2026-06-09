@@ -201,10 +201,11 @@ public class DontDestroyOnLoad : MonoBehaviour
                 
                 // Disable boss door collider
                 GameObject.Find("Lukot").gameObject.SetActive(false);
-                GameObject.Find("Final Boss - Tirehtööri").gameObject.SetActive(true);
+                GameObject.Find("Final Boss - Tirehtööri").transform.GetChild(0).gameObject.SetActive(true);
             }
             else {
                 //GameObject.Find("NPC Final Boss").gameObject.SetActive(true);
+                GameObject.Find("Final Boss - Tirehtööri").transform.GetChild(0).gameObject.SetActive(false);
             }
         }
     }
@@ -239,6 +240,7 @@ public class DontDestroyOnLoad : MonoBehaviour
         if (playerHealth <= 0) 
         {
             playerAlive = false;
+            AudioManager.musicSource.Stop();
             SceneManager.LoadScene("MainScene");
         }
     }

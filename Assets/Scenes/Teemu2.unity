@@ -3279,10 +3279,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Audio Manager
       objectReference: {fileID: 0}
-    - target: {fileID: 3642627199612782381, guid: 2ea6a65203091bc40bc599925934e51c, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4631023844011899684, guid: 2ea6a65203091bc40bc599925934e51c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 675.8502
@@ -3522,8 +3518,8 @@ MonoBehaviour:
   goal: {fileID: 1953896653}
   playerHealth: 10
   notesList: []
-  interval: 0.75
-  speedMultiplier: 7
+  interval: 0.507
+  speedMultiplier: 10
   damage: 1
   comboCounter: 0
   points: 1
@@ -3536,6 +3532,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f3e99fbe7cd323c4aaaa7432c6e14be7, type: 3}
   missSounds:
   - {fileID: 8300000, guid: e839052420e0e7d4bb11d77d5902378d, type: 3}
+  musicTrack:
+  - {fileID: 8300000, guid: 3ba39577aa2b71e49b4db0d67efe9fdc, type: 3}
 --- !u!4 &1313555535
 Transform:
   m_ObjectHideFlags: 0
@@ -4166,7 +4164,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1376368928887178475, guid: 63f100deee16e3f49a6c521ea0ee83ad, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2804782749880354408, guid: 63f100deee16e3f49a6c521ea0ee83ad, type: 3}
       propertyPath: m_AnchoredPosition.x

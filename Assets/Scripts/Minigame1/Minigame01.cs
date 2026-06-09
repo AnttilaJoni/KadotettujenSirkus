@@ -40,6 +40,7 @@ public class Minigame01 : MonoBehaviour
     
     public AudioClip [] hitSounds;
     public AudioClip [] missSounds;
+    public AudioClip [] musicTrack;
     void Start()
     {
         StartCoroutine(StartGame());
@@ -236,6 +237,7 @@ public class Minigame01 : MonoBehaviour
         if (bossHealth <= 0) {
             //Time.timeScale = 0f;
             _playerStats.GetComponent<DontDestroyOnLoad>().MinigameCompleted(1);
+            AudioManager.musicSource.Stop();
         }
     }
 
@@ -257,6 +259,9 @@ public class Minigame01 : MonoBehaviour
         gameActive = true;
         
         // Play song audio
+        //AudioManager.Instance.DDRMusic(musicTrack[0]);
+        AudioManager.Instance.PlayMusic("DDR");
+        
     }
 
     void AddCombo(int scoreToAdd)
