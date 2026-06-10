@@ -20,10 +20,14 @@ public class CameraTransition : MonoBehaviour
     {
         if (other.CompareTag("Player")) 
         {
-            //Debug.Log("Camera Transition");
-            GameObject.FindGameObjectWithTag("Fade").GetComponent<FadeScript>().StartFade();
-            
-            Invoke(nameof(Transition), 1f);
+            if (GameObject.FindGameObjectWithTag("Fade")
+                .GetComponent<FadeScript>().fadeComplete) {
+                //Debug.Log("Camera Transition");
+                GameObject.FindGameObjectWithTag("Fade")
+                    .GetComponent<FadeScript>().StartFade();
+
+                Invoke(nameof(Transition), 1f);
+            }
         }
     }
 

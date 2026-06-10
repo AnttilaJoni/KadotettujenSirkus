@@ -144,6 +144,12 @@ MonoBehaviour:
   moveSpeed: 1
   projectileDamage: 1
   bounceProjectile: 0
+  playerSounds:
+  - {fileID: 8300000, guid: 0ee957de055df054fb042aacaac79cb1, type: 3}
+  - {fileID: 8300000, guid: ce3f8950765bbc74e852d14e1d2a33d8, type: 3}
+  - {fileID: 8300000, guid: e8d10f11ea14c83468de197ccb369015, type: 3}
+  playerParrySound:
+  - {fileID: 8300000, guid: 6139267f0d6abbc48ac1d297a54213dd, type: 3}
 --- !u!1 &5192939069773694389
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,6 +294,12 @@ MonoBehaviour:
   moveSpeed: 1
   projectileDamage: 1
   bounceProjectile: 0
+  playerSounds:
+  - {fileID: 8300000, guid: 0ee957de055df054fb042aacaac79cb1, type: 3}
+  - {fileID: 8300000, guid: ce3f8950765bbc74e852d14e1d2a33d8, type: 3}
+  - {fileID: 8300000, guid: e8d10f11ea14c83468de197ccb369015, type: 3}
+  playerParrySound:
+  - {fileID: 8300000, guid: 6139267f0d6abbc48ac1d297a54213dd, type: 3}
 --- !u!1 &6228323002041859459
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,6 +444,12 @@ MonoBehaviour:
   moveSpeed: 1
   projectileDamage: 1
   bounceProjectile: 0
+  playerSounds:
+  - {fileID: 8300000, guid: 0ee957de055df054fb042aacaac79cb1, type: 3}
+  - {fileID: 8300000, guid: ce3f8950765bbc74e852d14e1d2a33d8, type: 3}
+  - {fileID: 8300000, guid: e8d10f11ea14c83468de197ccb369015, type: 3}
+  playerParrySound:
+  - {fileID: 8300000, guid: 6139267f0d6abbc48ac1d297a54213dd, type: 3}
 --- !u!1 &6929663063056799683
 GameObject:
   m_ObjectHideFlags: 0
@@ -486,6 +504,12 @@ MonoBehaviour:
   bounceProjectile: 0
   canBounce: 0
   playerStats: {fileID: 0}
+  playerSounds:
+  - {fileID: 8300000, guid: 0ee957de055df054fb042aacaac79cb1, type: 3}
+  - {fileID: 8300000, guid: ce3f8950765bbc74e852d14e1d2a33d8, type: 3}
+  - {fileID: 8300000, guid: e8d10f11ea14c83468de197ccb369015, type: 3}
+  playerParrySound:
+  - {fileID: 8300000, guid: 6139267f0d6abbc48ac1d297a54213dd, type: 3}
 --- !u!1 &7728067596423042723
 GameObject:
   m_ObjectHideFlags: 0
@@ -630,6 +654,12 @@ MonoBehaviour:
   moveSpeed: 1
   projectileDamage: 1
   bounceProjectile: 0
+  playerSounds:
+  - {fileID: 8300000, guid: 0ee957de055df054fb042aacaac79cb1, type: 3}
+  - {fileID: 8300000, guid: ce3f8950765bbc74e852d14e1d2a33d8, type: 3}
+  - {fileID: 8300000, guid: e8d10f11ea14c83468de197ccb369015, type: 3}
+  playerParrySound:
+  - {fileID: 8300000, guid: 6139267f0d6abbc48ac1d297a54213dd, type: 3}
 --- !u!1 &8169287540393007295
 GameObject:
   m_ObjectHideFlags: 0
@@ -774,3 +804,9 @@ MonoBehaviour:
   moveSpeed: 1
   projectileDamage: 1
   bounceProjectile: 0
+  playerSounds:
+  - {fileID: 8300000, guid: 0ee957de055df054fb042aacaac79cb1, type: 3}
+  - {fileID: 8300000, guid: ce3f8950765bbc74e852d14e1d2a33d8, type: 3}
+  - {fileID: 8300000, guid: e8d10f11ea14c83468de197ccb369015, type: 3}
+  playerParrySound:
+  - {fileID: 8300000, guid: 6139267f0d6abbc48ac1d297a54213dd, type: 3}

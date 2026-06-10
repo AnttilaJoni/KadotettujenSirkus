@@ -7,6 +7,8 @@ public class Projectile2 : MonoBehaviour
 
     public bool bounceProjectile = false;
     
+    public AudioClip[] playerSounds;
+    public AudioClip[] playerParrySound;
     void Start()
     {
         
@@ -40,7 +42,26 @@ public class Projectile2 : MonoBehaviour
         {
             Vector2 dir = other.transform.position - transform.position;
             
-            AudioManager.Instance.PlaySFX("PlayerDamaged");
+            //AudioManager.Instance.PlaySFX("PlayerDamaged");
+            
+            // Play bullet hit audio
+            
+            int randomInt = UnityEngine.Random.Range(0, 3);
+            {
+                if (randomInt == 0) {
+                    AudioManager.Instance.PlayerSFX(playerSounds[randomInt]);
+                }
+                
+                else if (randomInt == 1)
+                {
+                    AudioManager.Instance.PlayerSFX(playerSounds[randomInt]);
+                }
+                
+                else if (randomInt == 2) 
+                {
+                    AudioManager.Instance.PlayerSFX(playerSounds[randomInt]);
+                }
+            }
             
             GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().TakeDamage(projectileDamage);
             Destroy(gameObject);
@@ -48,6 +69,8 @@ public class Projectile2 : MonoBehaviour
         
         if (other.gameObject.layer == LayerMask.NameToLayer("Parry")) {
             
+            // Play parry audio
+            AudioManager.Instance.PlayerSFX(playerParrySound[0]);
             
             var speed = GetComponentInParent<Projectile>().moveSpeed;
             //transform.parent = null;
