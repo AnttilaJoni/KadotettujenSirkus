@@ -13,7 +13,7 @@ public class NotesScript : MonoBehaviour
         {
             transform.position -= new Vector3(0 , Time.deltaTime * minigameScript.speedMultiplier, 0f);
 
-            if (transform.position.y < goal.position.y - 0.76f) 
+            if (transform.position.y < goal.position.y - 0.91f) 
             {
                 AudioManager.Instance.DDRMissSFX(missSounds[0]);
                 minigameScript.notesList.Remove(this.gameObject);
