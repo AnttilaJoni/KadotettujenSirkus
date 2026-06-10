@@ -17,7 +17,7 @@ MonoBehaviour:
   npcPortrait:
   - {fileID: 21300000, guid: d667c64385224db42a954d2b7575bf9b, type: 3}
   dialogueLines:
-  - Im so cooked. Fell off :(
+  - That was fun~!
   isPlayerLine: 00
   isScreenShakeLine: 00
   autoProgressLines: 00
