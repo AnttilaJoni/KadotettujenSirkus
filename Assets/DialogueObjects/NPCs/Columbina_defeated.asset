@@ -23,7 +23,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 065307d55c5670948b6493c7e0e52cf6, type: 3}
   - {fileID: 21300000, guid: d1072acf725cf7d4faf27c6ef10a9540, type: 3}
   dialogueLines:
-  - " You\u2019ve received the Prima Donna Key "
+  - " ~ You\u2019ve received the Prima Donna Key ~ "
   - ' I suppose you proved your worth. Your dance was almost as graceful as mine.'
   - "Forgive my outburst, I have been a bit on edge lately\u2026 "
   - Why? Does it have something to do with the Ringmaster?

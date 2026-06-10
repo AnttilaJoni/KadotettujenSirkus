@@ -40,7 +40,7 @@ MonoBehaviour:
     Donna herself!'
   - I thought your name is Colombina
   - SHUT UP!!
-  isPlayerLine: 00000101010000
+  isPlayerLine: 00000101000100000100
   isScreenShakeLine: 00000000000001000001
   autoProgressLines: 00000000
   autoProgressDelay: 2.5

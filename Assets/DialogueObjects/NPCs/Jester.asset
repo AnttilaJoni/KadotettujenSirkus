@@ -15,17 +15,53 @@ MonoBehaviour:
   playerName: Emma
   npcName: Arlecchino
   npcPortrait:
-  - {fileID: 21300000, guid: 0af262158fdd6d24ba0ca215264212ae, type: 3}
-  - {fileID: 21300000, guid: e54a8e30c4b013042bac5cda328d5349, type: 3}
   - {fileID: 21300000, guid: 039a7f1b5cd5c1a41ae9574d0cded27c, type: 3}
+  - {fileID: 21300000, guid: e54a8e30c4b013042bac5cda328d5349, type: 3}
   - {fileID: 21300000, guid: 110bc5a46b453a9469b1042ef33259ea, type: 3}
+  - {fileID: 21300000, guid: 039a7f1b5cd5c1a41ae9574d0cded27c, type: 3}
+  - {fileID: 21300000, guid: d1072acf725cf7d4faf27c6ef10a9540, type: 3}
+  - {fileID: 21300000, guid: 039a7f1b5cd5c1a41ae9574d0cded27c, type: 3}
+  - {fileID: 21300000, guid: 039a7f1b5cd5c1a41ae9574d0cded27c, type: 3}
+  - {fileID: 21300000, guid: 0af262158fdd6d24ba0ca215264212ae, type: 3}
+  - {fileID: 21300000, guid: 039a7f1b5cd5c1a41ae9574d0cded27c, type: 3}
+  - {fileID: 21300000, guid: 039a7f1b5cd5c1a41ae9574d0cded27c, type: 3}
+  - {fileID: 21300000, guid: 0af262158fdd6d24ba0ca215264212ae, type: 3}
+  - {fileID: 21300000, guid: 039a7f1b5cd5c1a41ae9574d0cded27c, type: 3}
+  - {fileID: 21300000, guid: 039a7f1b5cd5c1a41ae9574d0cded27c, type: 3}
+  - {fileID: 21300000, guid: 039a7f1b5cd5c1a41ae9574d0cded27c, type: 3}
+  - {fileID: 21300000, guid: e54a8e30c4b013042bac5cda328d5349, type: 3}
+  - {fileID: 21300000, guid: 110bc5a46b453a9469b1042ef33259ea, type: 3}
+  - {fileID: 21300000, guid: 1681abeb72a3f5f4e9c1a9d2165e3ea0, type: 3}
+  - {fileID: 21300000, guid: f664cc1e80094d2449ee7b20b271e9e8, type: 3}
+  - {fileID: 21300000, guid: 039a7f1b5cd5c1a41ae9574d0cded27c, type: 3}
+  - {fileID: 21300000, guid: f664cc1e80094d2449ee7b20b271e9e8, type: 3}
+  - {fileID: 21300000, guid: 110bc5a46b453a9469b1042ef33259ea, type: 3}
+  - {fileID: 21300000, guid: 773ab3940a6ca544fafa783cd5afcdf7, type: 3}
   dialogueLines:
-  - Line 1 Player
-  - Line 2 Player
-  - Line 3 NPC
-  - Line 4 NPC
-  isPlayerLine: 01010000
-  isScreenShakeLine: 
+  - "I would tell you to go find a circus, but you\u2019re already here, hahah~!"
+  - "Funny\u2026 You\u2019re the clown of this circus?"
+  - ' Not a clown, but a Jester!'
+  - But I do like jokes!
+  - "Oh god\u2026"
+  - What do you call a magic dog?
+  - A Labracadabrador!!
+  - "...ok that\u2019s pretty good. "
+  - ' I know it is!'
+  - 'Next: What did the shark say when he ate the clownfish? '
+  - That it tasted funny?
+  - HAHAHAHA~!! YES~~!!!
+  - Last one!
+  - ' How many clowns do you need to take down the tent?'
+  - I don't know.
+  - None, because the show will go on forever!!!
+  - "and ever, and ever .....and ever\u2026\u2026\u2026............"
+  - .......
+  - Hahah~ I hope you have fun~~!
+  - Yeeeah... hahah... byeeee
+  - No, don't leave yet, we still have to play!!!
+  - Voi nyt vittu-
+  isPlayerLine: 00010000010000010000010000000100000100010001
+  isScreenShakeLine: 0000000000000000000000010000000001
   autoProgressLines: 00000000
   autoProgressDelay: 2.5
   typingSpeed: 0.05

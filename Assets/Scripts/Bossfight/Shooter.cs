@@ -341,8 +341,8 @@ public class Shooter : MonoBehaviour
     private IEnumerator Phase3()
     {
         // Play boss laugh audio
-        var randomInt  = UnityEngine.Random.Range(0, 3);
-        AudioManager.Instance.BossSFX(bossLaughSounds[randomInt]);
+        //var randomInt  = UnityEngine.Random.Range(0, 3);
+        //AudioManager.Instance.BossSFX(bossLaughSounds[randomInt]);
         
         if (!lastPhase) {
             gameObject.SetActive(false);

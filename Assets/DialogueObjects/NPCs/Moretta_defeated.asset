@@ -15,11 +15,17 @@ MonoBehaviour:
   playerName: Emma
   npcName: Moretta
   npcPortrait:
-  - {fileID: 9081229327621099148, guid: 51959db564ea5ef42b59f28c2a877fdd, type: 3}
+  - {fileID: 4526305056037504997, guid: a871d304dea507c4ab32384834edb946, type: 3}
+  - {fileID: 21300000, guid: f4bc7b8d10bfeee4c817ce96593828ba, type: 3}
+  - {fileID: 4526305056037504997, guid: a871d304dea507c4ab32384834edb946, type: 3}
+  - {fileID: 21300000, guid: ed45ecddfa5ed164686633fc0044f8be, type: 3}
   dialogueLines:
-  - Joever.
-  isPlayerLine: 00
-  isScreenShakeLine: 00
+  - -They seem amused-
+  - My brain hurts...
+  - "~You\u2019ve received The Fortune Teller Key~ "
+  - Thank you!
+  isPlayerLine: 00010001
+  isScreenShakeLine: 000001
   autoProgressLines: 00
   autoProgressDelay: 2.5
   typingSpeed: 0.05
