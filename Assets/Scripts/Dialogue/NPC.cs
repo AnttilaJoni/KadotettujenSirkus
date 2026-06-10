@@ -24,18 +24,55 @@ public class NPC : MonoBehaviour, IInteractable
     public bool isBoss_3;
     public bool isBoss_4;
     public bool isVolto;
+    public bool isReveal;
     public GameObject _npc;
     public GameObject _npc_dialogue_done;
 
+    [SerializeField] private Animator anim;
+
     private bool dialogueEnded;
+    private bool imgSet = false;
     public bool CanInteract()
     {
         return !isDialogueActive;
     }
     void Update()
     {
+        if(imgSet == false)
+        {
+            if(isBoss_1) 
+            {
+                portraitImage_NPC.transform.position = new Vector3(290f, 280f, 0f);
+                imgSet = true;
+            }
+            else if(isBoss_2) 
+            {
+                portraitImage_NPC.transform.position = new Vector3(324f, 310f, 0f);
+                imgSet = true;
+            }
+            else if(isBoss_3) 
+            {
+                portraitImage_NPC.transform.position = new Vector3(240f, 310f, 0f);
+                imgSet = true;
+            }
+            else if(isBoss_4)
+            {
+                imgSet = true;
+            }
+            else if(isBoss_4)
+            {
+                portraitImage_NPC.transform.position = new Vector3(200f, 180f, 0f);
+                imgSet = true;
+            }
+            else
+            {
+                portraitImage_NPC.transform.position = new Vector3(300f, 310f, 0f);
+                imgSet = true;
+            }
+        }
         if (isDialogueActive)
         {
+            portraitImage_NPC.SetNativeSize();
             if (Input.GetKeyDown(KeyCode.Space)) 
             {
                 NextLine();
@@ -160,6 +197,8 @@ public class NPC : MonoBehaviour, IInteractable
             GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().SavePlayerPosition();
             SceneController.instance.ChangeScene("Teemu2");
             dialogueEnded = true;
+            imgSet = false;
+            portraitImage_NPC.transform.position = new Vector3(0f, 0f, 0f);
         } 
         else if(isBoss_2)
         {
@@ -167,6 +206,8 @@ public class NPC : MonoBehaviour, IInteractable
             GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().SavePlayerPosition();
             SceneController.instance.ChangeScene("MemoryGame");
             dialogueEnded = true;
+            imgSet = false;
+            portraitImage_NPC.transform.position = new Vector3(0f, 0f, 0f);
         } 
         else if(isBoss_3)
         {
@@ -174,6 +215,8 @@ public class NPC : MonoBehaviour, IInteractable
             GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().SavePlayerPosition();
             SceneController.instance.ChangeScene("Teemu4");
             dialogueEnded = true;
+            imgSet = false;
+            portraitImage_NPC.transform.position = new Vector3(0f, 0f, 0f);
         } 
         else if(isBoss_4)
         {
@@ -181,6 +224,8 @@ public class NPC : MonoBehaviour, IInteractable
             GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().SavePlayerPosition();
             SceneController.instance.ChangeScene("Teemu3");
             dialogueEnded = true;
+            imgSet = false;
+            portraitImage_NPC.transform.position = new Vector3(0f, 0f, 0f);
         } 
         else if(isVolto)
         {
@@ -199,6 +244,33 @@ public class NPC : MonoBehaviour, IInteractable
                 _npc.SetActive(false);
                 _npc_dialogue_done.SetActive(true);
                 dialogueEnded = false;
+                dialogueBox.transform.rotation = Quaternion.identity;
+                flipped = false;
+                imgSet = false;
+                portraitImage_NPC.transform.position = new Vector3(0f, 0f, 0f);
+            }
+        }
+        else if(isReveal)
+        {
+            GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().boss4dialogue = true;
+            if(_npc != null && _npc_dialogue_done != null)
+            {
+                StopAllCoroutines();
+                isDialogueActive = false;
+                dialogueText.SetText("");
+                dialoguePanel.SetActive(false);
+                PauseController.SetPause(false);
+                dialogueIndex = 0;
+                expressionIndex = 0;
+                
+                _npc.SetActive(false);
+                _npc_dialogue_done.SetActive(true);
+                dialogueEnded = false;
+                anim.SetTrigger("Reveal");
+                dialogueBox.transform.rotation = Quaternion.identity;
+                flipped = false;
+                imgSet = false;
+                portraitImage_NPC.transform.position = new Vector3(0f, 0f, 0f);
             }
         }
         else
@@ -211,6 +283,16 @@ public class NPC : MonoBehaviour, IInteractable
             dialogueIndex = 0;
             expressionIndex = 0;
             dialogueEnded = false;
+            if(_npc != null && _npc_dialogue_done != null)
+            {
+                _npc.SetActive(false);
+                _npc_dialogue_done.SetActive(true);
+            }
+            dialogueBox.transform.rotation = Quaternion.identity;
+            flipped = false;
+            imgSet = false;
+            portraitImage_NPC.transform.position = new Vector3(0f, 0f, 0f);
+            
         }
     }
 }

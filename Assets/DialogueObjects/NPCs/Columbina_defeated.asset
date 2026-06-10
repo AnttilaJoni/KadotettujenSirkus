@@ -27,8 +27,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 1c3b2f9ef77d0c44a8845b0bc22ce9c7, type: 3}
   - {fileID: 8300000, guid: 42e36910413b41b42878acc8190feac5, type: 3}
   - {fileID: 8300000, guid: 95e22a425cdaf5143a476ee2a063c2ac, type: 3}
+  - {fileID: 8300000, guid: db2404e6ed834bb4aabb257887b2fce5, type: 3}
   voiceSounds_npc:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: be0e2c423b6ba674dac378d2c58879c6, type: 3}
+  - {fileID: 8300000, guid: 04865e861e5e22a48b5d063425591e32, type: 3}
+  - {fileID: 8300000, guid: c50b9f9c03577e34da2bbc2405696ef8, type: 3}
+  - {fileID: 8300000, guid: b5aa96e981cc56740a980f432ebeba08, type: 3}
   voicePitch: 1

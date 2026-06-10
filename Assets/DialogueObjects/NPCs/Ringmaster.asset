@@ -22,10 +22,10 @@ MonoBehaviour:
   dialogueLines:
   - Line 1 Player
   - Line 2 Player
-  - Line 3 NPC
-  - Line 4 NPC
+  - Line 3 Ringmaster
+  - Line 4 Ringmaster
   isPlayerLine: 01010000
-  isScreenShakeLine: 
+  isScreenShakeLine: 00000000
   autoProgressLines: 00000000
   autoProgressDelay: 2.5
   typingSpeed: 0.05
@@ -33,5 +33,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 1c3b2f9ef77d0c44a8845b0bc22ce9c7, type: 3}
   - {fileID: 8300000, guid: 42e36910413b41b42878acc8190feac5, type: 3}
   - {fileID: 8300000, guid: 95e22a425cdaf5143a476ee2a063c2ac, type: 3}
-  voiceSounds_npc: []
+  - {fileID: 8300000, guid: db2404e6ed834bb4aabb257887b2fce5, type: 3}
+  voiceSounds_npc:
+  - {fileID: 8300000, guid: ea9a7a1390662f94091323ede7613621, type: 3}
+  - {fileID: 8300000, guid: dd39fd44c5287e044a5456330a53a575, type: 3}
+  - {fileID: 8300000, guid: 8cefda233006dae40baf5ffe035a7b7f, type: 3}
+  - {fileID: 8300000, guid: 78fbc6ece7af9854883b395f265440d6, type: 3}
   voicePitch: 1
