@@ -3562,6 +3562,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4275716217589316759, guid: 2ea6a65203091bc40bc599925934e51c, type: 3}
+      propertyPath: musicSounds.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4275716217589316759, guid: 2ea6a65203091bc40bc599925934e51c, type: 3}
       propertyPath: sfxSounds.Array.data[2].name
       value: PlayerDamaged
       objectReference: {fileID: 0}
@@ -3570,11 +3574,23 @@ PrefabInstance:
       value: PlayerParry
       objectReference: {fileID: 0}
     - target: {fileID: 4275716217589316759, guid: 2ea6a65203091bc40bc599925934e51c, type: 3}
+      propertyPath: musicSounds.Array.data[1].name
+      value: Stacking
+      objectReference: {fileID: 0}
+    - target: {fileID: 4275716217589316759, guid: 2ea6a65203091bc40bc599925934e51c, type: 3}
       propertyPath: sfxSounds.Array.data[2].clip.Array.size
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4275716217589316759, guid: 2ea6a65203091bc40bc599925934e51c, type: 3}
       propertyPath: sfxSounds.Array.data[3].clip.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4275716217589316759, guid: 2ea6a65203091bc40bc599925934e51c, type: 3}
+      propertyPath: musicSounds.Array.data[0].clip.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4275716217589316759, guid: 2ea6a65203091bc40bc599925934e51c, type: 3}
+      propertyPath: musicSounds.Array.data[1].clip.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4275716217589316759, guid: 2ea6a65203091bc40bc599925934e51c, type: 3}
@@ -3601,6 +3617,14 @@ PrefabInstance:
       propertyPath: 'sfxSounds.Array.data[3].clip.Array.data[2]'
       value: 
       objectReference: {fileID: 8300000, guid: e8d10f11ea14c83468de197ccb369015, type: 3}
+    - target: {fileID: 4275716217589316759, guid: 2ea6a65203091bc40bc599925934e51c, type: 3}
+      propertyPath: 'musicSounds.Array.data[0].clip.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 3ba39577aa2b71e49b4db0d67efe9fdc, type: 3}
+    - target: {fileID: 4275716217589316759, guid: 2ea6a65203091bc40bc599925934e51c, type: 3}
+      propertyPath: 'musicSounds.Array.data[1].clip.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 5c6faf14510d02a44a3e3710c2e1e25b, type: 3}
     - target: {fileID: 4631023844011899684, guid: 2ea6a65203091bc40bc599925934e51c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 675.8502

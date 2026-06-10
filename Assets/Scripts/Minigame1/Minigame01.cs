@@ -33,14 +33,14 @@ public class Minigame01 : MonoBehaviour
     public int points = 1;
     public int score = 0;
     [SerializeField] private TextMeshProUGUI scoreText;
-    public int bossHealth;
-    public int bossMaxHealth;
+    public float bossHealth;
+    public float bossMaxHealth;
 
     public bool gameActive = false;
     
     public AudioClip [] hitSounds;
     public AudioClip [] missSounds;
-    public AudioClip [] musicTrack;
+    //public AudioClip [] musicTrack;
     void Start()
     {
         StartCoroutine(StartGame());
@@ -185,6 +185,7 @@ public class Minigame01 : MonoBehaviour
         if (gameActive) 
         {
             _time += Time.deltaTime;
+            BossTakeDamage(Time.deltaTime);
 
             while (_time >= interval) {
                 SpawnNotes();
@@ -198,7 +199,7 @@ public class Minigame01 : MonoBehaviour
         score += scoreToAdd;
         scoreText.text = " Score: " + score.ToString();
         
-        BossTakeDamage(scoreToAdd * 2);
+        //BossTakeDamage(scoreToAdd * 2);
     }
 
     void SpawnNotes()
@@ -229,8 +230,9 @@ public class Minigame01 : MonoBehaviour
         notesList.Add(note);
     }
 
-    void BossTakeDamage(int takeDamage)
+    void BossTakeDamage(float takeDamage)
     {
+        
         bossHealth -= takeDamage;
         bossHealthBar.GetComponent<Slider>().value = bossHealth;
 
@@ -288,7 +290,7 @@ public class Minigame01 : MonoBehaviour
     {
         comboCounter = 0;
         comboCounterText.text = comboCounter.ToString();
-        comboCounterImage.GetComponent<RawImage>().color = Color.orange;
+        comboCounterImage.GetComponent<RawImage>().color = Color.white;
     }
     
 }

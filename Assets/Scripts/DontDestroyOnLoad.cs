@@ -269,6 +269,9 @@ public class DontDestroyOnLoad : MonoBehaviour
             boss3Completed = true;
             
             minigameCompleted = true;
+            AudioManager.Instance.GetComponent<AudioSource>().loop = false;
+            AudioManager.musicSource.Stop();
+            
             SceneManager.LoadScene("MainScene");
             
             key3 = true;

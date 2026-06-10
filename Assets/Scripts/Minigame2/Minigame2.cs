@@ -31,6 +31,9 @@ public class Minigame2 : MonoBehaviour
     {
         GameObject.FindGameObjectWithTag("Fade").GetComponent<FadeScript>().fadeComplete = false;
         GameObject.FindGameObjectWithTag("Fade").GetComponent<FadeScript>().fadeOut = true;
+        
+        AudioManager.Instance.PlayMusic("Stacking");
+        AudioManager.Instance.GetComponent<AudioSource>().loop = true;
     }
 
     
