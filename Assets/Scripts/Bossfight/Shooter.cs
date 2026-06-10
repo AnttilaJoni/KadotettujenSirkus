@@ -56,6 +56,10 @@ public class Shooter : MonoBehaviour
         PauseController.SetPause(false);
         GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().ChangePlayerHealth(playerHealth);
 
+        if (audioEnabled) {
+            AudioManager.Instance.PlayMusic("Bossfight");
+            AudioManager.Instance.GetComponent<AudioSource>().loop = true;
+        }
     }
 
     private void Update()
