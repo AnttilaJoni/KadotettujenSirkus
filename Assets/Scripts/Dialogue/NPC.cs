@@ -196,6 +196,7 @@ public class NPC : MonoBehaviour, IInteractable
         if(dialogueEnded == true) return;
         if (isBoss_1) {
             GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().boss1dialogue = true;
+            GameObject.FindGameObjectWithTag("SaveController").GetComponent<SaveController>().SaveGame();
             GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().SavePlayerPosition();
             SceneController.instance.ChangeScene("Teemu2");
             dialogueEnded = true;
@@ -205,6 +206,7 @@ public class NPC : MonoBehaviour, IInteractable
         else if(isBoss_2)
         {
             GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().boss2dialogue = true;
+            GameObject.FindGameObjectWithTag("SaveController").GetComponent<SaveController>().SaveGame();
             GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().SavePlayerPosition();
             SceneController.instance.ChangeScene("MemoryGame");
             dialogueEnded = true;
@@ -214,6 +216,7 @@ public class NPC : MonoBehaviour, IInteractable
         else if(isBoss_3)
         {
             GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().boss3dialogue = true;
+            GameObject.FindGameObjectWithTag("SaveController").GetComponent<SaveController>().SaveGame();
             GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().SavePlayerPosition();
             SceneController.instance.ChangeScene("Teemu4");
             dialogueEnded = true;
@@ -223,6 +226,7 @@ public class NPC : MonoBehaviour, IInteractable
         else if(isBoss_4)
         {
             GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().boss4dialogue = true;
+            GameObject.FindGameObjectWithTag("SaveController").GetComponent<SaveController>().SaveGame();
             GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().SavePlayerPosition();
             SceneController.instance.ChangeScene("Teemu3");
             dialogueEnded = true;
