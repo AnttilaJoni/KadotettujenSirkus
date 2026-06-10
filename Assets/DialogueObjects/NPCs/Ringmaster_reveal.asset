@@ -18,8 +18,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: de552c155af459d4eafa136ee700421f, type: 3}
   - {fileID: 21300000, guid: de552c155af459d4eafa136ee700421f, type: 3}
   dialogueLines:
-  - Line 1 Ringmaster
-  - ...
+  - "So\u2026"
+  - " You\u2019re the little mouse that has been sneaking around my circus..."
   isPlayerLine: 0000
   isScreenShakeLine: 0000
   autoProgressLines: 0101
