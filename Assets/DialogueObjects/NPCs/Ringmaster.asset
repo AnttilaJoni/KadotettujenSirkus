@@ -15,17 +15,49 @@ MonoBehaviour:
   playerName: Emma
   npcName: Ringmaster
   npcPortrait:
-  - {fileID: 21300000, guid: 0af262158fdd6d24ba0ca215264212ae, type: 3}
-  - {fileID: 21300000, guid: e54a8e30c4b013042bac5cda328d5349, type: 3}
+  - {fileID: 21300000, guid: f664cc1e80094d2449ee7b20b271e9e8, type: 3}
+  - {fileID: 21300000, guid: 8635eca0edccc75448df23bfcd9356c9, type: 3}
+  - {fileID: 21300000, guid: 773ab3940a6ca544fafa783cd5afcdf7, type: 3}
+  - {fileID: 21300000, guid: 773ab3940a6ca544fafa783cd5afcdf7, type: 3}
   - {fileID: 21300000, guid: b46ff98eb0331db4c9bafa2bcb67ce9c, type: 3}
   - {fileID: 21300000, guid: 8635eca0edccc75448df23bfcd9356c9, type: 3}
+  - {fileID: 21300000, guid: 8635eca0edccc75448df23bfcd9356c9, type: 3}
+  - {fileID: 21300000, guid: b46ff98eb0331db4c9bafa2bcb67ce9c, type: 3}
+  - {fileID: 21300000, guid: 773ab3940a6ca544fafa783cd5afcdf7, type: 3}
+  - {fileID: 21300000, guid: 03e6cac59706c1a4d85f11e039aa3086, type: 3}
+  - {fileID: 21300000, guid: f664cc1e80094d2449ee7b20b271e9e8, type: 3}
+  - {fileID: 21300000, guid: 773ab3940a6ca544fafa783cd5afcdf7, type: 3}
+  - {fileID: 21300000, guid: 773ab3940a6ca544fafa783cd5afcdf7, type: 3}
+  - {fileID: 21300000, guid: 773ab3940a6ca544fafa783cd5afcdf7, type: 3}
+  - {fileID: 21300000, guid: 773ab3940a6ca544fafa783cd5afcdf7, type: 3}
+  - {fileID: 21300000, guid: 03e6cac59706c1a4d85f11e039aa3086, type: 3}
+  - {fileID: 21300000, guid: b46ff98eb0331db4c9bafa2bcb67ce9c, type: 3}
+  - {fileID: 21300000, guid: b28acc79cba2b4b44955a1a20c3afc02, type: 3}
   dialogueLines:
-  - Line 1 Player
-  - Line 2 Player
-  - Line 3 Ringmaster
-  - Line 4 Ringmaster
-  isPlayerLine: 01010000
-  isScreenShakeLine: 00000000
+  - ?????
+  - Why have you come here, child?
+  - "I\u2019m getting Taika back!"
+  - "You\u2019ve charmed them, but I know they want to leave!"
+  - Hahah! Really, now?
+  - "I don\u2019t think so. Out there, they had nothing. But here?"
+  - They can be the star of the show, every night, adored by the world.
+  - "Do you really want to take that away from them? Tsk\u2026 What a good friend
+    you are\u2026"
+  - SHUT UP YOU CREEP!
+  - ????
+  - "You don\u2019t know what you\u2019re talking about!"
+  - Taika is super talented, and they can start their own circus without you pulling
+    from the strings like some crazy puppeteer!!!
+  - ' Every member here could, and that is why you need them!'
+  - Because you are a talentless, creepy loser whose show SUCKS!!!
+  - " I\u2019m taking Taika with me, and if you try to stop us, I will KICK YOUR
+    ASS! "
+  - ........
+  - Issssss that sssssso?
+  - Come on then, kid.
+  - Entertain me before I rip out your ssssssssoul!!!!
+  isPlayerLine: 01000101000000000100010101010100
+  isScreenShakeLine: 00000000000000000100000000000000010101
   autoProgressLines: 00000000
   autoProgressDelay: 2.5
   typingSpeed: 0.05
