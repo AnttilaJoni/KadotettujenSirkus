@@ -2039,7 +2039,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4275716217589316759, guid: 2ea6a65203091bc40bc599925934e51c, type: 3}
       propertyPath: musicSounds.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4275716217589316759, guid: 2ea6a65203091bc40bc599925934e51c, type: 3}
       propertyPath: sfxSounds.Array.data[2].name
@@ -2052,6 +2052,10 @@ PrefabInstance:
     - target: {fileID: 4275716217589316759, guid: 2ea6a65203091bc40bc599925934e51c, type: 3}
       propertyPath: musicSounds.Array.data[1].name
       value: Stacking
+      objectReference: {fileID: 0}
+    - target: {fileID: 4275716217589316759, guid: 2ea6a65203091bc40bc599925934e51c, type: 3}
+      propertyPath: musicSounds.Array.data[2].name
+      value: Bossfight
       objectReference: {fileID: 0}
     - target: {fileID: 4275716217589316759, guid: 2ea6a65203091bc40bc599925934e51c, type: 3}
       propertyPath: sfxSounds.Array.data[2].clip.Array.size
@@ -2067,6 +2071,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4275716217589316759, guid: 2ea6a65203091bc40bc599925934e51c, type: 3}
       propertyPath: musicSounds.Array.data[1].clip.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4275716217589316759, guid: 2ea6a65203091bc40bc599925934e51c, type: 3}
+      propertyPath: musicSounds.Array.data[2].clip.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4275716217589316759, guid: 2ea6a65203091bc40bc599925934e51c, type: 3}
@@ -2101,6 +2109,10 @@ PrefabInstance:
       propertyPath: 'musicSounds.Array.data[1].clip.Array.data[0]'
       value: 
       objectReference: {fileID: 8300000, guid: 5c6faf14510d02a44a3e3710c2e1e25b, type: 3}
+    - target: {fileID: 4275716217589316759, guid: 2ea6a65203091bc40bc599925934e51c, type: 3}
+      propertyPath: 'musicSounds.Array.data[2].clip.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 9b20e0d2563a2ee4293c1a022051d04a, type: 3}
     - target: {fileID: 4631023844011899684, guid: 2ea6a65203091bc40bc599925934e51c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 675.8502

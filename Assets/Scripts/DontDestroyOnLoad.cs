@@ -281,6 +281,8 @@ public class DontDestroyOnLoad : MonoBehaviour
             boss4Completed = true;
             
             minigameCompleted = true;
+            AudioManager.musicSource.Stop();
+            
             SceneManager.LoadScene("Endings");
 
         }
