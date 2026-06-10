@@ -15,10 +15,60 @@ MonoBehaviour:
   playerName: Emma
   npcName: Volto
   npcPortrait:
-  - {fileID: 21300000, guid: b0321bac22fed8e4ca4dd78869ce325e, type: 3}
+  - {fileID: 21300000, guid: f7e0de14c29c1314493b756467b7d6c9, type: 3}
+  - {fileID: 21300000, guid: 3749d90ed1c3779499784d008a59a5ac, type: 3}
+  - {fileID: 21300000, guid: f664cc1e80094d2449ee7b20b271e9e8, type: 3}
+  - {fileID: 21300000, guid: f664cc1e80094d2449ee7b20b271e9e8, type: 3}
+  - {fileID: 21300000, guid: f7e0de14c29c1314493b756467b7d6c9, type: 3}
+  - {fileID: 21300000, guid: 3749d90ed1c3779499784d008a59a5ac, type: 3}
+  - {fileID: 21300000, guid: e54a8e30c4b013042bac5cda328d5349, type: 3}
+  - {fileID: 21300000, guid: ddaf942189d09394284b8826050e8d23, type: 3}
+  - {fileID: 21300000, guid: f4bc7b8d10bfeee4c817ce96593828ba, type: 3}
+  - {fileID: 21300000, guid: f664cc1e80094d2449ee7b20b271e9e8, type: 3}
+  - {fileID: 21300000, guid: f664cc1e80094d2449ee7b20b271e9e8, type: 3}
+  - {fileID: 21300000, guid: 4b7a64ae4e86a8148bd6f9d19c456ca5, type: 3}
+  - {fileID: 21300000, guid: 3749d90ed1c3779499784d008a59a5ac, type: 3}
+  - {fileID: 21300000, guid: 3749d90ed1c3779499784d008a59a5ac, type: 3}
+  - {fileID: 21300000, guid: f664cc1e80094d2449ee7b20b271e9e8, type: 3}
+  - {fileID: 21300000, guid: f7e0de14c29c1314493b756467b7d6c9, type: 3}
+  - {fileID: 21300000, guid: f7e0de14c29c1314493b756467b7d6c9, type: 3}
+  - {fileID: 21300000, guid: f7e0de14c29c1314493b756467b7d6c9, type: 3}
+  - {fileID: 21300000, guid: f664cc1e80094d2449ee7b20b271e9e8, type: 3}
+  - {fileID: 21300000, guid: e54a8e30c4b013042bac5cda328d5349, type: 3}
+  - {fileID: 21300000, guid: f7e0de14c29c1314493b756467b7d6c9, type: 3}
+  - {fileID: 21300000, guid: 4b7a64ae4e86a8148bd6f9d19c456ca5, type: 3}
+  - {fileID: 21300000, guid: ed45ecddfa5ed164686633fc0044f8be, type: 3}
+  - {fileID: 21300000, guid: 4b7a64ae4e86a8148bd6f9d19c456ca5, type: 3}
   dialogueLines:
-  - Volto Line 1
-  isPlayerLine: 00
+  - "One\u2026 Two\u2026 Three\u2026 Four\u2026 "
+  - "Oh- great, just as I thought I\u2019d have a moment of privacy\u2026"
+  - Sorry, I got lost in the maze.
+  - Why are you practising here and not with the others?
+  - "Because this spot is the only place where I\u2019m not being watched."
+  - "Kind of the point of privacy\u2026"
+  - "Watched? Like, by fans or\u2026someone else?"
+  - ...
+  - "Listen, I\u2019m trying to get my friend Taika out of here."
+  - "They claim to love it here, but in this letter they say that they\u2019re scared
+    and need my help!"
+  - " I\u2019m doing whatever it takes to get them to come home."
+  - "Huh\u2026 You\u2019re a good friend."
+  - ...
+  - Taika is charmed.
+  - Charmed?!
+  - 'Yes. '
+  - The Ringmaster is a powerful man, a snake in disguise.
+  - "He makes sure his \u2018show\u2019 is and stays perfect, no matter the means
+    necessary\u2026"
+  - "That\u2019s awful!"
+  - " Why don\u2019t you come with us? If we all leave together, he\u2019ll have
+    no power over you anymore."
+  - " Hmm\u2026 You\u2019re right."
+  - "I will talk to the others, and we will join you. I don\u2019t want us to live
+    in fear anymore."
+  - Thank you!
+  - Good luck, kid.
+  isPlayerLine: 000001010000010001010100000001000000010100000100
   isScreenShakeLine: 00
   autoProgressLines: 00
   autoProgressDelay: 2.5

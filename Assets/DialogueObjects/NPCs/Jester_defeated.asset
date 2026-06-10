@@ -15,11 +15,13 @@ MonoBehaviour:
   playerName: Emma
   npcName: Arlecchino
   npcPortrait:
-  - {fileID: 21300000, guid: d667c64385224db42a954d2b7575bf9b, type: 3}
+  - {fileID: 21300000, guid: 039a7f1b5cd5c1a41ae9574d0cded27c, type: 3}
+  - {fileID: 21300000, guid: 039a7f1b5cd5c1a41ae9574d0cded27c, type: 3}
   dialogueLines:
   - That was fun~!
+  - ~You've receaved the Funny Jester Key~
   isPlayerLine: 00
-  isScreenShakeLine: 00
+  isScreenShakeLine: 0001
   autoProgressLines: 00
   autoProgressDelay: 2.5
   typingSpeed: 0.05
