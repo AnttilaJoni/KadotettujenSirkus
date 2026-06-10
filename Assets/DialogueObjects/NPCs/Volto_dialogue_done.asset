@@ -17,7 +17,7 @@ MonoBehaviour:
   npcPortrait:
   - {fileID: 21300000, guid: 4b7a64ae4e86a8148bd6f9d19c456ca5, type: 3}
   dialogueLines:
-  - Volto Line 1
+  - You can do this.
   isPlayerLine: 00
   isScreenShakeLine: 00
   autoProgressLines: 00
