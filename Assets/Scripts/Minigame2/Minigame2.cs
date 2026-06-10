@@ -35,35 +35,26 @@ public class Minigame2 : MonoBehaviour
         AudioManager.Instance.PlayMusic("Stacking");
         AudioManager.Instance.GetComponent<AudioSource>().loop = true;
     }
-
     
     void Update()
     {
-        
         if (minigameActive) {
             MoveLauncher();
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && minigameActive && _canSpawnShape) 
         {
-            //_spawnedShape.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
             _spawnedShape.transform.parent = null;
             _spawnedShape.GetComponent<Rigidbody2D>().gravityScale = 1;
-            //_spawnedShape.GetComponent<Rigidbody2D>().AddForce(-launcher.transform.up * 5, ForceMode2D.Impulse);
-            //_spawnedShape.GetComponent<ShapeScript>().active = true;
-            
-
             
             StartCoroutine(ShapeTimer());
             _canSpawnShape = false;
-
         }
 
         if (Input.GetKeyDown(KeyCode.E)) 
         {
             _spawnedShape.transform.Rotate(new Vector3(0, 0, -90f));
         }
-        
     }
 
     void CalculateSpeed()
@@ -83,7 +74,6 @@ public class Minigame2 : MonoBehaviour
         else {
             moveSpeed += Time.deltaTime * 10;
         }
-        
     }
 
     void MoveLauncher()
@@ -126,7 +116,6 @@ public class Minigame2 : MonoBehaviour
 
     private IEnumerator ShapeTimer()
     {
-        
         yield return new WaitForSeconds(1f);
         SpawnShape();
         _canSpawnShape = true;

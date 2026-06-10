@@ -9,15 +9,11 @@ public class WinLineScript : MonoBehaviour
     [SerializeField] private TextMeshProUGUI timerText;
     public float _time  = 5f;
     public float timeToWin = 0f;
-
-    void Update()
-    {
-        
-    }
+    
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.CompareTag("Shape")) {
-            
+        if (other.CompareTag("Shape")) 
+        {
             _time -= Time.deltaTime;
 
             if (_time <= 4.5f && _time > 0) {

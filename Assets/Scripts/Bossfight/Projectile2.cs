@@ -13,8 +13,7 @@ public class Projectile2 : MonoBehaviour
     {
         
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         if (!bounceProjectile) {
@@ -41,8 +40,6 @@ public class Projectile2 : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Player")) 
         {
             Vector2 dir = other.transform.position - transform.position;
-            
-            //AudioManager.Instance.PlaySFX("PlayerDamaged");
             
             // Play bullet hit audio
             
@@ -80,13 +77,9 @@ public class Projectile2 : MonoBehaviour
             //Destroy(gameObject);
         }
         
-        
-
         if (other.gameObject.layer == LayerMask.NameToLayer("Wall")) 
         {
             Destroy(gameObject);
         }
-        
-        
     }
 }

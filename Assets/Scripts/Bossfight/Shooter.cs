@@ -64,13 +64,6 @@ public class Shooter : MonoBehaviour
 
     private void Update()
     {
-        /*
-        if (countDownScript.gameActive) {
-
-            Attack();
-        }
-        */
-        
         Attack();
     }
 
@@ -92,11 +85,8 @@ public class Shooter : MonoBehaviour
             {
                 StartCoroutine(Phase3());
             }
-            
         }
-        
     }
-    
     
     // Phase 1
     private IEnumerator Phase1()
@@ -109,15 +99,7 @@ public class Shooter : MonoBehaviour
         // Play animation
         animationDelay = 0.5f;
         
-        //yield return new WaitForSeconds(animationDelay);
-        
-        // Play boss laugh audio
-        //var randomInt  = UnityEngine.Random.Range(0, 3);
-        //AudioManager.Instance.BossSFX(bossLaughSounds[randomInt]);
-        
-
         float startAngle, currentAngle, angleStep, endAngle;
-        //float timeBetweenProjectiles = 0f;
 
         TargetConeOfInfluence(out startAngle, out currentAngle, out angleStep, out endAngle);
 
@@ -132,8 +114,7 @@ public class Shooter : MonoBehaviour
                 }
 
                 Vector2 pos = FindBulletSpawnPos(currentAngle);
-
-
+                
                 GameObject newBullet = Instantiate(bulletPrefab, pos, Quaternion.identity);
                 newBullet.transform.right = newBullet.transform.position - transform.position;
 
@@ -157,7 +138,6 @@ public class Shooter : MonoBehaviour
     // Phase 2
     private IEnumerator Phase2()
     {
-        
         if (phase2_1) {
 
             _isShooting = true;
@@ -183,9 +163,7 @@ public class Shooter : MonoBehaviour
             animationDelay = 0.5f;
         
             yield return new WaitForSeconds(animationDelay);
-
-
-
+            
             if (stagger) {
                 timeBetweenProjectiles = timebetweenBursts / projectilesPerBurst;
             }
@@ -268,8 +246,6 @@ public class Shooter : MonoBehaviour
         
             yield return new WaitForSeconds(animationDelay);
 
-
-
             if (stagger) {
                 timeBetweenProjectiles = timebetweenBursts / projectilesPerBurst;
             }
@@ -327,15 +303,10 @@ public class Shooter : MonoBehaviour
                 yield return new WaitForSeconds(timebetweenBursts);
 
             }
-
             yield return new WaitForSeconds(restTime);
             _isShooting = false;
-            
         }
-
     }
-    
-    
     
     // Phase 3
     private IEnumerator Phase3()
@@ -377,8 +348,6 @@ public class Shooter : MonoBehaviour
                 StartCoroutine(TimerLeft(6.5f));
             }
             
-            
-            
             _isShooting = true;
             oscillate = false;
             stagger = false;
@@ -389,8 +358,7 @@ public class Shooter : MonoBehaviour
             restTime = 2.5f;
             timebetweenBursts = 1.25f;
             burstCount = 3;
-
-
+            
             float startAngle, currentAngle, angleStep, endAngle;
             //float timeBetweenProjectiles = 0f;
 
@@ -433,10 +401,7 @@ public class Shooter : MonoBehaviour
 
             yield return new WaitForSeconds(restTime);
             _isShooting = false;
-
         }
-
-
     }
 
     private void TargetConeOfInfluence(out float startAngle, out float currentAngle, out float angleStep, out float endAngle)

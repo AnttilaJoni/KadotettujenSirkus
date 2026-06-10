@@ -7,12 +7,6 @@ public class NotesScript : MonoBehaviour
     
     public AudioClip [] missSounds;
     
-    void Start()
-    {
-        
-    }
-
-    
     void Update()
     {
         if (transform.position.y > goal.position.y - 2f) 

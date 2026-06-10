@@ -5,8 +5,7 @@ using UnityEngine;
 public class SaveController : MonoBehaviour
 {
     private string _saveLocation;
-
-
+    
     void Awake()
     {
         _saveLocation = Path.Combine(Application.persistentDataPath, "saveData.json");
@@ -50,7 +49,6 @@ public class SaveController : MonoBehaviour
         
         //SaveGame();
     }
-
 
     public void SaveGame()
     {
@@ -115,7 +113,6 @@ public class SaveController : MonoBehaviour
         {
             SaveGame();
         }
-        
         
     }
 

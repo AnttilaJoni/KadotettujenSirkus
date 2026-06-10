@@ -15,8 +15,6 @@ public class MovementScript : MonoBehaviour
     private float _parryTimer = 1f;
     public float parryTime;
     
-    
-
     [SerializeField] private Animator anim;
     public string lastDirection = "Up";
 
