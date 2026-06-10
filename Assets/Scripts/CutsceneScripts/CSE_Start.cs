@@ -24,7 +24,6 @@ public class CSE_Start : CutsceneElementBase
 
         StartCoroutine(FadeCanvas(canvasGroup, Direction.FadeIn, fadingSpeed));
         //StartCoroutine(WaitAndAdvance());
-        Debug.Log("Executing " + name);
     }
 
     private IEnumerator FadeCanvas(CanvasGroup canvasGroup, Direction direction, float duration)

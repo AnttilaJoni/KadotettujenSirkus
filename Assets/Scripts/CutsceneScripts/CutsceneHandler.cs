@@ -9,6 +9,7 @@ public class CutsceneHandler : MonoBehaviour
     private int index = -1;
     private bool gameStarted;
     private bool gameEnded;
+    public FlashingSkipText flashingSkipText;
 
     public void Start()
     {
@@ -36,6 +37,10 @@ public class CutsceneHandler : MonoBehaviour
         if(index >= 0 && index < cutsceneElements.Length)
         {
             cutsceneElements[index].Execute();
+            if(scene.name == $"Menu" && index == 2 && flashingSkipText != null)
+            {
+                StartCoroutine(StartTextAnim());
+            }
         } 
         else if(gameStarted == false && scene.name == $"Menu")
         {   
@@ -59,6 +64,11 @@ public class CutsceneHandler : MonoBehaviour
             //Time.timeScale = 1; //pausecontroller not paused?
             //AudioListener.pause = false;
         }
+    }
+    IEnumerator StartTextAnim()
+    {
+        yield return new WaitForSeconds(4f);
+        flashingSkipText.StartFlashing();
     }
 
     public void PlayNextElement()
