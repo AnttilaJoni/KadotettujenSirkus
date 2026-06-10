@@ -18,7 +18,7 @@ public class SaveController : MonoBehaviour
             GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().TakeDamage(0);
             PauseController.SetPause(false);
             GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().DialogueState();
-            
+            GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().LockState();
             Debug.Log("Loaded game after death");
         }
         
@@ -69,8 +69,8 @@ public class SaveController : MonoBehaviour
             boss4Completed = GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().boss4Completed,
             
             key1 = GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().key1,
-            key2 = GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().key1,
-            key3 = GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().key1,
+            key2 = GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().key2,
+            key3 = GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().key3,
             
             gameEnding = GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().gameEnding
             

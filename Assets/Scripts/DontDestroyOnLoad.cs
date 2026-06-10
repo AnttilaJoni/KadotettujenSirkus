@@ -171,7 +171,7 @@ public class DontDestroyOnLoad : MonoBehaviour
         }
     }
 
-    void LockState()
+    public void LockState()
     {
         if (key1) {
             GameObject.Find("Lukot").transform.GetChild(0).transform.GetChild(0).gameObject.SetActive(false);
@@ -202,6 +202,7 @@ public class DontDestroyOnLoad : MonoBehaviour
             playerAlive = false;
             AudioManager.musicSource.Stop();
             SceneManager.LoadScene("MainScene");
+            //LockState();
         }
     }
 
