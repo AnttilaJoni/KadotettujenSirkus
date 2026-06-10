@@ -95529,7 +95529,7 @@ Transform:
   m_GameObject: {fileID: 6900293536843754455}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.37, y: 45.56, z: 0}
+  m_LocalPosition: {x: 16.35, y: 45.45, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -95548,7 +95548,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: a4637d1958aacfc42af426c82f409974, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.256
+  m_Volume: 0.086
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -95556,7 +95556,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 0
-  MinDistance: 2.7980614
+  MinDistance: 2.7027264
   MaxDistance: 6.5344143
   Pan2D: 0
   rolloffMode: 2
@@ -118387,11 +118387,53 @@ PrefabInstance:
       propertyPath: m_Name
       value: MA_TicketBooth
       objectReference: {fileID: 0}
+    - target: {fileID: 3854689827540492160, guid: 468ab14d3f63b24468e4eadaf4f302de, type: 3}
+      propertyPath: m_TagString
+      value: Interactable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3854689827540492160, guid: 468ab14d3f63b24468e4eadaf4f302de, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7227800964699743752}
   m_SourcePrefab: {fileID: 100100000, guid: 468ab14d3f63b24468e4eadaf4f302de, type: 3}
+--- !u!1 &6281965564236210793 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3854689827540492160, guid: 468ab14d3f63b24468e4eadaf4f302de, type: 3}
+  m_PrefabInstance: {fileID: 7084335507636092393}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7227800964699743752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6281965564236210793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d6076e85bf393c4081dfc9d47b2af32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NPC
+  dialogueData: {fileID: 11400000, guid: a0da1a0bd0b999e49ba86049426db3e8, type: 2}
+  dialoguePanel: {fileID: 0}
+  dialogueBox: {fileID: 0}
+  dialogueText: {fileID: 0}
+  nameText: {fileID: 0}
+  nameTextNPC: {fileID: 0}
+  portraitImage: {fileID: 0}
+  portraitImage_NPC: {fileID: 0}
+  closeDialogue: {fileID: 0}
+  isBoss_1: 0
+  isBoss_2: 0
+  isBoss_3: 0
+  isBoss_4: 0
+  isVolto: 0
+  isReveal: 0
+  _npc: {fileID: 0}
+  _npc_dialogue_done: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!4 &7159893568790729769 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 75876026243475904, guid: 468ab14d3f63b24468e4eadaf4f302de, type: 3}

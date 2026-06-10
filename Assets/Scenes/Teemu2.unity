@@ -3520,7 +3520,7 @@ MonoBehaviour:
   notesSpawnPoint: {fileID: 1354814092}
   notes: {fileID: 123136580}
   goal: {fileID: 1953896653}
-  playerHealth: 30
+  playerHealth: 50
   notesList: []
   interval: 0.507
   speedMultiplier: 7

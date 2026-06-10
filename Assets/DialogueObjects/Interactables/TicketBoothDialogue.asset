@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b8f0dde067395140a3c2cbe4f68691f, type: 3}
+  m_Name: TicketBoothDialogue
+  m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
+  playerName: Emma
+  npcName: Emma
+  npcPortrait:
+  - {fileID: 21300000, guid: ed45ecddfa5ed164686633fc0044f8be, type: 3}
+  - {fileID: 21300000, guid: e54a8e30c4b013042bac5cda328d5349, type: 3}
+  dialogueLines:
+  - '"Your soul."'
+  - That's a bit lame.
+  isPlayerLine: 0101
+  isScreenShakeLine: 
+  autoProgressLines: 0000
+  autoProgressDelay: 2.5
+  typingSpeed: 0.05
+  voiceSounds_player:
+  - {fileID: 8300000, guid: 1c3b2f9ef77d0c44a8845b0bc22ce9c7, type: 3}
+  - {fileID: 8300000, guid: 42e36910413b41b42878acc8190feac5, type: 3}
+  - {fileID: 8300000, guid: 95e22a425cdaf5143a476ee2a063c2ac, type: 3}
+  voiceSounds_npc: []
+  voicePitch: 1

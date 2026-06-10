@@ -15,11 +15,24 @@ MonoBehaviour:
   playerName: Emma
   npcName: Colombina
   npcPortrait:
+  - {fileID: 21300000, guid: 4b38569d70e4be446bc3d86b330d8f6c, type: 3}
+  - {fileID: 21300000, guid: 4b38569d70e4be446bc3d86b330d8f6c, type: 3}
+  - {fileID: 21300000, guid: 065307d55c5670948b6493c7e0e52cf6, type: 3}
+  - {fileID: 21300000, guid: e54a8e30c4b013042bac5cda328d5349, type: 3}
   - {fileID: 21300000, guid: 9d87e408fff0638469c262f075481d86, type: 3}
+  - {fileID: 21300000, guid: 065307d55c5670948b6493c7e0e52cf6, type: 3}
+  - {fileID: 21300000, guid: d1072acf725cf7d4faf27c6ef10a9540, type: 3}
   dialogueLines:
-  - You got me damn.
-  isPlayerLine: 00
-  isScreenShakeLine: 00
+  - " You\u2019ve received the Prima Donna Key "
+  - ' I suppose you proved your worth. Your dance was almost as graceful as mine.'
+  - "Forgive my outburst, I have been a bit on edge lately\u2026 "
+  - Why? Does it have something to do with the Ringmaster?
+  - Oh heavens no!
+  - "It\u2019s that stupid CLOWN that keeps hopping around and ringing his bells,
+    disturbing my beauty sleep and distracting me! "
+  - Right...
+  isPlayerLine: 00000001000001
+  isScreenShakeLine: 01
   autoProgressLines: 00
   autoProgressDelay: 2.5
   typingSpeed: 0.05

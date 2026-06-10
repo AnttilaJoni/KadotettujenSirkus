@@ -15,11 +15,43 @@ MonoBehaviour:
   playerName: Emma
   npcName: Taika
   npcPortrait:
+  - {fileID: 21300000, guid: ed45ecddfa5ed164686633fc0044f8be, type: 3}
   - {fileID: 21300000, guid: cd83077c9d4a38945a6931a885f2be87, type: 3}
+  - {fileID: 21300000, guid: cd83077c9d4a38945a6931a885f2be87, type: 3}
+  - {fileID: 21300000, guid: f664cc1e80094d2449ee7b20b271e9e8, type: 3}
+  - {fileID: 21300000, guid: f664cc1e80094d2449ee7b20b271e9e8, type: 3}
+  - {fileID: 21300000, guid: 026a525d33b8cc14f9d02e26abaf76ce, type: 3}
+  - {fileID: 21300000, guid: f83896aa02878d340942c4ac11e4d93a, type: 3}
+  - {fileID: 21300000, guid: d1072acf725cf7d4faf27c6ef10a9540, type: 3}
+  - {fileID: 21300000, guid: f83896aa02878d340942c4ac11e4d93a, type: 3}
+  - {fileID: 21300000, guid: f664cc1e80094d2449ee7b20b271e9e8, type: 3}
+  - {fileID: 21300000, guid: f83896aa02878d340942c4ac11e4d93a, type: 3}
+  - {fileID: 21300000, guid: f83896aa02878d340942c4ac11e4d93a, type: 3}
+  - {fileID: 21300000, guid: f664cc1e80094d2449ee7b20b271e9e8, type: 3}
+  - {fileID: 21300000, guid: cd83077c9d4a38945a6931a885f2be87, type: 3}
+  - {fileID: 21300000, guid: f664cc1e80094d2449ee7b20b271e9e8, type: 3}
+  - {fileID: 21300000, guid: d1072acf725cf7d4faf27c6ef10a9540, type: 3}
   dialogueLines:
-  - Taika Line 1
-  isPlayerLine: 00
-  isScreenShakeLine: 00
+  - Taika!!!!
+  - Oh, hi Emma. What are you doing here?
+  - "The show won\u2019t start until the evening. "
+  - You.. You asked me to come here, in your letter?
+  - "You said you needed help! Come on, we\u2019re going home. "
+  - ' What letter?'
+  - " Emma, you\u2019re being silly. The Circus is my home now, why would I leave? "
+  - " I don\u2019t know, something about \u2018The Ringleader isn\u2019t what he
+    seems\u2019 kind of sent alarm bells going in my head!!"
+  - 'The Ringleader is a nice man, Emma! I was just spooked on my first day, hahah~ '
+  - But-
+  - " I\u2019m fine! I love it here!"
+  - 'Everyone does. '
+  - '... '
+  - " If you don\u2019t believe me, ask them! Have fun and walk around, maybe you
+    want to stay here too~"
+  - ...
+  - Fine.
+  isPlayerLine: 01000001010000010001000001000101
+  isScreenShakeLine: 000000000000000000000001
   autoProgressLines: 00
   autoProgressDelay: 2.5
   typingSpeed: 0.05
