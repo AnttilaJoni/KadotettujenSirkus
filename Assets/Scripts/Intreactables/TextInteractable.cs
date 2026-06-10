@@ -31,6 +31,7 @@ public class TextInteractable : MonoBehaviour, IInteractable
     private void OpenInteract()
     {
         SetOpened(true);
+        // audioo?
         
     }
     public void SetOpened(bool opened)

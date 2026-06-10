@@ -46,6 +46,7 @@ public class CardsController : MonoBehaviour
         PrepareSprites();
         CreateCards();
         AudioManager.PlayCardSFX(cardSounds[1]);
+        AudioManager.Instance.PlayMusic("MemoryGame");
     }
     private void Update()
     {
