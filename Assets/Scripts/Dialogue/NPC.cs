@@ -38,40 +38,42 @@ public class NPC : MonoBehaviour, IInteractable
     }
     void Update()
     {
-        if(imgSet == false)
-        {
-            if(isBoss_1) 
-            {
-                portraitImage_NPC.transform.position = new Vector3(290f, 280f, 0f);
-                imgSet = true;
-            }
-            else if(isBoss_2) 
-            {
-                portraitImage_NPC.transform.position = new Vector3(324f, 310f, 0f);
-                imgSet = true;
-            }
-            else if(isBoss_3) 
-            {
-                portraitImage_NPC.transform.position = new Vector3(240f, 310f, 0f);
-                imgSet = true;
-            }
-            else if(isBoss_4)
-            {
-                imgSet = true;
-            }
-            else if(isBoss_4)
-            {
-                portraitImage_NPC.transform.position = new Vector3(200f, 180f, 0f);
-                imgSet = true;
-            }
-            else
-            {
-                portraitImage_NPC.transform.position = new Vector3(300f, 310f, 0f);
-                imgSet = true;
-            }
-        }
         if (isDialogueActive)
         {
+            if(imgSet == false)
+            {
+                if(isBoss_1) 
+                {
+                    portraitImage_NPC.transform.position = new Vector2(290f, 280f);
+                    //portraitImage_NPC.transform.PointsToPixels(new Vector2(290f, 280f)); 
+                    imgSet = true;
+                }
+                else if(isBoss_2) 
+                {
+                    portraitImage_NPC.transform.position = new Vector3(324f, 310f, 0f);
+                    imgSet = true;
+                }
+                else if(isBoss_3) 
+                {
+                    portraitImage_NPC.transform.position = new Vector3(240f, 310f, 0f);
+                    imgSet = true;
+                }
+                else if(isBoss_4)
+                {
+                    portraitImage_NPC.transform.position = new Vector3(200f, 180f, 0f);
+                    imgSet = true;
+                }
+                else if(isReveal)
+                {
+                    portraitImage_NPC.transform.position = new Vector3(200f, 180f, 0f);
+                    imgSet = true;
+                }
+                else
+                {
+                    portraitImage_NPC.transform.position = new Vector3(300f, 310f, 0f);
+                    imgSet = true;
+                }
+            }
             portraitImage_NPC.SetNativeSize();
             if (Input.GetKeyDown(KeyCode.Space)) 
             {
@@ -198,7 +200,7 @@ public class NPC : MonoBehaviour, IInteractable
             SceneController.instance.ChangeScene("Teemu2");
             dialogueEnded = true;
             imgSet = false;
-            portraitImage_NPC.transform.position = new Vector3(0f, 0f, 0f);
+            portraitImage_NPC.transform.position = new Vector3(300f, 310f, 0f);
         } 
         else if(isBoss_2)
         {
@@ -207,7 +209,7 @@ public class NPC : MonoBehaviour, IInteractable
             SceneController.instance.ChangeScene("MemoryGame");
             dialogueEnded = true;
             imgSet = false;
-            portraitImage_NPC.transform.position = new Vector3(0f, 0f, 0f);
+            portraitImage_NPC.transform.position = new Vector3(300f, 310f, 0f);
         } 
         else if(isBoss_3)
         {
@@ -216,7 +218,7 @@ public class NPC : MonoBehaviour, IInteractable
             SceneController.instance.ChangeScene("Teemu4");
             dialogueEnded = true;
             imgSet = false;
-            portraitImage_NPC.transform.position = new Vector3(0f, 0f, 0f);
+            portraitImage_NPC.transform.position = new Vector3(300f, 310f, 0f);
         } 
         else if(isBoss_4)
         {
@@ -225,7 +227,7 @@ public class NPC : MonoBehaviour, IInteractable
             SceneController.instance.ChangeScene("Teemu3");
             dialogueEnded = true;
             imgSet = false;
-            portraitImage_NPC.transform.position = new Vector3(0f, 0f, 0f);
+            portraitImage_NPC.transform.position = new Vector3(300f, 310f, 0f);
         } 
         else if(isVolto)
         {
@@ -247,7 +249,7 @@ public class NPC : MonoBehaviour, IInteractable
                 dialogueBox.transform.rotation = Quaternion.identity;
                 flipped = false;
                 imgSet = false;
-                portraitImage_NPC.transform.position = new Vector3(0f, 0f, 0f);
+                portraitImage_NPC.transform.position = new Vector3(300f, 310f, 0f);
             }
         }
         else if(isReveal)
@@ -270,7 +272,7 @@ public class NPC : MonoBehaviour, IInteractable
                 dialogueBox.transform.rotation = Quaternion.identity;
                 flipped = false;
                 imgSet = false;
-                portraitImage_NPC.transform.position = new Vector3(0f, 0f, 0f);
+                portraitImage_NPC.transform.position = new Vector3(300f, 310f, 0f);
             }
         }
         else
@@ -291,7 +293,7 @@ public class NPC : MonoBehaviour, IInteractable
             dialogueBox.transform.rotation = Quaternion.identity;
             flipped = false;
             imgSet = false;
-            portraitImage_NPC.transform.position = new Vector3(0f, 0f, 0f);
+            portraitImage_NPC.transform.position = new Vector3(300f, 310f, 0f);
             
         }
     }
