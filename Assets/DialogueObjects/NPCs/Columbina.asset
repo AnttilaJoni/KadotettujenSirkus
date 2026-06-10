@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: Columbina
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
   playerName: Emma
-  npcName: Columbina
+  npcName: Colombina
   npcPortrait:
   - {fileID: 21300000, guid: 9d87e408fff0638469c262f075481d86, type: 3}
   - {fileID: 21300000, guid: 4b38569d70e4be446bc3d86b330d8f6c, type: 3}
   - {fileID: 21300000, guid: 0af262158fdd6d24ba0ca215264212ae, type: 3}
   - {fileID: 21300000, guid: e54a8e30c4b013042bac5cda328d5349, type: 3}
   dialogueLines:
-  - Line 1 Columbina
-  - Line 2 Columbina
+  - Line 1 Colombina
+  - Line 2 Colombina
   - Line 3 Emma
   - Line 4 Emma
   isPlayerLine: 00000101

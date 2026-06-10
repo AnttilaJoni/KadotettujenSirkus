@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Columbina_defeated
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
   playerName: Emma
-  npcName: Columbina
+  npcName: Colombina
   npcPortrait:
   - {fileID: 21300000, guid: 9d87e408fff0638469c262f075481d86, type: 3}
   dialogueLines:
