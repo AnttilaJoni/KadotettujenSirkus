@@ -45,8 +45,11 @@ public class AudioManager : MonoBehaviour
     public void PlaySFX(string name)
     {
         Sound s = Array.Find(sfxSounds, x => x.name == name);
-
-        if (s == null)
+        if(name == "WalkOutside")
+        {
+            voiceAudioSource.PlayOneShot(sfxSounds[0].clip[UnityEngine.Random.Range(0, sfxSounds[0].clip.Length)]);
+        }
+        else if (s == null)
         {
             Debug.Log("Sound Not Found");
         }

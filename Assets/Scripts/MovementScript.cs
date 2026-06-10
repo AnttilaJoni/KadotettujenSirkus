@@ -14,6 +14,7 @@ public class MovementScript : MonoBehaviour
     private bool _canParry = true;
     private float _parryTimer = 1f;
     public float parryTime;
+    private bool alreadyPlaying;
     
     
 
@@ -25,6 +26,7 @@ public class MovementScript : MonoBehaviour
     void Start()
     {
         _rb2d = GetComponent<Rigidbody2D>();
+        alreadyPlaying = false;
     }
     void Update()
     {
@@ -78,6 +80,8 @@ public class MovementScript : MonoBehaviour
         Vector3 finalDirection = Vector2.zero;
         if(PauseController.IsGamePaused)
         {
+            alreadyPlaying = false;
+            StopAllCoroutines();
             //Debug.Log("Is paused");
             moveDirection = Vector3.zero;
         }
@@ -150,7 +154,18 @@ public class MovementScript : MonoBehaviour
     {
         if (_canParry && GameObject.FindGameObjectWithTag("Fade").GetComponent<FadeScript>().fadeComplete) {
             _rb2d.MovePosition(transform.position + moveDirection.normalized * (moveSpeed / 50));
+            if(moveDirection != Vector3.zero && !alreadyPlaying)
+            {
+                alreadyPlaying = true;
+                StartCoroutine(WalkSFXCoroutine());
+            }
         }
+    }
+     private IEnumerator WalkSFXCoroutine()
+    {
+        AudioManager.Instance.PlaySFX("WalkOutside");
+        yield return new WaitForSeconds(0.3f);
+        alreadyPlaying = false;
     }
 
     void Parry()

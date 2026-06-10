@@ -776,7 +776,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3642627199612782381, guid: 2ea6a65203091bc40bc599925934e51c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3688602523991887851, guid: 2ea6a65203091bc40bc599925934e51c, type: 3}
       propertyPath: Loop
@@ -834,6 +834,10 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6986743332046555498, guid: 2ea6a65203091bc40bc599925934e51c, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 6826fe7e04dd2af4aa1d95f127eda033, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
