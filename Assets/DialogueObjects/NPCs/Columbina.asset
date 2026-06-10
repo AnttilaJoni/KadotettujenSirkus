@@ -17,15 +17,31 @@ MonoBehaviour:
   npcPortrait:
   - {fileID: 21300000, guid: 9d87e408fff0638469c262f075481d86, type: 3}
   - {fileID: 21300000, guid: 4b38569d70e4be446bc3d86b330d8f6c, type: 3}
-  - {fileID: 21300000, guid: 0af262158fdd6d24ba0ca215264212ae, type: 3}
+  - {fileID: 21300000, guid: f664cc1e80094d2449ee7b20b271e9e8, type: 3}
   - {fileID: 21300000, guid: e54a8e30c4b013042bac5cda328d5349, type: 3}
+  - {fileID: 21300000, guid: 9d87e408fff0638469c262f075481d86, type: 3}
+  - {fileID: 21300000, guid: 773ab3940a6ca544fafa783cd5afcdf7, type: 3}
+  - {fileID: 21300000, guid: 065307d55c5670948b6493c7e0e52cf6, type: 3}
+  - {fileID: 21300000, guid: 9d87e408fff0638469c262f075481d86, type: 3}
+  - {fileID: 21300000, guid: 0af262158fdd6d24ba0ca215264212ae, type: 3}
+  - {fileID: 21300000, guid: 065307d55c5670948b6493c7e0e52cf6, type: 3}
   dialogueLines:
-  - Line 1 Colombina
-  - Line 2 Colombina
-  - Line 3 Emma
-  - Line 4 Emma
-  isPlayerLine: 00000101
-  isScreenShakeLine: 00000000
+  - Aaah~ Another adoring fan, I see! Welcome, welcome~
+  - You can leave your gifts and flowers anywhere you wish~
+  - Uh-
+  - " I don\u2019t have-"
+  - ' You can watch me as I practise and cheer for me~ '
+  - " I\u2019M NOT HERE FOR YOU, I\u2019M HERE FOR TAIKA!!! I NEED YOUR KEY TO GET
+    INTO THAT STUPID TENT!"
+  - ....W H A T?! THAT NEWCOMER, THE LITTLE TWERP WHO THINKS THEY CAN OUTSHINE ME?! 
+    I AM THE TRUE STAR OF THE SHOW, PEOPLE COME FROM MILES AROUND JUST TO SEE MY
+    DANCE!
+  - ' I will show you! Get ready, child, for you are about to be amazed by the Prima
+    Donna herself!'
+  - I thought your name is Colombina
+  - SHUT UP!!
+  isPlayerLine: 00000101010000
+  isScreenShakeLine: 00000000000001000001
   autoProgressLines: 00000000
   autoProgressDelay: 2.5
   typingSpeed: 0.05
