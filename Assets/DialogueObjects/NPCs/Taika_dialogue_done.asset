@@ -17,7 +17,7 @@ MonoBehaviour:
   npcPortrait:
   - {fileID: 21300000, guid: cd83077c9d4a38945a6931a885f2be87, type: 3}
   dialogueLines:
-  - Taika Line 1
+  - ' Have fun~ Or not!'
   isPlayerLine: 00
   isScreenShakeLine: 00
   autoProgressLines: 00
