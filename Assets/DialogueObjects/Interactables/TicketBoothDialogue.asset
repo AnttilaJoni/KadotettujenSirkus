@@ -15,8 +15,8 @@ MonoBehaviour:
   playerName: Emma
   npcName: Emma
   npcPortrait:
-  - {fileID: 21300000, guid: ed45ecddfa5ed164686633fc0044f8be, type: 3}
   - {fileID: 21300000, guid: e54a8e30c4b013042bac5cda328d5349, type: 3}
+  - {fileID: 21300000, guid: 0af262158fdd6d24ba0ca215264212ae, type: 3}
   dialogueLines:
   - '"Your soul."'
   - That's a bit lame.
