@@ -36,14 +36,12 @@ public class Projectile : MonoBehaviour
     {
         //this.projectileRange  = projectileRange;
     }
-
-
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Player")) 
         {
             // Play bullet hit audio
-            
             int randomInt = UnityEngine.Random.Range(0, 3);
             {
                 if (randomInt == 0) {
@@ -61,12 +59,6 @@ public class Projectile : MonoBehaviour
                 }
             }
             
-
-
-            //AudioManager.Instance.PlaySFX("PlayerDamaged");
-            
-            //Vector2 dir = other.transform.position - transform.position;
-            
             GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().TakeDamage(projectileDamage);
             Destroy(gameObject);
         }
@@ -78,24 +70,17 @@ public class Projectile : MonoBehaviour
             
             Debug.Log("Parry");
             bounceProjectile = true;
-            //Destroy(gameObject);
         }
-        
-        
 
         if (other.gameObject.layer == LayerMask.NameToLayer("Wall")) 
         {
             //Debug.Log("Wall");
             Destroy(gameObject);
         }
-        
-        
-        
     }
 
     private void MoveProjectile()
     {
-        
         if (!bounceProjectile) {
             transform.Translate(Vector3.right * (Time.deltaTime * moveSpeed));
         }
@@ -104,6 +89,4 @@ public class Projectile : MonoBehaviour
             transform.Translate(-Vector3.right * (Time.deltaTime * moveSpeed));
         }
     }
-
-    
 }

@@ -537,7 +537,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: JONI - CODE & ???
+  m_Text: 'JONI - PROGRAAMMER, CONCEPT ART '
 --- !u!1 &841227835268421440
 GameObject:
   m_ObjectHideFlags: 0
@@ -1243,7 +1243,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5056423957378915012
 Transform:
   m_ObjectHideFlags: 0
@@ -1547,7 +1547,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: TEEMU - MAIN CODER
+  m_Text: TEEMU - LEAD PROGRAMMER
 --- !u!1 &2620448266587119000
 GameObject:
   m_ObjectHideFlags: 0
@@ -2065,7 +2065,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: HEKATE - PROJECT MANAGER + LEVEL DESIGN
+  m_Text: HEKATE - PROJECT MANAGER + GAME AND LEVEL DESIGN, TILESETS
 --- !u!1 &2919539033463467451
 GameObject:
   m_ObjectHideFlags: 0
@@ -5462,7 +5462,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SIPU - SHITASS PUNK
+  m_Text: SIPU - 2D ILLUSTRATIVE AND PIXEL ART, MENU ART
 --- !u!1 &8575443273005529167
 GameObject:
   m_ObjectHideFlags: 0
@@ -5661,7 +5661,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: REBE - GAME LEAD
+  m_Text: REBE - GAME LEAD, PIXEL CHARACTER ART, ANIMATION, CUTSCENE ART
 --- !u!1 &8618885338771194352
 GameObject:
   m_ObjectHideFlags: 0

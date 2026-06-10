@@ -56,9 +56,7 @@ public class Minigame01 : MonoBehaviour
         comboCounterText.text = comboCounter.ToString();
         
         GameObject.FindGameObjectWithTag("PlayerStats").GetComponent<DontDestroyOnLoad>().ChangePlayerHealth(playerHealth);
-
     }
-
     
     void Update()
     {
@@ -177,11 +175,8 @@ public class Minigame01 : MonoBehaviour
                     ResetCombo();
                 }
             }
-            
-            
         }
-
-
+        
         if (gameActive) 
         {
             _time += Time.deltaTime;
@@ -232,7 +227,6 @@ public class Minigame01 : MonoBehaviour
 
     void BossTakeDamage(float takeDamage)
     {
-        
         bossHealth -= takeDamage;
         bossHealthBar.GetComponent<Slider>().value = bossHealth;
 
@@ -263,7 +257,6 @@ public class Minigame01 : MonoBehaviour
         // Play song audio
         //AudioManager.Instance.DDRMusic(musicTrack[0]);
         AudioManager.Instance.PlayMusic("DDR");
-        
     }
 
     void AddCombo(int scoreToAdd)
@@ -272,7 +265,6 @@ public class Minigame01 : MonoBehaviour
         comboCounterText.text = comboCounter.ToString();
         comboAnim.SetTrigger("Combo");
         
-
         if (comboCounter < 10) {
             comboCounterImage.GetComponent<RawImage>().color = Color.white;
         }
@@ -292,5 +284,4 @@ public class Minigame01 : MonoBehaviour
         comboCounterText.text = comboCounter.ToString();
         comboCounterImage.GetComponent<RawImage>().color = Color.white;
     }
-    
 }

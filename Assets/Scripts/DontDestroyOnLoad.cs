@@ -59,8 +59,6 @@ public class DontDestroyOnLoad : MonoBehaviour
             Destroy(gameObject);
         }
         
-        //heartImage = Resources.Load("HeartImage") as Image;
-        
     }
 
     void Start()
@@ -77,7 +75,6 @@ public class DontDestroyOnLoad : MonoBehaviour
             healthText.gameObject.SetActive(false);
             heartImage.gameObject.SetActive(false);
         }
-        
         
     }
 
@@ -107,15 +104,10 @@ public class DontDestroyOnLoad : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "MainScene") 
         {
-            //playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
-            //mapBoundary = FindFirstObjectByType<CinemachineConfiner2D>().m_BoundingShape2D.gameObject.name;
-
             GameObject.Find("PlayerCam").GetComponent<CinemachineConfiner2D>()
                     .m_BoundingShape2D =
                 GameObject.Find(mapBoundary).GetComponent<PolygonCollider2D>();
-                
-                
-            //FindFirstObjectByType<CinemachineConfiner2D>().m_BoundingShape2D.gameObject.name = mapBoundary;
+            
             GameObject.FindGameObjectWithTag("Player").GetComponent<MovementScript>().SetPlayerPosition(playerPosition);
             Debug.Log("Loaded player pos");
             minigameCompleted = false;
@@ -192,7 +184,6 @@ public class DontDestroyOnLoad : MonoBehaviour
         if (key3) {
             GameObject.Find("Lukot").transform.GetChild(0).transform.GetChild(2).gameObject.SetActive(false);
         }
-
 
     }
 
@@ -286,7 +277,5 @@ public class DontDestroyOnLoad : MonoBehaviour
             SceneManager.LoadScene("Endings");
 
         }
-        
-        
     }
 }

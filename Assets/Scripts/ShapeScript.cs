@@ -13,16 +13,6 @@ public class ShapeScript : MonoBehaviour
         _rb2d = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        /*
-        if (_rb2d.mass < 10f) {
-            _rb2d.mass = _rb2d.mass + Time.deltaTime;
-        }
-        */
-    }
-
     private void OnCollisionEnter2D(Collision2D other)
     {
         // Play collision audio
@@ -41,6 +31,5 @@ public class ShapeScript : MonoBehaviour
             _rb2d.mass = Mathf.Abs(pos) / 2;
             _hasCollided = true;
         }
-
     }
 }
