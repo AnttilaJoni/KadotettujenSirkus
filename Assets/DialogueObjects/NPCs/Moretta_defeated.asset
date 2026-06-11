@@ -25,8 +25,8 @@ MonoBehaviour:
   - "~You\u2019ve received The Fortune Teller Key~ "
   - Thank you!
   isPlayerLine: 00010001
-  isScreenShakeLine: 000001
-  autoProgressLines: 00
+  isScreenShakeLine: 00000100
+  autoProgressLines: 00000000
   autoProgressDelay: 2.5
   typingSpeed: 0.05
   voiceSounds_player:

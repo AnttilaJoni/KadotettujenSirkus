@@ -69,8 +69,8 @@ MonoBehaviour:
   - Thank you!
   - Good luck, kid.
   isPlayerLine: 000001010000010001010100000001000000010100000100
-  isScreenShakeLine: 00
-  autoProgressLines: 00
+  isScreenShakeLine: 000000000000000000000000000000000000000000000000
+  autoProgressLines: 000000000000000000000000000000000000000000000000
   autoProgressDelay: 2.5
   typingSpeed: 0.05
   voiceSounds_player:

@@ -20,9 +20,9 @@ MonoBehaviour:
   dialogueLines:
   - That was fun~!
   - ~You've receaved the Funny Jester Key~
-  isPlayerLine: 00
+  isPlayerLine: 0000
   isScreenShakeLine: 0001
-  autoProgressLines: 00
+  autoProgressLines: 0000
   autoProgressDelay: 2.5
   typingSpeed: 0.05
   voiceSounds_player:

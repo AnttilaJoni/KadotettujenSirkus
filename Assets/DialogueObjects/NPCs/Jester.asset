@@ -61,8 +61,8 @@ MonoBehaviour:
   - No, don't leave yet, we still have to play!!!
   - Voi nyt vittu-
   isPlayerLine: 00010000010000010000010000000100000100010001
-  isScreenShakeLine: 0000000000000000000000010000000001
-  autoProgressLines: 00000000
+  isScreenShakeLine: 00000000000000000000000100000000010000000000
+  autoProgressLines: 00000000000000000000000000000000000000000000
   autoProgressDelay: 2.5
   typingSpeed: 0.05
   voiceSounds_player:

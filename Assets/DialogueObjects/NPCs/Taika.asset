@@ -51,8 +51,8 @@ MonoBehaviour:
   - ...
   - Fine.
   isPlayerLine: 01000001010000010001000001000101
-  isScreenShakeLine: 000000000000000000000001
-  autoProgressLines: 00
+  isScreenShakeLine: 00000000000000000000000100000000
+  autoProgressLines: 00000000000000000000000000000000
   autoProgressDelay: 2.5
   typingSpeed: 0.05
   voiceSounds_player:

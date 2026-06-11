@@ -21,7 +21,7 @@ MonoBehaviour:
   - Tis a barrel.
   - Neat I guess.
   isPlayerLine: 0101
-  isScreenShakeLine: 
+  isScreenShakeLine: 0000
   autoProgressLines: 0000
   autoProgressDelay: 2.5
   typingSpeed: 0.05
@@ -29,5 +29,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 1c3b2f9ef77d0c44a8845b0bc22ce9c7, type: 3}
   - {fileID: 8300000, guid: 42e36910413b41b42878acc8190feac5, type: 3}
   - {fileID: 8300000, guid: 95e22a425cdaf5143a476ee2a063c2ac, type: 3}
+  - {fileID: 8300000, guid: db2404e6ed834bb4aabb257887b2fce5, type: 3}
   voiceSounds_npc: []
   voicePitch: 1

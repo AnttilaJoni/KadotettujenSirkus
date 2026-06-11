@@ -37,8 +37,8 @@ MonoBehaviour:
   - I won't leave without it.
   - ....
   isPlayerLine: 00000100010001000100
-  isScreenShakeLine: 
-  autoProgressLines: 00000000
+  isScreenShakeLine: 00000000000000000000
+  autoProgressLines: 00000000000000000000
   autoProgressDelay: 2.5
   typingSpeed: 0.05
   voiceSounds_player:

@@ -1,7 +1,7 @@
 using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEditor;
+//using UnityEditor;
 
 public class PlayButton : MonoBehaviour
 {
@@ -28,7 +28,7 @@ public class PlayButton : MonoBehaviour
         Button btn = playButton.GetComponent<Button>();
 		btn.onClick.AddListener(PlayStart);
     }
-    void Update()
+    /* void Update()
     {
         if(playButton == Selection.activeObject)
         {
@@ -37,7 +37,7 @@ public class PlayButton : MonoBehaviour
                 PlayStart();
             }
         }
-    }
+    } */
 
     public void PlayStart()
     {

@@ -33,6 +33,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 03e6cac59706c1a4d85f11e039aa3086, type: 3}
   - {fileID: 21300000, guid: b46ff98eb0331db4c9bafa2bcb67ce9c, type: 3}
   - {fileID: 21300000, guid: b28acc79cba2b4b44955a1a20c3afc02, type: 3}
+  - {fileID: 21300000, guid: b28acc79cba2b4b44955a1a20c3afc02, type: 3}
   dialogueLines:
   - ?????
   - Why have you come here, child?
@@ -56,9 +57,9 @@ MonoBehaviour:
   - Issssss that sssssso?
   - Come on then, kid.
   - Entertain me before I rip out your ssssssssoul!!!!
-  isPlayerLine: 01000101000000000100010101010100
+  isPlayerLine: 01000101000000000100010101010100000000
   isScreenShakeLine: 00000000000000000100000000000000010101
-  autoProgressLines: 00000000
+  autoProgressLines: 00000000000000000000000000000000000000
   autoProgressDelay: 2.5
   typingSpeed: 0.05
   voiceSounds_player:

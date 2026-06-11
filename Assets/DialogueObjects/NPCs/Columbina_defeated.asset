@@ -32,8 +32,8 @@ MonoBehaviour:
     disturbing my beauty sleep and distracting me! "
   - Right...
   isPlayerLine: 00000001000001
-  isScreenShakeLine: 01
-  autoProgressLines: 00
+  isScreenShakeLine: 00000000000000
+  autoProgressLines: 00000000000000
   autoProgressDelay: 2.5
   typingSpeed: 0.05
   voiceSounds_player:
